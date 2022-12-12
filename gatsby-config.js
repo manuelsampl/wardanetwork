@@ -22,6 +22,9 @@ module.exports = {
         //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
         hardCacheMediaFiles: true,
       },
+      production: {
+        allow404Images: true
+      }
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
     resolve: 'gatsby-plugin-google-analytics',
