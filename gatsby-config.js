@@ -14,6 +14,7 @@ module.exports = {
     resolve: 'gatsby-source-wordpress',
     options: {
       url: process.env.GATSBY_WPGRAPHQL_URL,
+      verbose: true,
       schema: {
         //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
         typePrefix: `Wp`,
@@ -23,7 +24,8 @@ module.exports = {
         hardCacheMediaFiles: true,
       },
       production: {
-        allow404Images: true
+        allow404Images: true,
+        hardCacheMediaFiles: true,
       },
       schema: {
         timeout: 6000000,
