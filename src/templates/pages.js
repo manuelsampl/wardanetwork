@@ -2,9 +2,9 @@ import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Loader from '../components/loader/loader'
 
-import Contact from '../pages/contact/contact'
-import Work from '../pages/work/work'
-import About from '../pages/about/about'
+import Contact from '../components/contact/contact'
+import Work from '../components/work/work'
+import About from '../components/about/about'
 import './pages.css'
 
 

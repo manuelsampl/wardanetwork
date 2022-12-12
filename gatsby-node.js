@@ -213,6 +213,8 @@ exports.createPages = async function ({ graphql, actions }) {
         // Gatsby uses Redux to manage its internal state.
         if (edge.node.slug != 'landing') {
 
+            console.log(edge.node.slug)
+
             // PAGES
             createPage({
                 path: edge.node.slug,
@@ -295,6 +297,7 @@ exports.createPages = async function ({ graphql, actions }) {
 
     works.data.allWpWork.edges.forEach(edge => {
 
+        console.log(`/work/${edge.node.slug}`)
 
         createPage({
             path: `/work/${edge.node.slug}`,
