@@ -28,6 +28,13 @@ module.exports = {
       schema: {
         timeout: 6000000,
       },
+      type: {
+        MediaItem: {
+          localFile: {
+            requestConcurrency: 50,
+          },
+        },
+      },
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
     resolve: 'gatsby-plugin-google-analytics',
