@@ -1,20 +1,32 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require('dotenv').config({ path: './.env' })
+
+console.log(process.env.GATSBY_DOMAIN)
 module.exports = {
   siteMetadata: {
     title: `wardanetwork`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: process.env.GATSBY_DOMAIN
   },
   plugins: [{
     resolve: 'gatsby-source-wordpress',
     options: {
-      "url": "http://wardanetwork.local/graphql"
+      url: process.env.GATSBY_WPGRAPHQL_URL,
+      schema: {
+        //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
+        typePrefix: `Wp`,
+      },
+      develop: {
+        //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
+        hardCacheMediaFiles: true,
+      },
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
-      "trackingId": "42343534254"
+      "trackingId": process.env.GATSBY_GOOGLE_ANALYTICS
     }
   }, "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
@@ -35,5 +47,9 @@ module.exports = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `my-transition`,
+  ]
 };

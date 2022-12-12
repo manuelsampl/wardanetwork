@@ -1,0 +1,112 @@
+.footer {
+    background-color: var(--main-text-color);
+    color: var(--text-dark-bg);
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(----text-dark-bg);
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: var(----text-dark-bg);
+}
+
+.getintouch {
+    text-align: center;
+    margin-top: 77px;
+    margin-bottom: 77px;
+}
+
+.getintouch a {
+    font-family: Monument;
+    font-weight: bold;
+    color: var(--contact) !important;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.getintouch a span {
+    position: relative;
+    z-index: 20;
+}
+
+.getintouch a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 5px;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 50%;
+    position: absolute;
+    background: var(--main-bg-color);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    z-index: 1;
+}
+
+.getintouch a:hover:after {
+    left: 0;
+    width: 100%;
+
+}
+
+
+.getintouch a:hover {
+    color: var(--work);
+}
+
+.socialFooter {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.copyright {
+    text-align: right;
+}
+
+.social-icon {
+    width: 24px;
+}
+
+.logo-footer {
+    width: 26px;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-link {
+    font-family: Monument;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    text-transform: uppercase;
+    color: var(--jobs) !important;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}
+
+.footer-link div {
+    margin-left: 15px;
+}
+
+.footer-link:hover {
+    opacity: 0.75;
+    color: var(--jobs);
+
+}

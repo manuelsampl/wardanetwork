@@ -1,0 +1,22 @@
+.smaller-container {
+    max-width: 750px;
+    margin-top: 30px;
+}
+
+.pink-container {
+    background-color: var(--contact);
+    text-align: center;
+    padding-top: 61px;
+    padding-bottom: 61px;
+    margin-top: 200px;
+    min-height: 100%;
+}
+
+.sign-icon {
+    max-width: 537px;
+    margin-bottom: 60px;
+}
+
+.landing .tl-edges {
+    overflow: revert;
+}

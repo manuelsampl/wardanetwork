@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/gatsby-ssr.js"],"names":["exports","wrapPageElement","require","wrapRootElement"],"mappings":";;AAAAA,OAAO,CAACC,eAAR,GAA0BC,OAAO,CAAE,aAAF,CAAjC;AACAF,OAAO,CAACG,eAAR,GAA0BD,OAAO,CAAE,aAAF,CAAjC","sourcesContent":["exports.wrapPageElement = require(`./wrap-page`)\nexports.wrapRootElement = require(`./wrap-root`)\n"],"file":"gatsby-ssr.js"}

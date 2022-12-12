@@ -1,0 +1,46 @@
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999;
+}
+
+.page-wrapper {
+    margin-top: 250px;
+    text-align: center;
+}
+
+.page-wrapper h1 span {
+    position: relative;
+    z-index: 4;
+}
+
+.page-wrapper h1 {
+    position: relative;
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 4;
+    color: var(--main-text-color);
+    text-transform: uppercase;
+
+}
+
+.page-wrapper h1:after {
+    bottom: 20px;
+    content: "";
+    display: block;
+    height: 25px;
+    left: 0%;
+    position: absolute;
+    background: var(--contact);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 100%;
+    z-index: 1;
+}

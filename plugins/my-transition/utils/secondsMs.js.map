@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/utils/secondsMs.js"],"names":["getMs","seconds"],"mappings":";;;;;AAAA,MAAMA,KAAK,GAAGC,OAAO,IAAIA,OAAO,GAAG,IAAnC","sourcesContent":["const getMs = seconds => seconds * 1000\n\nexport { getMs }\n"],"file":"secondsMs.js"}

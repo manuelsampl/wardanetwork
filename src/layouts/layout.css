@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/FuturaStdMedium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/FuturaStdBold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Monument';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/PPMonumentExtended-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Monument';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/PPMonumentExtended-Heavy.woff') format('woff');
+}
+
+:root {
+    --main-bg-color: #f0f2f4;
+    --main-text-color: #101820;
+    --link-light-bg: #53595f;
+    --text-dark-bg: #868a8e;
+    --work: #e0aaff;
+    --about: #90cab7;
+    --jobs: #e6e97c;
+    --contact: #f8bbd6;
+}
+
+
+.tl-edges {
+    min-height: 100vh;
+}
+
+
+
+body {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: 'Futura';
+    font-weight: normal;
+    line-height: 1.7;
+    letter-spacing: 1.3px;
+    font-size: 30px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+p {
+    font-family: 'Futura';
+    font-weight: normal;
+    line-height: 1.7;
+    letter-spacing: 1.3px;
+    font-size: 30px;
+}
+
+.text-sm {
+    font-family: 'Futura';
+    font-weight: normal;
+    line-height: 1.7;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.text-xs {
+    font-family: 'Futura';
+    font-weight: normal;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+}
+
+.bold {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+
+h1 {
+    font-family: 'Monument';
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 3px;
+    font-size: 70px;
+}
+
+h2 {
+    font-family: 'Monument';
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-size: 35px;
+}
+
+h3 {
+    font-family: 'Monument';
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: 'Monument';
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+
+.container-fluid {
+    padding-left: 39px;
+    padding-right: 39px;
+}
+
+.btn {
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 100px;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    font-family: Monument;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+.btn:hover {
+    opacity: 0.75;
+}
+
+.btn-black {
+    background-color: var(--main-text-color);
+    color: var(--main-bg-color);
+}
+
+.btn-black:hover {
+    background-color: var(--main-text-color);
+    color: var(--main-bg-color);
+}
+
+.btn-2 {
+    font-family: "Monument";
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+}
+
+.tl-wrapper {
+    position: revert;
+}
+
+@media (max-width: 769px) {
+    .container-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
