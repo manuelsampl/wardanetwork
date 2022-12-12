@@ -24,7 +24,10 @@ module.exports = {
       },
       production: {
         allow404Images: true
-      }
+      },
+      schema: {
+        timeout: 6000000,
+      },
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
     resolve: 'gatsby-plugin-google-analytics',
