@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Video from '../components/video/video'
 

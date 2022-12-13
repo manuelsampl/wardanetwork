@@ -73,7 +73,7 @@ export default function About({ context }) {
         }
     }
 
-
+    const isSSR = typeof window === "undefined"
 
     return (
         <>
@@ -95,8 +95,11 @@ export default function About({ context }) {
             </Container>
             <AnimateIn triggerOnce={false}>
                 <div className="polaroids">
-                    <Polaroid polaroids={context?.pageContext?.edge?.about?.polaroids}></Polaroid>
+                    {!isSSR &&
+                        <Polaroid polaroids={context?.pageContext?.edge?.about?.polaroids}></Polaroid>
+                    }
                     <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.madness }} />
+
                 </div>
             </AnimateIn>
             <Container>
