@@ -39,3 +39,12 @@ video {
     color: var(--main-text-color);
     background-color: var(--work);
 }
+
+.preloader-image {
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+}

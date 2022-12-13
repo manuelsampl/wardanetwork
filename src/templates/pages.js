@@ -26,27 +26,21 @@ const Pages = (context) => {
                     altText
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageIpad {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageMobile {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
@@ -56,27 +50,21 @@ const Pages = (context) => {
                     altText
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageIpad {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageMobile {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
@@ -86,27 +74,21 @@ const Pages = (context) => {
                     altText
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageIpad {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageMobile {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
@@ -116,27 +98,21 @@ const Pages = (context) => {
                     altText
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageIpad {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }
                   imageMobile {
                     localFile {
                       childImageSharp {
-                        original {
-                            src
-                          }
+                        gatsbyImageData
                       }
                     }
                   }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from 'framer-motion'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import './loader.scss'
 import { defaultTransition } from "../../utils/transition";
@@ -26,6 +27,7 @@ export default function Loader({ color, images }) {
     const [stop, setStop] = useState(false)
     const [cnt, setCnt] = useState(-1)
 
+
     useEffect(() => {
         const interval = setInterval(() => {
             if (cnt < images.length - 2) {
@@ -44,11 +46,12 @@ export default function Loader({ color, images }) {
         return () => clearTimeout(interval);
     }, [cnt, images.length])
 
+    const imageDesktop = getImage(images[cnt + 1].imageDesktop.localFile.childImageSharp.gatsbyImageData)
     return (
         <motion.div className="full-loader" variants={variants} initial={"initial"} animate={"animate"} transition={defaultTransition} style={{ backgroundColor: color }}>
             {cnt >= -1 && !stop ?
                 <>
-                    <motion.img className="full-loader-desktop" src={images[cnt + 1].imageDesktop.localFile.childImageSharp.original?.src} />
+                    <GatsbyImage className="full-loader-desktop" alt={images[cnt + 1].imageDesktop.altText} image={imageDesktop} />
                 </>
                 : <></>}
         </motion.div >

@@ -4,7 +4,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Marquee from "react-fast-marquee"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import AnimateIn from '../../components/animateIn/animateIn'
 
 
 import './footer.css'
@@ -69,44 +71,54 @@ const Footer = () => {
     return (
         <footer className="footer">
             <Container fluid>
-                <Row>
-                    <Col xs={12} md={2} dangerouslySetInnerHTML={{ __html: leftColumn }} className="text-xs leftFooterCol">
-                    </Col>
-                    <Col xs={12} md={2} dangerouslySetInnerHTML={{ __html: rightColumn }} className="text-xs rightFooterCol">
-                    </Col>
-                    <Col xs={12} md={6}>
-                    </Col>
-                    <Col xs={12} md={2} className="socialFooter">
-                        {social.map((item, i) => {
-                            const icon = getImage(item?.socialIcon?.localFile?.childImageSharp?.gatsbyImageData)
-                            return (
-                                <a rel="noreferrer" href={item?.socialLink} target="_blank" key={i}>
-                                    <GatsbyImage className="social-icon" image={icon} alt={item?.socialIcon.altText} />
-                                </a>
-                            )
-                        })}
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={12} className="getintouch">
-                        <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={12} md={3} >
+                <AnimateIn triggerOnce={false}>
+                    <Row>
+                        <Col xs={12} md={2} dangerouslySetInnerHTML={{ __html: leftColumn }} className="text-xs leftFooterCol">
+                        </Col>
+                        <Col xs={12} md={2} dangerouslySetInnerHTML={{ __html: rightColumn }} className="text-xs rightFooterCol">
+                        </Col>
+                        <Col xs={12} md={6}>
+                        </Col>
+                        <Col xs={12} md={2} className="socialFooter">
+                            {social.map((item, i) => {
+                                const icon = getImage(item?.socialIcon?.localFile?.childImageSharp?.gatsbyImageData)
+                                return (
+                                    <a rel="noreferrer" href={item?.socialLink} target="_blank" key={i}>
+                                        <GatsbyImage className="social-icon" image={icon} alt={item?.socialIcon.altText} />
+                                    </a>
+                                )
+                            })}
+                        </Col>
+                    </Row>
+                </AnimateIn>
+                <AnimateIn triggerOnce={false}>
+                    <Row>
+                        <Col xs={12} className="getintouch">
+                            <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
+                        </Col>
+                    </Row>
+                </AnimateIn>
+                <AnimateIn triggerOnce={false}>
+                    <Row>
+                        <Col xs={12} md={3} >
 
-                        <a rel="noreferrer" href={bottomLeftLink.url} target={bottomLeftLink.target} className="footer-link" aria-label={bottomLeftLink.title}>
-                            <GatsbyImage image={image} className="logo-footer" alt="Logo" />
-                            <div dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
-                        </a>
-                    </Col>
-                    <Col xs={12} md={6}>
+                            <a rel="noreferrer" href={bottomLeftLink.url} target={bottomLeftLink.target} className="footer-link" aria-label={bottomLeftLink.title}>
+                                <Marquee gradient={false} speed={50}>
+                                    <GatsbyImage image={image} className="logo-footer" alt="Logo" />
+                                    <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
+                                    <GatsbyImage image={image} className="logo-footer" alt="Logo" />
+                                    <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
+                                </Marquee>
+                            </a>
+                        </Col>
+                        <Col xs={12} md={6}>
 
-                    </Col>
-                    <Col xs={12} md={3} className="copyright">
-                        <div className="text-xs" dangerouslySetInnerHTML={{ __html: bottomRightText }} />
-                    </Col>
-                </Row>
+                        </Col>
+                        <Col xs={12} md={3} className="copyright">
+                            <div className="text-xs" dangerouslySetInnerHTML={{ __html: bottomRightText }} />
+                        </Col>
+                    </Row>
+                </AnimateIn>
             </Container>
         </footer>
     )

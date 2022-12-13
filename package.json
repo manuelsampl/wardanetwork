@@ -26,6 +26,7 @@
     "gatsby-plugin-layout": "^4.2.0",
     "gatsby-plugin-manifest": "^5.2.0",
     "gatsby-plugin-mdx": "^5.2.0",
+    "gatsby-plugin-preload": "^1.0.0",
     "gatsby-plugin-sass": "^6.2.0",
     "gatsby-plugin-sharp": "^5.2.0",
     "gatsby-plugin-sitemap": "^6.2.0",

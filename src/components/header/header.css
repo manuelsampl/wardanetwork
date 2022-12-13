@@ -27,7 +27,6 @@
 
 .nav-link {
     color: var(--main-text-color);
-    cursor: pointer;
 }
 
 .navbar-nav .nav-link.active,
