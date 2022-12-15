@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row'
 
 import AnimateIn from '../../components/animateIn/animateIn'
 
-import './jobs.scss'
+
 
 export default function Standard({ context }) {
 
