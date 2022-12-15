@@ -24,7 +24,7 @@ export default function Standard({ context }) {
             <Container >
                 <AnimateIn triggerOnce={false}>
                     <Row>
-                        <Col xd={12} md={12}>
+                        <Col xd={12} md={12} className="align-left">
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
                         </Col>
                     </Row>
