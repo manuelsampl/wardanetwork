@@ -37,3 +37,13 @@ body {
         cursor: none !important;
     }
 }
+
+@media (max-width: 769px) {
+    .dot {
+        display: none;
+    }
+
+    .ring {
+        display: none;
+    }
+}

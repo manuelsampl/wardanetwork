@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Loader from '../components/loader/loader'
-
+import Header from '../components/header/header'
 import Contact from '../components/contact/contact'
 import Work from '../components/work/work'
 import About from '../components/about/about'
 import Jobs from '../components/jobs/jobs'
+import Standard from '../components/standard/standard'
 import './pages.css'
 
 
@@ -171,7 +172,7 @@ const Pages = (context) => {
         );
       default:
         return (
-          <Contact context={context}></Contact>
+          <Standard context={context}></Standard>
         );
 
     }
@@ -181,6 +182,7 @@ const Pages = (context) => {
 
   return (
     <>
+      <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
       {!isSSR &&
         <Loader color={color} images={images} id="loader" />
       }

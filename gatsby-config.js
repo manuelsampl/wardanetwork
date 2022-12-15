@@ -14,7 +14,6 @@ module.exports = {
     resolve: 'gatsby-source-wordpress',
     options: {
       url: process.env.GATSBY_WPGRAPHQL_URL,
-      verbose: true,
       schema: {
         //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
         typePrefix: `Wp`,

@@ -117,3 +117,58 @@
     color: #fffc00;
 
 }
+
+.d-desktop-none {
+    display: none;
+}
+
+
+.d-mobile-none {
+    display: block;
+}
+
+
+@media (max-width: 769px) {
+
+    .d-mobile-none {
+        display: none;
+    }
+
+    .d-desktop-none {
+        display: block;
+    }
+
+    .getintouch a {
+        font-size: 25px;
+    }
+
+    .getintouch {
+        margin-top: 38px;
+        margin-bottom: 38px;
+    }
+
+    .socialFooter {
+        justify-content: center;
+
+    }
+
+    .socialFooter a {
+        padding: 32px;
+    }
+
+    .mobile-footer-txt {
+        text-align: center;
+        line-height: 2.5;
+    }
+
+    .footer-link {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin: 0 auto;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+}

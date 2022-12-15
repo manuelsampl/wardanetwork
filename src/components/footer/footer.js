@@ -70,7 +70,7 @@ const Footer = () => {
 
     return (
         <footer className="footer">
-            <Container fluid>
+            <Container className="d-mobile-none" fluid>
                 <AnimateIn triggerOnce={false}>
                     <Row>
                         <Col xs={12} md={2} dangerouslySetInnerHTML={{ __html: leftColumn }} className="text-xs leftFooterCol">
@@ -96,6 +96,54 @@ const Footer = () => {
                         <Col xs={12} className="getintouch">
                             <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
                         </Col>
+                    </Row>
+                </AnimateIn>
+                <Row>
+                    <Col xs={12} md={3} >
+
+                        <a rel="noreferrer" href={bottomLeftLink.url} target={bottomLeftLink.target} className="footer-link" aria-label={bottomLeftLink.title}>
+                            <Marquee gradient={false} speed={50}>
+                                <GatsbyImage image={image} className="logo-footer" alt="Logo" />
+                                <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
+                                <GatsbyImage image={image} className="logo-footer" alt="Logo" />
+                                <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
+                            </Marquee>
+                        </a>
+                    </Col>
+                    <Col xs={12} md={6}>
+
+                    </Col>
+                    <Col xs={12} md={3} className="copyright">
+                        <div className="text-xs" dangerouslySetInnerHTML={{ __html: bottomRightText }} />
+                    </Col>
+                </Row>
+            </Container>
+            <Container className="d-desktop-none" fluid>
+
+                <AnimateIn triggerOnce={false}>
+                    <Row>
+                        <Col xs={12} className="getintouch">
+                            <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
+                        </Col>
+                    </Row>
+                </AnimateIn>
+                <AnimateIn triggerOnce={false}>
+                    <Row>
+                        <Col xs={12} md={2} className="socialFooter">
+                            {social.map((item, i) => {
+                                const icon = getImage(item?.socialIcon?.localFile?.childImageSharp?.gatsbyImageData)
+                                return (
+                                    <a rel="noreferrer" href={item?.socialLink} target="_blank" key={i}>
+                                        <GatsbyImage className="social-icon" image={icon} alt={item?.socialIcon.altText} />
+                                    </a>
+                                )
+                            })}
+                        </Col>
+                        <Col xs={12} md={2} dangerouslySetInnerHTML={{ __html: leftColumn }} className="text-xs mobile-footer-txt">
+                        </Col>
+                        <Col xs={12} md={2} dangerouslySetInnerHTML={{ __html: rightColumn }} className="text-xs mobile-footer-txt">
+                        </Col>
+
                     </Row>
                 </AnimateIn>
                 <Row>
