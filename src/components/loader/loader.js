@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createElement } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { motion } from 'framer-motion'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -18,7 +18,6 @@ const variants = {
     }
 }
 
-const overRoot = document.getElementById('___gatsby')
 
 export default function Loader({ color, images }) {
 

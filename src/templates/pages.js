@@ -149,7 +149,7 @@ const Pages = (context) => {
     color = data?.wp?.siteOptions?.siteOptions?.contactColor
     images = data?.wp?.siteOptions?.siteOptions?.contactTransition
   }
-
+  const isSSR = window === "undefined"
 
   function rendererSwitch(slug, context) {
 
@@ -177,7 +177,6 @@ const Pages = (context) => {
 
     }
   }
-  const isSSR = window === "undefined"
 
 
   return (
