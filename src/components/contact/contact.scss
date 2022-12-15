@@ -20,3 +20,8 @@
 .landing .tl-edges {
     overflow: revert;
 }
+
+
+.contact-page h1 {
+    background-image: linear-gradient(var(--contact), var(--contact)) !important;
+}

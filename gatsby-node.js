@@ -6,55 +6,55 @@ const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 
 exports.createResolvers = async (
-    {
-        actions,
-        cache,
-        createNodeId,
-        createResolvers,
-        store,
-        reporter,
-    },
+  {
+    actions,
+    cache,
+    createNodeId,
+    createResolvers,
+    store,
+    reporter,
+  },
 ) => {
-    const { createNode } = actions
+  const { createNode } = actions
 
-    await createResolvers({
-        WPGraphQL_MediaItem: {
-            imageFile: {
-                type: "File",
-                async resolve(source) {
-                    let sourceUrl = source.sourceUrl
+  await createResolvers({
+    WPGraphQL_MediaItem: {
+      imageFile: {
+        type: "File",
+        async resolve(source) {
+          let sourceUrl = source.sourceUrl
 
-                    if (source.mediaItemUrl !== undefined) {
-                        sourceUrl = source.mediaItemUrl
-                    }
+          if (source.mediaItemUrl !== undefined) {
+            sourceUrl = source.mediaItemUrl
+          }
 
-                    return await createRemoteFileNode({
-                        url: encodeURI(sourceUrl),
-                        store,
-                        cache,
-                        createNode,
-                        createNodeId,
-                        reporter,
-                    })
-                },
-            },
+          return await createRemoteFileNode({
+            url: encodeURI(sourceUrl),
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter,
+          })
         },
-    })
+      },
+    },
+  })
 }
 
 
 exports.createPages = async function ({ graphql, actions }) {
-    const { createPage } = actions
+  const { createPage } = actions
 
 
-    // The “graphql” function allows us to run arbitrary
-    // queries against the local WordPress graphql schema. Think of
-    // it like the site has a built-in database constructed
-    // from the fetched data that you can run queries against.
-    // ==== PAGES (WORDPRESS NATIVE) ====
+  // The “graphql” function allows us to run arbitrary
+  // queries against the local WordPress graphql schema. Think of
+  // it like the site has a built-in database constructed
+  // from the fetched data that you can run queries against.
+  // ==== PAGES (WORDPRESS NATIVE) ====
 
-    const pages = await graphql(
-        `
+  const pages = await graphql(
+    `
         query {
            
             allWpPage {
@@ -107,6 +107,10 @@ exports.createPages = async function ({ graphql, actions }) {
                               title
                               url
                             }
+                        }
+                        jobs{
+                          headline
+                          text
                         }
                         about {
                             cta {
@@ -196,50 +200,50 @@ exports.createPages = async function ({ graphql, actions }) {
             }
         }
       `
-    )
+  )
 
 
-    const landingTemplate = (await path).resolve('./src/templates/landing.js')
+  const landingTemplate = (await path).resolve('./src/templates/landing.js')
 
-    const pageTemplate = (await path).resolve('./src/templates/pages.js')
-
-
+  const pageTemplate = (await path).resolve('./src/templates/pages.js')
 
 
-    // We want to create a detailed page for each
-    // page node. We'll just use the WordPress Slug for the slug.
-    // The Page ID is prefixed with 'PAGE_'
-    pages.data.allWpPage.edges.forEach(edge => {
-        // Gatsby uses Redux to manage its internal state.
-        if (edge.node.slug != 'landing') {
-
-            console.log(edge.node.slug)
-
-            // PAGES
-            createPage({
-                path: edge.node.slug,
-                component: slash(pageTemplate),
-                context: {
-                    edge: edge.node
-                },
-
-            })
-        } else {
-
-            // LANDING PAGE
-            createPage({
-                path: '/',
-                component: slash(landingTemplate),
-                context: {
-                    edge: edge.node
-                },
-
-            })
-        }
-    })
 
 
-    const works = await graphql(`
+  // We want to create a detailed page for each
+  // page node. We'll just use the WordPress Slug for the slug.
+  // The Page ID is prefixed with 'PAGE_'
+  pages.data.allWpPage.edges.forEach(edge => {
+    // Gatsby uses Redux to manage its internal state.
+    if (edge.node.slug != 'landing') {
+
+      console.log(edge.node.slug)
+
+      // PAGES
+      createPage({
+        path: edge.node.slug,
+        component: slash(pageTemplate),
+        context: {
+          edge: edge.node
+        },
+
+      })
+    } else {
+
+      // LANDING PAGE
+      createPage({
+        path: '/',
+        component: slash(landingTemplate),
+        context: {
+          edge: edge.node
+        },
+
+      })
+    }
+  })
+
+
+  const works = await graphql(`
     query{
         allWpWork {
             edges {
@@ -279,6 +283,7 @@ exports.createPages = async function ({ graphql, actions }) {
                     text
                   }
                   subheadline
+                  videoIdVimeo
                   video {
                     altText
                     localFile {
@@ -293,20 +298,69 @@ exports.createPages = async function ({ graphql, actions }) {
     }
     `)
 
-    const worksTemplate = (await path).resolve('./src/templates/work.js')
+  const worksTemplate = (await path).resolve('./src/templates/work.js')
 
-    works.data.allWpWork.edges.forEach(edge => {
+  works.data.allWpWork.edges.forEach(edge => {
 
-        console.log(`/work/${edge.node.slug}`)
 
-        createPage({
-            path: `/work/${edge.node.slug}`,
-            component: slash(worksTemplate),
-            context: {
-                edge: edge.node
-            },
-
-        })
+    createPage({
+      path: `/work/${edge.node.slug}`,
+      component: slash(worksTemplate),
+      context: {
+        edge: edge.node
+      },
 
     })
+
+  })
+
+
+  const jobs = await graphql(`
+    query{
+        allWpJob {
+            edges {
+              node {
+                title
+                content
+                slug
+                excerpt
+                featuredImage {
+                    node {
+                      altText
+                      gatsbyImage
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
+                    }
+                  
+                }
+
+                jobsDetail{
+                  gender
+                  payment
+                  apply
+                }
+              }
+            }
+        }
+    }
+    `)
+
+  const jobsTemplate = (await path).resolve('./src/templates/jobs.js')
+
+  jobs.data.allWpJob.edges.forEach(edge => {
+
+
+    createPage({
+      path: `/jobs/${edge.node.slug}`,
+      component: slash(jobsTemplate),
+      context: {
+        edge: edge.node
+      },
+
+    })
+
+  })
 }

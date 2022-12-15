@@ -12,7 +12,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _jsxFileName = "/Users/tyler/Documents/GitHub/gatsby-plugins/transition-link/gatsby-plugin-transition-link/src/components/TransitionPortal.js";
-const portalRoot = typeof document !== `undefined` ? document.body : false;
+const portalRoot = typeof document !== `undefined` ? document.getElementById('___gatsby') : false;
 
 const PortalContainer = props => {
   const zIndex = function (level) {

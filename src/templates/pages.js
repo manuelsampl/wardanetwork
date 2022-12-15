@@ -5,6 +5,7 @@ import Loader from '../components/loader/loader'
 import Contact from '../components/contact/contact'
 import Work from '../components/work/work'
 import About from '../components/about/about'
+import Jobs from '../components/jobs/jobs'
 import './pages.css'
 
 
@@ -128,27 +129,28 @@ const Pages = (context) => {
   var images = data?.wp?.siteOptions?.siteOptions?.workTransition
 
 
-  if (context.path === '/work/') {
+  if (context?.path === '/work/') {
     color = data?.wp?.siteOptions?.siteOptions?.workColor
     images = data?.wp?.siteOptions?.siteOptions?.workTransition
   }
 
-  if (context.path === '/about/') {
+  if (context?.path === '/about/') {
     color = data?.wp?.siteOptions?.siteOptions?.aboutColor
     images = data?.wp?.siteOptions?.siteOptions?.aboutTransition
   }
 
-  if (context.path === '/jobs/') {
+  if (context?.path === '/jobs/') {
     color = data?.wp?.siteOptions?.siteOptions?.jobsColor
     images = data?.wp?.siteOptions?.siteOptions?.jobsTransition
   }
 
-  if (context.path === '/contact/') {
+  if (context?.path === '/contact/') {
     color = data?.wp?.siteOptions?.siteOptions?.contactColor
     images = data?.wp?.siteOptions?.siteOptions?.contactTransition
   }
 
-  function rendererSwitch(slug, context, Contact) {
+
+  function rendererSwitch(slug, context) {
 
     switch (slug) {
       case 'contact':
@@ -165,7 +167,7 @@ const Pages = (context) => {
         );
       case 'jobs':
         return (
-          <Contact context={context}></Contact>
+          <Jobs context={context}></Jobs>
         );
       default:
         return (
@@ -174,12 +176,15 @@ const Pages = (context) => {
 
     }
   }
+  const isSSR = window === "undefined"
 
 
   return (
     <>
-      <Loader color={color} images={images} />
-      {rendererSwitch(context?.pageContext?.edge?.slug, context, Contact)}
+      {!isSSR &&
+        <Loader color={color} images={images} id="loader" />
+      }
+      {rendererSwitch(context?.pageContext?.edge?.slug, context)}
     </>
 
   )

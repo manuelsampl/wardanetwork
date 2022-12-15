@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from '../components/header/header'
@@ -13,12 +12,17 @@ import Cursor from '../components/cursor/cursor';
 
 const Layout = ({ children }) => {
 
+
+
+
     return (
-        <div>
+        <div id="layoutcontainer">
+
             <Cursor />
             <Header transparent={children?.props?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
 
             <main>{children}</main>
+
 
             <Footer></Footer>
         </div>

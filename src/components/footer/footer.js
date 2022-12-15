@@ -98,27 +98,25 @@ const Footer = () => {
                         </Col>
                     </Row>
                 </AnimateIn>
-                <AnimateIn triggerOnce={false}>
-                    <Row>
-                        <Col xs={12} md={3} >
+                <Row>
+                    <Col xs={12} md={3} >
 
-                            <a rel="noreferrer" href={bottomLeftLink.url} target={bottomLeftLink.target} className="footer-link" aria-label={bottomLeftLink.title}>
-                                <Marquee gradient={false} speed={50}>
-                                    <GatsbyImage image={image} className="logo-footer" alt="Logo" />
-                                    <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
-                                    <GatsbyImage image={image} className="logo-footer" alt="Logo" />
-                                    <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
-                                </Marquee>
-                            </a>
-                        </Col>
-                        <Col xs={12} md={6}>
+                        <a rel="noreferrer" href={bottomLeftLink.url} target={bottomLeftLink.target} className="footer-link" aria-label={bottomLeftLink.title}>
+                            <Marquee gradient={false} speed={50}>
+                                <GatsbyImage image={image} className="logo-footer" alt="Logo" />
+                                <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
+                                <GatsbyImage image={image} className="logo-footer" alt="Logo" />
+                                <div className="footer-marquee-text" dangerouslySetInnerHTML={{ __html: bottomLeftLink.title }} />
+                            </Marquee>
+                        </a>
+                    </Col>
+                    <Col xs={12} md={6}>
 
-                        </Col>
-                        <Col xs={12} md={3} className="copyright">
-                            <div className="text-xs" dangerouslySetInnerHTML={{ __html: bottomRightText }} />
-                        </Col>
-                    </Row>
-                </AnimateIn>
+                    </Col>
+                    <Col xs={12} md={3} className="copyright">
+                        <div className="text-xs" dangerouslySetInnerHTML={{ __html: bottomRightText }} />
+                    </Col>
+                </Row>
             </Container>
         </footer>
     )

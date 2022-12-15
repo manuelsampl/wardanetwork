@@ -1,0 +1,43 @@
+.jobs-format {
+    text-align: left !important;
+
+    p {
+        text-align: left !important;
+        font-family: 'Futura';
+        font-weight: normal;
+        line-height: 1.7;
+        letter-spacing: 1px;
+        font-size: 20px;
+    }
+
+    ul {
+        text-align: left;
+        font-family: 'Futura';
+        font-weight: normal;
+        line-height: 1.7;
+        letter-spacing: 1px;
+        font-size: 20px;
+    }
+
+    h4 {
+        margin-top: 100px;
+    }
+}
+
+.yellow-container {
+    .btn {
+        margin-top: 60px;
+    }
+
+    .jobs-format {
+        margin-top: 0px;
+
+        h4 {
+            margin-top: 60px;
+        }
+    }
+}
+
+.job-list-item {
+    border-top: 1px solid vad(--main-text-color);
+}

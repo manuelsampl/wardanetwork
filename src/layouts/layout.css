@@ -104,6 +104,8 @@ h1 {
     line-height: 1.5;
     letter-spacing: 3px;
     font-size: 70px;
+    display: inline;
+    margin-bottom: 60px;
 }
 
 h2 {
@@ -172,7 +174,16 @@ h4 {
 }
 
 .tl-wrapper {
-    position: revert;
+    position: relative;
+    float: revert;
+}
+
+.tl-edges {
+    overflow: revert;
+}
+
+.transitionlinkPortal {
+    z-index: 9999000;
 }
 
 @media (max-width: 769px) {

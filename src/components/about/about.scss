@@ -6,42 +6,19 @@
     }
 
     h1 {
-        margin-bottom: 60px;
+        background-image: linear-gradient(var(--about), var(--about)) !important;
+
+
     }
 
-    h1:after {
-        background: var(--about) !important;
+    span {
+        position: relative;
+
+        margin-bottom: 60px !important;
     }
+
 }
 
-.about-page h1 span {
-    position: relative;
-    z-index: 4;
-}
-
-.about-page h1 {
-    position: relative;
-    display: inline-block;
-    padding-left: 15px;
-    padding-right: 15px;
-    z-index: 4;
-    color: var(--main-text-color);
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.about-page h1:after {
-    bottom: 20px;
-    content: "";
-    display: block;
-    height: 25px;
-    left: 0%;
-    position: absolute;
-    background: var(--contact);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 100%;
-    z-index: 1;
-}
 
 .align-center {
     text-align: center;
@@ -187,8 +164,15 @@
 
 .logo-partner-wrapper {
     display: flex;
-    justify-content: center;
     padding: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-partner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .team-container {
@@ -238,4 +222,28 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.circle-team {
+    position: -webkit-sticky;
+    /* Safari */
+
+    position: sticky;
+    z-index: 99;
+    top: 200px;
+    align-items: normal
+}
+
+.sticky-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+}
+
+.circle-svg {
+    position: absolute;
+    right: 8%;
+    width: 170px;
+    margin-top: -110px;
 }

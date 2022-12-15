@@ -7,8 +7,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import AnimateIn from '../../components/animateIn/animateIn'
 
 import Polaroid from "../polaroid/polaroid"
+import Logos from "../logos/logos"
 
 import './about.scss'
+import Circle from "../circle/circle"
 
 
 const convertArrayToObject = (array, key) => {
@@ -17,9 +19,9 @@ const convertArrayToObject = (array, key) => {
         return {
             ...obj,
             [item[key]]: item.state,
-        };
+        }
     }, initialValue)
-};
+}
 
 
 const Item = ({ children }) => {
@@ -27,8 +29,8 @@ const Item = ({ children }) => {
 
     return (
         <div {...eventHandlers} className="hover-image">{hovered && children}</div>
-    );
-};
+    )
+}
 
 const useHover = () => {
     const [hovered, setHovered] = useState()
@@ -36,7 +38,7 @@ const useHover = () => {
     const eventHandlers = useMemo(() => ({
         onMouseOver() { setHovered(true) },
         onMouseOut() { setHovered(false) }
-    }), []);
+    }), [])
 
     return [hovered, eventHandlers]
 }
@@ -73,14 +75,15 @@ export default function About({ context }) {
         }
     }
 
-    const isSSR = typeof window === "undefined"
+    const isSSR = window === "undefined"
+
 
     return (
-        <>
+        <div className="sticky-container">
             <Container>
                 <AnimateIn triggerOnce={false}>
                     <Row className="page-wrapper about-page">
-                        <span><h1 ><span>{context?.pageContext?.edge?.title}</span></h1></span>
+                        <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 
                     </Row>
                 </AnimateIn>
@@ -88,7 +91,7 @@ export default function About({ context }) {
                     <Row>
                         <Col xd={12} className="align-center" >
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
-                            <Link to={context?.pageContext?.edge?.about?.cta?.url} target={context?.pageContext?.edge?.about?.cta?.target} className="btn btn-black cta">{context?.pageContext?.edge?.about?.cta?.title}</Link>
+                            <a href={context?.pageContext?.edge?.about?.cta?.url} target={context?.pageContext?.edge?.about?.cta?.target} className="btn btn-black cta">{context?.pageContext?.edge?.about?.cta?.title}</a>
                         </Col>
                     </Row>
                 </AnimateIn>
@@ -106,7 +109,7 @@ export default function About({ context }) {
                 <AnimateIn triggerOnce={false}>
                     <Row className="about-page">
 
-                        <span><h1 ><span>{context?.pageContext?.edge?.about?.headline2}</span></h1></span>
+                        <span><h1 >{context?.pageContext?.edge?.about?.headline2}</h1></span>
 
                     </Row>
                 </AnimateIn>
@@ -122,8 +125,8 @@ export default function About({ context }) {
                 {context?.pageContext?.edge?.about?.faq?.map((item, i) => {
 
                     return (
-                        <AnimateIn triggerOnce={false}>
-                            <div key={i} onClick={() => clickHandler(i)} className="faq-container">
+                        <AnimateIn key={i} triggerOnce={false}>
+                            <div onClick={() => clickHandler(i)} className="faq-container">
                                 <div className="faq-headline">
                                     <h3 dangerouslySetInnerHTML={{ __html: item?.question }}></h3>
                                     {clicked[i] ?
@@ -175,32 +178,34 @@ export default function About({ context }) {
             <Container>
                 <AnimateIn triggerOnce={false}>
                     <Row className="about-page partners-container">
-                        <span><h1 ><span>{context?.pageContext?.edge?.about?.headlinePartners}</span></h1></span>
+                        <span><h1 >{context?.pageContext?.edge?.about?.headlinePartners}</h1></span>
                     </Row>
                 </AnimateIn>
                 <AnimateIn triggerOnce={false}>
                     <Row>
-                        {context?.pageContext?.edge?.about?.partners?.map((item, i) => {
-                            const image = getImage(item?.logo?.localFile?.childImageSharp?.gatsbyImageData)
-                            return (
-                                <Col key={i} xs={6} md={4} className="logo-partner-wrapper">
-                                    <div className="logo-partner">
-                                        <GatsbyImage image={image} alt={item?.logo?.altText} />
-                                    </div>
-                                </Col>
-                            )
-                        })}
+                        <Logos logos={context?.pageContext?.edge?.about?.partners} />
+
                     </Row>
                 </AnimateIn>
             </Container>
-            <Container className="bottom-row">
+            <Container style={{ height: 'auto', overflow: 'revert' }}>
                 <AnimateIn triggerOnce={false}>
                     <Row className="about-page team-container">
-                        <span><h1 ><span>{context?.pageContext?.edge?.about?.teamHeadline}</span></h1></span>
+                        <span><h1 >{context?.pageContext?.edge?.about?.teamHeadline}</h1></span>
                     </Row>
                 </AnimateIn>
+
+            </Container>
+            <div className="circle-team">
+                <Circle ></Circle>
+            </div>
+            <Container className="bottom-row" >
+
+
                 <AnimateIn triggerOnce={false}>
+
                     <Row>
+
                         {context?.pageContext?.edge?.about?.team?.map((item, i) => {
                             const image = getImage(item?.image?.localFile?.childImageSharp?.gatsbyImageData)
                             const imageAdult = getImage(item?.imageAdult?.localFile?.childImageSharp?.gatsbyImageData)
@@ -230,6 +235,7 @@ export default function About({ context }) {
                     </Row>
                 </AnimateIn>
             </Container>
-        </>
+
+        </div>
     )
 }

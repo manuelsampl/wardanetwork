@@ -56,26 +56,37 @@ export default function Polaroid(polaroids) {
         } else {
             setCounter(0);
         }
+        return
 
     }, 200);
 
 
     function weAreHovered(e) {
         const elem = e.target
-        const rect = elem.getBoundingClientRect()
-        setAbsoluteY(rect.top)
+        if (elem) {
+            const rect = elem?.getBoundingClientRect()
+            setAbsoluteY(rect.top)
 
-        setHovered(true)
+            setHovered(true)
+        }
+        return
     }
 
     function weAreUnHovered() {
         setHovered(false)
+        return
     }
 
     function setY(e) {
-        const elem = document.getElementById('polaroid-container')
-        const rect = elem.getBoundingClientRect()
-        setAbsoluteY(rect.top)
+        if (document) {
+            const elem = document.getElementById('polaroid-container')
+            if (elem != undefined && elem != null) {
+                const rect = elem?.getBoundingClientRect()
+                setAbsoluteY(rect.top)
+            }
+        }
+
+        return
     }
 
     return (

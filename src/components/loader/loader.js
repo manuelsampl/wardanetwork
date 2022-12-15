@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createElement } from "react";
 import { motion } from 'framer-motion'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -18,7 +18,7 @@ const variants = {
     }
 }
 
-
+const overRoot = document.getElementById('___gatsby')
 
 export default function Loader({ color, images }) {
 
@@ -29,13 +29,19 @@ export default function Loader({ color, images }) {
 
 
     useEffect(() => {
+        if (document) (
+            document.getElementsByClassName('tl-wrapper')[0].style.position = 'revert'
+        )
+
         const interval = setInterval(() => {
+
             if (cnt < images.length - 2) {
                 setCnt(cnt + 1)
             } else {
                 setStop(true)
                 return () => {
                     setCnt(0)
+                    document.getElementsByClassName('tl-wrapper')[0].style.position = 'relative'
                     clearTimeout(interval)
                 }
 
@@ -46,9 +52,11 @@ export default function Loader({ color, images }) {
         return () => clearTimeout(interval);
     }, [cnt, images.length])
 
+
     const imageDesktop = getImage(images[cnt + 1].imageDesktop.localFile.childImageSharp.gatsbyImageData)
+
     return (
-        <motion.div className="full-loader" variants={variants} initial={"initial"} animate={"animate"} transition={defaultTransition} style={{ backgroundColor: color }}>
+        <motion.div className="full-loader" variants={variants} initial={"initial"} animate={"animate"} transition={defaultTransition} style={{ backgroundColor: color, zIndex: '99999999999999999999' }}>
             {cnt >= -1 && !stop ?
                 <>
                     <GatsbyImage className="full-loader-desktop" alt={images[cnt + 1].imageDesktop.altText} image={imageDesktop} />
@@ -57,3 +65,5 @@ export default function Loader({ color, images }) {
         </motion.div >
     )
 }
+
+

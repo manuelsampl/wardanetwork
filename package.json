@@ -15,7 +15,10 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.5",
+    "add": "^2.0.6",
+    "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
+    "debounce": "^1.2.1",
     "dotenv": "^16.0.3",
     "framer-motion": "^7.6.19",
     "gatsby": "^5.2.0",
@@ -48,6 +51,7 @@
     "react-pose": "^4.0.10",
     "react-spring": "^9.5.5",
     "sass": "^1.56.1",
-    "slash": "^5.0.0"
+    "slash": "^5.0.0",
+    "yarn": "^1.22.19"
   }
 }
