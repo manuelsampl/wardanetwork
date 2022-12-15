@@ -39,6 +39,8 @@
         text-align: left;
         display: inline;
         min-width: 140px;
+        margin-left: 10px;
+        text-transform: uppercase;
     }
 }
 
@@ -53,10 +55,26 @@
 
 .list-item-description {
     text-align: left;
+    margin-top: 40px;
 
     p {
         text-align: left;
         font-size: 20px;
         line-height: 34px;
+    }
+
+    svg {
+        margin-top: 20px;
+        transition: all 0.5s ease;
+    }
+}
+
+.jobs-wrapper .col-12 {
+    padding: 60px;
+}
+
+.job-list-item:hover {
+    .list-item-description svg {
+        margin-left: 10px;
     }
 }

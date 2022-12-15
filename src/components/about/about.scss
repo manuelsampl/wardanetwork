@@ -66,11 +66,23 @@
     padding-top: 70px;
 }
 
+.faq-container:hover {
+    .faq-headline {
+        margin-left: 30px;
+    }
+}
+
 .faq-headline {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.5s ease;
+
+    h3 {
+        margin-top: 7px;
+        margin-bottom: 0px;
+    }
 
     svg {
         width: 80px;
@@ -108,6 +120,7 @@
         margin-top: 60px;
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 70px;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: white;
         color: var(--main-text-color);
@@ -121,8 +134,8 @@
 }
 
 .media-container {
-    margin-top: 60px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 39px;
     max-width: 800px;
 }
 
@@ -137,6 +150,23 @@
         margin-top: 30px;
 
     }
+}
+
+.zoom-hover {
+    overflow: hidden;
+    transition: scale 0.8s ease;
+
+
+}
+
+.zoom-hover div img {
+    transition: all 0.8s ease-in-out;
+}
+
+
+
+.zoom-hover div img:hover {
+    transform: scale(1.1)
 }
 
 .green-container {
@@ -186,9 +216,13 @@
 
     h4 {
         margin-top: 20px;
+        margin-bottom: 0px;
     }
 }
 
+.margin-bottom-100 {
+    margin-bottom: 70px;
+}
 
 .team-image {
     position: relative;

@@ -1,18 +1,19 @@
 .footer {
     background-color: var(--main-text-color);
-    color: var(--text-dark-bg);
+    color: #fff;
     padding-top: 26px;
     padding-bottom: 26px;
 }
 
 .footer a {
     text-decoration: none;
-    color: var(----text-dark-bg);
+    color: #fff;
+    transition: 0.5s all ease;
 }
 
 .footer a:hover {
     text-decoration: none;
-    color: var(----text-dark-bg);
+    opacity: 0.75;
 }
 
 .getintouch {
@@ -41,13 +42,13 @@
 
 .getintouch a:after {
     background: none repeat scroll 0 0 transparent;
-    bottom: 5px;
+    bottom: -4px;
     content: "";
     display: block;
-    height: 20px;
-    left: 50%;
+    height: 5px;
+    left: 0;
     position: absolute;
-    background: var(--main-bg-color);
+    background: var(--contact);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
     z-index: 1;
@@ -126,6 +127,8 @@
 .d-mobile-none {
     display: block;
 }
+
+
 
 
 @media (max-width: 769px) {

@@ -37,7 +37,9 @@ video {
 
 .btn-landing:hover {
     color: var(--main-text-color);
-    background-color: var(--work);
+    background-color: #ecccff;
+    opacity: 1;
+
 }
 
 .preloader-image {

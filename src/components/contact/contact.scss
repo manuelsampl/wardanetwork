@@ -1,6 +1,6 @@
 .smaller-container {
     max-width: 750px;
-    margin-top: 30px;
+    margin-top: 45px;
 }
 
 .pink-container {
@@ -10,6 +10,11 @@
     padding-bottom: 61px;
     margin-top: 200px;
     min-height: 100%;
+
+    .btn-black:hover {
+        opacity: 1;
+        background-color: #53595f;
+    }
 }
 
 .sign-icon {

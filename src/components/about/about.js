@@ -127,18 +127,19 @@ export default function About({ context }) {
                     return (
                         <AnimateIn key={i} triggerOnce={false}>
                             <div onClick={() => clickHandler(i)} className="faq-container">
-                                <div className="faq-headline">
+                                <div className="faq-headline" style={{ marginLeft: clicked[i] ? '0px' : '' }}>
                                     <h3 dangerouslySetInnerHTML={{ __html: item?.question }}></h3>
                                     {clicked[i] ?
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="79" viewBox="0 0 79 79">
+                                            <path fillRule="evenodd" d="M39.5,0 C61.3152476,0 79,17.6847524 79,39.5 C79,61.3152476 61.3152476,79 39.5,79 C17.6847524,79 0,61.3152476 0,39.5 C0,17.6847524 17.6847524,0 39.5,0 Z M39.5,1 C18.2370371,1 1,18.2370371 1,39.5 C1,60.7629629 18.2370371,78 39.5,78 C60.7629629,78 78,60.7629629 78,39.5 C78,18.2370371 60.7629629,1 39.5,1 Z M54,38 L54,41 L26,41 L26,38 L54,38 Z" />
+                                        </svg>
+
+                                        :
                                         <svg xmlns="http://www.w3.org/2000/svg" width="82" height="81" viewBox="0 0 82 81">
                                             <g fill="none" fillRule="evenodd" transform="translate(1 1)">
                                                 <polygon fill="#000" fillRule="nonzero" points="41.405 53.688 41.405 41.301 53.824 41.301 53.824 37.923 41.405 37.923 41.405 25.535 38.019 25.535 38.019 37.923 25.6 37.923 25.6 41.301 38.019 41.301 38.019 53.688" />
                                                 <ellipse cx="40" cy="39.5" stroke="#000" strokeWidth=".8" rx="40" ry="39.5" />
                                             </g>
-                                        </svg>
-                                        :
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="79" viewBox="0 0 79 79">
-                                            <path fillRule="evenodd" d="M39.5,0 C61.3152476,0 79,17.6847524 79,39.5 C79,61.3152476 61.3152476,79 39.5,79 C17.6847524,79 0,61.3152476 0,39.5 C0,17.6847524 17.6847524,0 39.5,0 Z M39.5,1 C18.2370371,1 1,18.2370371 1,39.5 C1,60.7629629 18.2370371,78 39.5,78 C60.7629629,78 78,60.7629629 78,39.5 C78,18.2370371 60.7629629,1 39.5,1 Z M54,38 L54,41 L26,41 L26,38 L54,38 Z" />
                                         </svg>
 
                                     }
@@ -163,7 +164,7 @@ export default function About({ context }) {
 
                                 const image = getImage(item?.image?.localFile?.childImageSharp?.gatsbyImageData)
                                 return (
-                                    <Col key={i} xs={12} md={4}>
+                                    <Col key={i} xs={12} md={4} className="zoom-hover">
                                         <GatsbyImage image={image} alt={item?.image?.altText} />
                                         <h4 dangerouslySetInnerHTML={{ __html: item?.title }} />
                                     </Col>
@@ -204,7 +205,7 @@ export default function About({ context }) {
 
                 <AnimateIn triggerOnce={false}>
 
-                    <Row>
+                    <Row className="margin-bottom-100">
 
                         {context?.pageContext?.edge?.about?.team?.map((item, i) => {
                             const image = getImage(item?.image?.localFile?.childImageSharp?.gatsbyImageData)

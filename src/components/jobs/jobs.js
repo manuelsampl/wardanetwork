@@ -55,10 +55,9 @@ export default function Jobs({ context }) {
                 </AnimateIn>
             </Container>
             <AnimateIn triggerOnce={false}>
-                <Container fluid>
+                <Container fluid className="jobs-wrapper">
                     <Row>
                         {data?.allWpJob?.edges?.map((job, i) => {
-                            console.log(job)
                             return (
                                 <Col key={i} xs={12} md={6} >
                                     <Link to={`/jobs/${job?.node?.slug}`}>

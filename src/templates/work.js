@@ -137,7 +137,7 @@ const Work = (context) => {
                 <Container fluid>
                     <Row>
                         <Col className="align-right" xs={12}>
-                            <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" width="19px" viewBox="0 0 78.65 86.28"><path stroke="#000" strokeWidth="5px" fill="none" d="M5.43,2.88L74.95,41.52c.8,.45,1.2,.99,1.2,1.62s-.4,1.17-1.2,1.62L5.43,83.4c-.8,.45-1.49,.51-2.07,.16s-.86-.98-.86-1.88V4.61c0-.91,.29-1.54,.86-1.88s1.27-.3,2.07,.16Z" /></svg><span className="btn-2">Watch the film</span>
+                            <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" width="19px" viewBox="0 0 78.65 86.28"><path stroke="#000" strokeWidth="5px" fill="none" d="M5.43,2.88L74.95,41.52c.8,.45,1.2,.99,1.2,1.62s-.4,1.17-1.2,1.62L5.43,83.4c-.8,.45-1.49,.51-2.07,.16s-.86-.98-.86-1.88V4.61c0-.91,.29-1.54,.86-1.88s1.27-.3,2.07,.16Z" /></svg><span className="btn-2 info-btn-2">Watch the film</span>
                         </Col>
                     </Row>
                 </Container>
@@ -178,7 +178,7 @@ const Work = (context) => {
                                 <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.work?.videoTitle }}></h3>
                             </Col>
                         </Row>
-                        <Row>
+                        <Row className="margin-container">
                             <Col xs={12}>
                                 <Video videoSrcURL={context?.pageContext?.edge?.work?.video?.localFile?.publicURL}></Video>
                             </Col>

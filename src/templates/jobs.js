@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-
+import Header from '../components/header/header'
 import AnimateIn from '../components/animateIn/animateIn'
 
 import './jobs.scss'
@@ -27,9 +27,11 @@ const Jobs = (context) => {
 
     return (
         <div className="page-wrapper jobs-page">
+            <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
+
             <AnimateIn triggerOnce={false}>
 
-                <Container fluid>
+                <Container className="jobdetails-container" >
                     <Row>
                         <Col xs={12}>
                             <span><h1>{context.pageContext.edge.title}</h1></span>

@@ -71,7 +71,7 @@ a:hover {
 p {
     font-family: 'Futura';
     font-weight: normal;
-    line-height: 1.7;
+    line-height: 2;
     letter-spacing: 1.3px;
     font-size: 30px;
 }
@@ -196,6 +196,7 @@ h4 {
         font-size: 35px;
         line-height: 1.4;
         letter-spacing: 1.5px;
+        background-size: 110% 13px !important;
     }
 
     h2 {
@@ -240,7 +241,5 @@ h4 {
         letter-spacing: 2.5px;
     }
 
-    .getintouch a {
-        font-size: 25px
-    }
+
 }

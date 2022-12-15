@@ -17,10 +17,12 @@
         line-height: 1.7;
         letter-spacing: 1px;
         font-size: 20px;
+        padding-left: 18px;
     }
 
     h4 {
         margin-top: 100px;
+        margin-bottom: 30px;
     }
 }
 
@@ -34,10 +36,22 @@
 
         h4 {
             margin-top: 60px;
+            margin-bottom: 30px;
         }
     }
 }
 
+.yellow-container .btn-black:hover {
+    opacity: 1;
+    background-color: #53595f;
+}
+
 .job-list-item {
     border-top: 1px solid vad(--main-text-color);
+}
+
+.jobdetails-container {
+    h2 {
+        text-transform: uppercase;
+    }
 }
