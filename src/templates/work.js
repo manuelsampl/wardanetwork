@@ -8,7 +8,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Video from '../components/video/video'
 import useMousePosition from "../hooks/useMousePosition/useMousePosition"
 import VideoVimeo from '../components/videovimeo/videovimeo'
-import debounce from "debounce"
+import Header from '../components/header/header'
 import AnimateIn from '../components/animateIn/animateIn'
 import FadeIn from '../components/animateIn/fadeIn'
 
@@ -127,6 +127,8 @@ const Work = (context) => {
 
     return (
         <>
+            <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
+
             <AnimateIn triggerOnce={false}>
                 <div className="work-header">
                     <GatsbyImage image={headerImage} alt={context?.pageContext?.edge?.featuredImage?.node?.altText} />

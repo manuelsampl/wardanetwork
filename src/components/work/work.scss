@@ -208,3 +208,26 @@
     display: none;
     /* for Chrome, Safari, and Opera */
 }
+
+@media (max-width: 769px) {
+
+    .masonry-margin {
+        border: 0px;
+        border-bottom: 20px solid transparent;
+    }
+
+    .work-image-holder .gatsby-image-wrapper-constrained {
+        left: 0px !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    .work-images-container .row {
+        margin-bottom: 0px !important;
+    }
+
+    .align-right {
+        justify-content: center;
+        text-align: center;
+    }
+}

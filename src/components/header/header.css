@@ -134,7 +134,6 @@
 
     .navbar-expand {
         opacity: 0;
-        pointer-events: none;
     }
 
     #showNavbar {
