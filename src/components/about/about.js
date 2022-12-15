@@ -75,7 +75,7 @@ export default function About({ context }) {
         }
     }
 
-    const isSSR = window === "undefined"
+    const isSSR = typeof window === "undefined"
 
 
     return (

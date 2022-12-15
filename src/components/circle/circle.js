@@ -8,7 +8,7 @@ export default function Circle() {
 
     const [scroll, setScroll] = useState(0)
     const [rotation, setRotation] = useState(0)
-    const isSSR = window === undefined
+    const isSSR = typeof window === "undefined"
 
     if (!isSSR) {
 

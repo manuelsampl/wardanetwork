@@ -149,7 +149,7 @@ const Pages = (context) => {
     color = data?.wp?.siteOptions?.siteOptions?.contactColor
     images = data?.wp?.siteOptions?.siteOptions?.contactTransition
   }
-  const isSSR = window === "undefined"
+  const isSSR = typeof window === "undefined"
 
   function rendererSwitch(slug, context) {
 
