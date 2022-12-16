@@ -72,11 +72,11 @@ class Cover extends _react.Component {
         duration: 0.3
       }).set(node, {
         opacity: 0,
-        duration: 0,
+        duration: 3.5,
       }).to(cover, {
         y: directionTo,
         ease: "power1.easeIn",
-        duration: 1
+        duration: 2
       }, `+=${wait}`);
     };
 

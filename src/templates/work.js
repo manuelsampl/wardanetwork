@@ -68,15 +68,21 @@ const Work = (context) => {
     const [openBox, setOpenBox] = useState(false)
     const [btnContent, setBtnContent] = useState('mehr Infos')
 
+    const myRef = useRef(null)
+
     const [autoplay, setAutoplay] = useState(false)
 
 
+
+
     const handleClick2 = () => {
+        console.log('ok')
         if (!autoplay) {
             setAutoplay(true)
         } else {
             setAutoplay(false)
         }
+        return autoplay
     }
 
     const handleClick = () => {
@@ -87,8 +93,9 @@ const Work = (context) => {
             setOpenBox(false)
             setBtnContent('mehr Infos')
         }
-    }
 
+        return openBox
+    }
 
 
     const [absoluteY, setAbsoluteY] = useState(0)
@@ -103,12 +110,14 @@ const Work = (context) => {
 
 
     function setY(e) {
+        const isSSR = typeof window === "undefined"
         if (!isSSR && hoveredElement != undefined) {
             const elem = hoveredElement
 
             const rect = elem.getBoundingClientRect()
             setAbsoluteY(rect.top)
         }
+        return
     }
 
     function handleMouseEnter(e) {
@@ -117,9 +126,17 @@ const Work = (context) => {
         const elem = e.target
         const rect = elem.getBoundingClientRect()
         setAbsoluteY(rect.top)
+        return
     }
 
+    function executeScroll() {
+        const isSSR = typeof window === "undefined"
+        if (!isSSR) {
+            myRef.current.scrollIntoView()
 
+        }
+        return handleClick2()
+    }
 
 
     const headerImage = getImage(context?.pageContext?.edge?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
@@ -135,7 +152,7 @@ const Work = (context) => {
 
                 <Container fluid>
                     <Row>
-                        <Col className="align-right" xs={12}>
+                        <Col className="align-right" xs={12} onClick={executeScroll}>
                             <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" width="19px" viewBox="0 0 78.65 86.28"><path stroke="#000" strokeWidth="5px" fill="none" d="M5.43,2.88L74.95,41.52c.8,.45,1.2,.99,1.2,1.62s-.4,1.17-1.2,1.62L5.43,83.4c-.8,.45-1.49,.51-2.07,.16s-.86-.98-.86-1.88V4.61c0-.91,.29-1.54,.86-1.88s1.27-.3,2.07,.16Z" /></svg><span className="btn-2 info-btn-2">Watch the film</span>
                         </Col>
                     </Row>
@@ -171,7 +188,7 @@ const Work = (context) => {
                     <div className="btn-2 info-btn" onClick={handleClick}>{btnContent}</div>
                 </AnimateIn>
                 <AnimateIn triggerOnce={true}>
-                    <Container fluid className="work-video-container">
+                    <Container ref={myRef} fluid className="work-video-container">
                         <Row>
                             <Col xs={12}>
                                 <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.work?.videoTitle }}></h3>
@@ -179,8 +196,11 @@ const Work = (context) => {
                         </Row>
                         <Row className="margin-container">
                             <Col xs={12} >
-                                <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} onMouseEnter={(e) => handleMouseEnter(e)} />
-
+                                {!autoplay ?
+                                    <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} />
+                                    :
+                                    <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} />
+                                }
                             </Col>
                         </Row>
                     </Container>
@@ -262,7 +282,7 @@ const Work = (context) => {
                                     const image = getImage(element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
                                     if (i < 2) {
                                         return (
-                                            <Col key={i} xs={7} md={5} className="otherWorkContainer">
+                                            <Col key={i} xs={6} md={5} className="otherWorkContainer">
                                                 <Link to={`/work/${element.node?.slug}`}>
                                                     <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
                                                         <GatsbyImage image={image} alt={element.node?.featuredImage?.node?.altText} />
@@ -274,6 +294,10 @@ const Work = (context) => {
                                                                 </div>
                                                             </Item>
                                                         </div>
+                                                    </div>
+                                                    <div className="mobile-caption desktop-hide">
+                                                        <h3 dangerouslySetInnerHTML={{ __html: element?.node?.title }} />
+                                                        <p className="text-small">{element?.node?.work?.subheadline}</p>
                                                     </div>
                                                 </Link>
                                             </Col>

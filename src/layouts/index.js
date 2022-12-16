@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,15 +12,19 @@ import Cursor from '../components/cursor/cursor';
 const Layout = ({ children }) => {
 
 
+    const [mouseOver, setMouseOver] = useState(0)
 
+    function handleMouseOver(e) {
+        setMouseOver(e.target)
+    }
 
     return (
         <div id="layoutcontainer">
 
-            <Cursor />
+            <Cursor mouseOver={mouseOver} />
 
 
-            <main>{children}</main>
+            <main onMouseOver={(e) => handleMouseOver(e)} >{children}</main>
 
 
 

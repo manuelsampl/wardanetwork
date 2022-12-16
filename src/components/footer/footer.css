@@ -165,7 +165,7 @@
     content: '';
 }
 
-@media (max-width: 769px) {
+@media (max-width: 992px) {
 
     .d-mobile-none {
         display: none;

@@ -311,8 +311,37 @@
 }
 
 
+@media (max-width: 992px) {
+    .otherWorkContainer {
+        max-height: 150px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .desktop-hide {
+            display: block !important;
+        }
+
+        .mobile-caption {
+            color: var(--main-text-color);
+            margin-top: 10px;
+            padding-bottom: 30px;
+        }
+    }
+}
 
 @media (max-width: 769px) {
+
+    .otherWorkContainer {
+        max-height: 150px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .mobile-caption {
+            color: var(--main-text-color);
+            margin-top: 10px;
+            padding-bottom: 30px;
+        }
+    }
 
     .desktop-hide {
         display: block !important;

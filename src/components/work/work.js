@@ -34,6 +34,8 @@ const useHover = () => {
     return [hovered, eventHandlers]
 }
 
+
+
 export default function Work({ context }) {
 
     const data = useStaticQuery(graphql`
@@ -69,6 +71,7 @@ export default function Work({ context }) {
     const [absoluteY, setAbsoluteY] = useState(0)
     const [absoluteX, setAbsoluteX] = useState(0)
     const [hoveredElement, setHoveredElement] = useState(undefined)
+
 
     const isSSR = typeof window === "undefined"
 

@@ -3,6 +3,15 @@
     max-width: 100%;
 }
 
+.navbar .container-fluid {
+    height: 100%;
+}
+
+#Warda_logo {
+    height: 100%;
+    ;
+}
+
 .navbar-transparent {
     background-color: transparent !important;
 
@@ -123,6 +132,7 @@
 
 .navbar-brand {
     z-index: 1040;
+    height: 100%;
 }
 
 

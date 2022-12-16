@@ -23,7 +23,7 @@ export default function Video({ videoId, controls, muted, width, autoplay }) {
         }
 
         apiFetch()
-    }, [apiFetch, axios])
+    }, [videoId])
     return (
         video ?
             <div className="video">
