@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -54,6 +54,19 @@ const Footer = () => {
             }
           }
         }
+
+        allWpMenu {
+            nodes {
+              name
+              menuItems {
+                nodes {
+                  target
+                  path
+                  label
+                }
+              }
+            }
+          }
     }
         `);
 
@@ -113,8 +126,13 @@ const Footer = () => {
                             </svg>
                         </a>
                     </Col>
-                    <Col xs={12} lg={6}>
+                    <Col xs={12} lg={6} className="footer-nav">
+                        {data.allWpMenu.nodes[1].menuItems.nodes.map((item, i, data) => {
+                            return (
+                                <Link className="footer-nav-link" key={i} index={i} to={item?.path} target={item?.target}>{item?.label}</Link>
+                            )
 
+                        })}
                     </Col>
                     <Col xs={12} lg={3} className="copyright">
                         <div className="text-xs" dangerouslySetInnerHTML={{ __html: bottomRightText }} />
@@ -165,8 +183,13 @@ const Footer = () => {
 
                         </a>
                     </Col>
-                    <Col xs={12} lg={6}>
+                    <Col xs={12} lg={6} className="footer-nav">
+                        {data.allWpMenu.nodes[1].menuItems.nodes.map((item, i, data) => {
+                            return (
+                                <Link className="footer-nav-link" key={i} index={i} to={item?.path} target={item?.target}>{item?.label}</Link>
+                            )
 
+                        })}
                     </Col>
                     <Col xs={12} lg={3} className="copyright">
                         <div className="text-xs" dangerouslySetInnerHTML={{ __html: bottomRightText }} />

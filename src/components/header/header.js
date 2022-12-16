@@ -74,7 +74,7 @@ const Header = (transparent) => {
 
         <Navbar className={`navbar-toggled ${transparent.transparent === true ? 'navbar-transparent' : ''} ${isOpen === true ? ' opacity1' : ' opacity0'}`} id={`${isOpen === true ? 'showNavbar' : ''}`} >
           <Nav className="justify-content-end flex-grow-1 pe-3">
-            {navigation.nodes[1].menuItems.nodes.map((item, i, data) => {
+            {navigation.nodes[0].menuItems.nodes.map((item, i, data) => {
               return (
                 <TransitionLink className="nav-link" key={i} index={i} path={item?.path} workColor={logo.siteOptions?.siteOptions?.workColor} aboutColor={logo.siteOptions?.siteOptions?.aboutColor} jobsColor={logo.siteOptions?.siteOptions?.jobsColor} contactColor={logo.siteOptions?.siteOptions?.contactColor} target={item?.target}>{item?.label}</TransitionLink>
               )
