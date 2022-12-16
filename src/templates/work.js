@@ -197,7 +197,7 @@ const Work = (context) => {
                     </Container>
                 </AnimateIn>
                 <Container fluid className="work-images-container">
-                    {context?.pageContext?.edge?.work?.bilder.map((item, i) => {
+                    {context?.pageContext?.edge?.work?.bilder?.map((item, i) => {
                         const image = getImage(item?.bild?.localFile?.childImageSharp?.gatsbyImageData)
                         if (item?.align === "left:Left") {
                             return (
