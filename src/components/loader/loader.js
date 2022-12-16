@@ -60,9 +60,9 @@ export default function Loader({ color, images }) {
         <motion.div className="full-loader" variants={variants} initial={"initial"} animate={"animate"} transition={defaultTransition} style={{ backgroundColor: color, zIndex: '99999999999999999999' }}>
             {cnt >= -1 && !stop ?
                 <>
-                    <GatsbyImage className="full-loader-desktop video-desktop" alt={images[cnt + 1].imageDesktop.altText} image={imageDesktop} />
-                    <GatsbyImage className="full-loader-desktop video-tablet" alt={images[cnt + 1].imageDesktop.altText} image={imageTablet} />
-                    <GatsbyImage className="full-loader-desktop video-mobile" alt={images[cnt + 1].imageDesktop.altText} image={imageMobile} />
+                    <GatsbyImage loading="eager" className="full-loader-desktop video-desktop" alt={images[cnt + 1].imageDesktop.altText} image={imageDesktop} />
+                    <GatsbyImage loading="eager" className="full-loader-desktop video-tablet" alt={images[cnt + 1].imageDesktop.altText} image={imageTablet} />
+                    <GatsbyImage loading="eager" className="full-loader-desktop video-mobile" alt={images[cnt + 1].imageDesktop.altText} image={imageMobile} />
                 </>
                 : <></>}
         </motion.div >
