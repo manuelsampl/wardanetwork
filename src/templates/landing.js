@@ -150,76 +150,76 @@ const LandingPage = (context) => {
       {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
         const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
         const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
         const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
         )
       })}
 
       {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
         const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
         const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
         const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
         )
       })}
 
       {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
         const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
         const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
         )
       })}
 
       {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
         const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
         const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
         const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
         )
       })}
       {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
         const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
         return (
-          <GatsbyImage key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
         )
       })}
       <Footer></Footer>

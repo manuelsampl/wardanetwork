@@ -39,7 +39,7 @@ export default function Logos(logos) {
                 const img = getImage(logos.logos[visible[i]].logo.localFile.childImageSharp.gatsbyImageData)
                 return (
                     <Col xs={6} md={3} key={i} id={`logo${i}`} className="logo-partner-wrapper" >
-                        <GatsbyImage className="logo-partner" image={img} alt={logos.logos[visible[i]].logo?.altText} />
+                        <GatsbyImage loading="eager" className="logo-partner" image={img} alt={logos.logos[visible[i]].logo?.altText} />
                     </Col>
                 )
             })}
