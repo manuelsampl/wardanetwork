@@ -29,7 +29,7 @@ const Jobs = (context) => {
         <div className="page-wrapper jobs-page">
             <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
 
-            <AnimateIn triggerOnce={false}>
+            <AnimateIn triggerOnce={true}>
 
                 <Container className="jobdetails-container" >
                     <Row>
@@ -49,7 +49,7 @@ const Jobs = (context) => {
             </AnimateIn>
 
             <div className="yellow-container">
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Container className="jobs-format">
                         <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobsDetail.payment }} ></div>
                         <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobsDetail.apply }} ></div>

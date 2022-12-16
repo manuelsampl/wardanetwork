@@ -55,3 +55,13 @@
         text-transform: uppercase;
     }
 }
+
+.jobs-wrapper a {
+    color: var(--main-text-color);
+}
+
+@media (max-width: 769px) {
+    .jobdetails-container h1 {
+        font-size: 6vw;
+    }
+}
