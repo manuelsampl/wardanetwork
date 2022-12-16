@@ -24,9 +24,7 @@ export default function HoverCaption({ hoverId, captionTitle, captionSubtitle })
     }
 
     function handleMouseEnter(e) {
-        console.log(e.target)
         setHovered(true)
-        console.log('ok')
         const elem = e.target
         const rect = elem.getBoundingClientRect()
         setAbsoluteY(rect.top)
@@ -37,7 +35,6 @@ export default function HoverCaption({ hoverId, captionTitle, captionSubtitle })
         setHovered(false)
     }
 
-    console.log(hovered)
 
     return (
         <div id={`hover_${hoverId}`} className="work-hover-container" style={{ left: `${x}px`, top: `${y - absoluteY}px` }} onMouseEnter={(e) => handleMouseEnter(e)} onMouseLeave={(e) => handleMouseLeave(e)}>

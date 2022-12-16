@@ -74,9 +74,7 @@ const Work = (context) => {
 
 
 
-
     const handleClick2 = () => {
-        console.log('ok')
         if (!autoplay) {
             setAutoplay(true)
         } else {
@@ -140,8 +138,8 @@ const Work = (context) => {
 
 
     const headerImage = getImage(context?.pageContext?.edge?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
-    const image1 = getImage(data?.allWpWork?.edges[0]?.element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
-    const image2 = getImage(data?.allWpWork?.edges[1]?.element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
+    const image1 = getImage(data?.allWpWork?.edges[0]?.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
+    const image2 = getImage(data?.allWpWork?.edges[1]?.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
     return (
         <>
             <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>

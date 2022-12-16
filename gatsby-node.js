@@ -202,7 +202,6 @@ exports.createPages = async function ({ graphql, actions }) {
     // Gatsby uses Redux to manage its internal state.
     if (edge.node.slug != 'landing') {
 
-      console.log(edge.node.slug)
 
       // PAGES
       createPage({

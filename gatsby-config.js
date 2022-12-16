@@ -4,7 +4,7 @@
 
 require('dotenv').config({ path: './.env' })
 
-console.log(process.env.GATSBY_DOMAIN)
+
 module.exports = {
   siteMetadata: {
     title: `wardanetwork`,
