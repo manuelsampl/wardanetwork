@@ -61,7 +61,7 @@ class Cover extends _react.Component {
     }) => {
       const directionTo = direction === 'up' ? '-100%' : '100%';
       const directionFrom = direction === 'up' ? '100%' : '-100%';
-      const wait = 2.3;
+      const wait = 5.3;
       const half = (seconds - wait) / 2;
       const cover = this.getCoverEl();
       return _gsap.default.timeline().set(cover, {
@@ -76,7 +76,7 @@ class Cover extends _react.Component {
       }).to(cover, {
         y: directionTo,
         ease: "power1.easeIn",
-        duration: 0.2
+        duration: 1
       }, `+=${wait}`);
     };
 

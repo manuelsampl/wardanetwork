@@ -35,7 +35,7 @@ const Header = (transparent) => {
           }
         }
 
-        allWpMenu {
+        allWpMenu(filter: {slug: {eq: "main-menu"}}) {
             nodes {
               name
               menuItems {

@@ -303,11 +303,11 @@
 }
 
 .desktop-hide {
-    display: none;
+    display: none !important;
 }
 
 .mobile-hide {
-    display: block;
+    display: block !important;
 }
 
 
@@ -315,7 +315,7 @@
 @media (max-width: 769px) {
 
     .desktop-hide {
-        display: block;
+        display: block !important;
         margin-bottom: 80px;
 
         a {
@@ -324,7 +324,7 @@
     }
 
     .mobile-hide {
-        display: none;
+        display: none !important;
     }
 
 

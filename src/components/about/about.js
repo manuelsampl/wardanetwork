@@ -7,6 +7,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import AnimateIn from '../../components/animateIn/animateIn'
 
 import Polaroid from "../polaroid/polaroid"
+import PolaroidMobile from "../polaroid/polaroid"
 import Logos from "../logos/logos"
 
 import './about.scss'
@@ -44,7 +45,6 @@ const useHover = () => {
 }
 
 
-
 export default function About({ context }) {
 
     const mediaIcon = getImage(context?.pageContext?.edge?.about?.wardaMediaIcon?.localFile?.childImageSharp?.gatsbyImageData)
@@ -57,6 +57,9 @@ export default function About({ context }) {
         }
     }), 'key') || [])
 
+
+
+    const isSSR = typeof window === "undefined"
 
 
 
@@ -75,7 +78,6 @@ export default function About({ context }) {
         }
     }
 
-    const isSSR = typeof window === "undefined"
 
 
     return (
@@ -96,10 +98,20 @@ export default function About({ context }) {
                     </Row>
                 </AnimateIn>
             </Container>
-            <AnimateIn triggerOnce={false}>
+            <AnimateIn className="mobile-hide" triggerOnce={true}>
                 <div className="polaroids">
                     {!isSSR &&
                         <Polaroid polaroids={context?.pageContext?.edge?.about?.polaroids}></Polaroid>
+                    }
+                    <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.madness }} />
+
+                </div>
+            </AnimateIn>
+            <AnimateIn className="desktop-hide" triggerOnce={true}>
+
+                <div className="polaroids">
+                    {!isSSR &&
+                        <PolaroidMobile polaroids={context?.pageContext?.edge?.about?.polaroids}></PolaroidMobile>
                     }
                     <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.madness }} />
 

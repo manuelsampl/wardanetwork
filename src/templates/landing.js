@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Header from '../components/header/header'
 import SingleTransition from '../components/transitionlink/singleTransition'
 import VideoVimeo from '../components/videovimeo/videovimeo'
+import Footer from '../components/footer/footer';
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -221,7 +222,7 @@ const LandingPage = (context) => {
           <GatsbyImage key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
         )
       })}
-
+      <Footer></Footer>
     </>
   )
 }

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import './layout.css'
-import Footer from '../components/footer/footer';
+
 
 import Cursor from '../components/cursor/cursor';
 
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
             <main>{children}</main>
 
 
-            <Footer></Footer>
+
         </div>
     )
 

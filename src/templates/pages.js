@@ -7,6 +7,7 @@ import Work from '../components/work/work'
 import About from '../components/about/about'
 import Jobs from '../components/jobs/jobs'
 import Standard from '../components/standard/standard'
+import Footer from '../components/footer/footer';
 import './pages.css'
 
 
@@ -207,6 +208,7 @@ const Pages = (context) => {
       <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
 
       {rendererSwitch(context?.pageContext?.edge?.slug, context)}
+      <Footer></Footer>
     </>
 
   )

@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Marquee from "react-fast-marquee"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import AnimateIn from '../../components/animateIn/animateIn'
+import FadeIn from '../../components/animateIn/fadeIn'
 
 
 import './footer.css'
@@ -55,7 +56,7 @@ const Footer = () => {
           }
         }
 
-        allWpMenu {
+        allWpMenu(filter: {slug: {eq: "footer-menue"}})  {
             nodes {
               name
               menuItems {
@@ -84,7 +85,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <Container className="d-mobile-none" fluid>
-                <AnimateIn triggerOnce={false}>
+                <FadeIn triggerOnce={false}>
                     <Row>
                         <Col xs={12} lg={2} dangerouslySetInnerHTML={{ __html: leftColumn }} className="text-xs leftFooterCol">
                         </Col>
@@ -103,14 +104,14 @@ const Footer = () => {
                             })}
                         </Col>
                     </Row>
-                </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                </FadeIn>
+                <FadeIn triggerOnce={false}>
                     <Row>
                         <Col xs={12} className="getintouch">
                             <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
                         </Col>
                     </Row>
-                </AnimateIn>
+                </FadeIn>
                 <Row>
                     <Col xs={12} lg={3} >
 
@@ -127,7 +128,7 @@ const Footer = () => {
                         </a>
                     </Col>
                     <Col xs={12} lg={6} className="footer-nav">
-                        {data.allWpMenu.nodes[1].menuItems.nodes.map((item, i, data) => {
+                        {data.allWpMenu.nodes[0].menuItems.nodes.map((item, i, data) => {
                             return (
                                 <Link className="footer-nav-link" key={i} index={i} to={item?.path} target={item?.target}>{item?.label}</Link>
                             )
@@ -141,14 +142,14 @@ const Footer = () => {
             </Container>
             <Container className="d-desktop-none" fluid>
 
-                <AnimateIn triggerOnce={false}>
+                <FadeIn triggerOnce={false}>
                     <Row>
                         <Col xs={12} className="getintouch">
                             <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
                         </Col>
                     </Row>
-                </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                </FadeIn>
+                <FadeIn triggerOnce={false}>
                     <Row>
                         <Col xs={12} lg={2} className="socialFooter">
                             {social.map((item, i) => {
@@ -166,7 +167,7 @@ const Footer = () => {
                         </Col>
 
                     </Row>
-                </AnimateIn>
+                </FadeIn>
                 <Row>
                     <Col xs={12} lg={3} >
 
@@ -184,7 +185,7 @@ const Footer = () => {
                         </a>
                     </Col>
                     <Col xs={12} lg={6} className="footer-nav">
-                        {data.allWpMenu.nodes[1].menuItems.nodes.map((item, i, data) => {
+                        {data.allWpMenu.nodes[0].menuItems.nodes.map((item, i, data) => {
                             return (
                                 <Link className="footer-nav-link" key={i} index={i} to={item?.path} target={item?.target}>{item?.label}</Link>
                             )

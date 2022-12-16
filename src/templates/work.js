@@ -10,6 +10,7 @@ import VideoVimeo from '../components/videovimeo/videovimeo'
 import Header from '../components/header/header'
 import AnimateIn from '../components/animateIn/animateIn'
 import FadeIn from '../components/animateIn/fadeIn'
+import Footer from '../components/footer/footer';
 
 import './landing.css'
 
@@ -287,6 +288,7 @@ const Work = (context) => {
                     </AnimateIn>
                 </div>
             </div>
+            <Footer></Footer>
         </>
     )
 }
