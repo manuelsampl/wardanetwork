@@ -153,11 +153,13 @@ export default function About({ context }) {
             </Container>
             <AnimateIn triggerOnce={false}>
                 <div className="media-wrapper">
+                    <Container>
+                        <GatsbyImage className="media-logo" image={mediaIcon} alt={context?.pageContext?.edge?.about?.wardaMediaIcon?.altText} />
+                        <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.mediaHeadline }} />
+                        <div className="media-container" dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.mediaText }} />
+                        <h4 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.mediaSubheadline }} />
 
-                    <GatsbyImage className="media-logo" image={mediaIcon} alt={context?.pageContext?.edge?.about?.wardaMediaIcon?.altText} />
-                    <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.mediaHeadline }} />
-                    <div className="media-container" dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.mediaText }} />
-                    <h4 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.mediaSubheadline }} />
+                    </Container>
                     <Container className="walls-container" fluid>
                         <Row>
                             {context?.pageContext?.edge?.about?.walls?.map((item, i) => {
@@ -203,7 +205,7 @@ export default function About({ context }) {
             <Container className="bottom-row" >
 
 
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce="true">
 
                     <Row className="margin-bottom-100">
 

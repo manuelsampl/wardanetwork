@@ -136,7 +136,6 @@
 .media-container {
     margin-top: 30px;
     margin-bottom: 39px;
-    max-width: 800px;
 }
 
 .walls-container {
@@ -267,8 +266,11 @@
 
     position: sticky;
     z-index: 99;
-    top: 200px;
-    align-items: normal
+    top: 5%;
+    align-items: normal;
+    left: 85%;
+    height: 140px;
+    width: 140px;
 }
 
 .sticky-container {
@@ -280,7 +282,47 @@
 
 .circle-svg {
     position: absolute;
-    right: 8%;
-    width: 170px;
-    margin-top: -110px;
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-row {
+    margin-top: -80px;
+}
+
+.image-team-wrapper h4 {
+    font-size: 16px;
+}
+
+@media (max-width: 769px) {
+
+    .circle-team {
+        top: 10%;
+    }
+
+    .circle-svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    .bottom-row {
+        margin-top: -140px;
+    }
+
+    .media-wrapper h2 {
+        font-size: 30px;
+        -webkit-text-stroke-width: 1px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .circle-team {
+        top: 15%;
+        left: 90%;
+    }
+
+    .bottom-row {
+        margin-top: -100px;
+    }
 }

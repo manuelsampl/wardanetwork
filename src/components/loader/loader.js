@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from 'framer-motion'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -53,12 +53,16 @@ export default function Loader({ color, images }) {
 
 
     const imageDesktop = getImage(images[cnt + 1].imageDesktop.localFile.childImageSharp.gatsbyImageData)
+    const imageTablet = getImage(images[cnt + 1].imageIpad.localFile.childImageSharp.gatsbyImageData)
+    const imageMobile = getImage(images[cnt + 1].imageMobile.localFile.childImageSharp.gatsbyImageData)
 
     return (
         <motion.div className="full-loader" variants={variants} initial={"initial"} animate={"animate"} transition={defaultTransition} style={{ backgroundColor: color, zIndex: '99999999999999999999' }}>
             {cnt >= -1 && !stop ?
                 <>
-                    <GatsbyImage className="full-loader-desktop" alt={images[cnt + 1].imageDesktop.altText} image={imageDesktop} />
+                    <GatsbyImage className="full-loader-desktop video-desktop" alt={images[cnt + 1].imageDesktop.altText} image={imageDesktop} />
+                    <GatsbyImage className="full-loader-desktop video-tablet" alt={images[cnt + 1].imageDesktop.altText} image={imageTablet} />
+                    <GatsbyImage className="full-loader-desktop video-mobile" alt={images[cnt + 1].imageDesktop.altText} image={imageMobile} />
                 </>
                 : <></>}
         </motion.div >

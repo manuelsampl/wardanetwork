@@ -123,7 +123,7 @@ export default function Work({ context }) {
                             </Row>
                         </Container>
                     </AnimateIn>
-                    <Container fluid className="works-masonry-container">
+                    <Container fluid className="works-masonry-container mobile-hide">
                         <Masonry
                             className={'my-gallery'} // default ''
                             elementType={'div'} // default 'div'
@@ -153,6 +153,10 @@ export default function Work({ context }) {
                                                             </div>
                                                         </Item>
                                                     </div>
+                                                    <div className="desktop-hide">
+                                                        <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
+                                                        <p className="text-small">{item?.node?.work?.subheadline}</p>
+                                                    </div>
                                                 </Link>
                                             </Col>
                                         )
@@ -171,6 +175,10 @@ export default function Work({ context }) {
                                                                 <p className="text-small">{item?.node?.work?.subheadline}</p>
                                                             </div>
                                                         </Item>
+                                                    </div>
+                                                    <div className="desktop-hide">
+                                                        <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
+                                                        <p className="text-small">{item?.node?.work?.subheadline}</p>
                                                     </div>
                                                 </Link>
                                             </Col>
@@ -196,7 +204,12 @@ export default function Work({ context }) {
                                                             </div>
                                                         </Item>
                                                     </div>
+
                                                 </Link>
+                                                <div className="desktop-hide">
+                                                    <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
+                                                    <p className="text-small">{item?.node?.work?.subheadline}</p>
+                                                </div>
                                             </Col>
                                         )
                                     } else {
@@ -214,6 +227,7 @@ export default function Work({ context }) {
                                                             </div>
                                                         </Item>
                                                     </div>
+
                                                 </Link>
                                             </Col>
                                         )
@@ -224,6 +238,91 @@ export default function Work({ context }) {
 
                         </Masonry>
                     </Container >
+                    <Container className="desktop-hide">
+                        <Row>
+                            {data.allWpWork?.edges?.map((item, i) => {
+                                const image = getImage(item?.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
+                                const link = item?.node?.slug
+
+                                if (item?.node?.work?.overviewHeight === "1") {
+
+                                    if (item?.node?.work?.overviewWidth === "1") {
+                                        return (
+                                            <Col key={i} xs={12} md={6} >
+
+                                                <Link to={`/work/${link}`} >
+                                                    <div className="max-height-1">
+                                                        <FadeIn triggerOnce={false}>
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        </FadeIn>
+                                                    </div>
+                                                    <div>
+                                                        <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
+                                                        <p className="text-small">{item?.node?.work?.subheadline}</p>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+                                        )
+                                    } else {
+                                        return (
+                                            <Col key={i} xs={12} >
+
+                                                <Link to={`/work/${link}`} >
+                                                    <div className="max-height-1">
+                                                        <FadeIn triggerOnce={false}>
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        </FadeIn>
+                                                    </div>
+                                                    <div>
+                                                        <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
+                                                        <p className="text-small">{item?.node?.work?.subheadline}</p>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+
+                                        )
+                                    }
+                                } else {
+                                    if (item?.node?.work?.overviewWidth === "1") {
+                                        return (
+                                            <Col key={i} xs={12} md={6}  >
+                                                <Link to={`/work/${link}`}  >
+                                                    <div className="max-height-2">
+
+                                                        <FadeIn triggerOnce={false}>
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        </FadeIn>
+                                                    </div>
+                                                    <div>
+                                                        <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
+                                                        <p className="text-small">{item?.node?.work?.subheadline}</p>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+                                        )
+                                    } else {
+                                        return (
+                                            <Col key={i} xs={12} >
+
+                                                <Link to={`/work/${link}`} >
+                                                    <div className="max-height-2">
+                                                        <FadeIn triggerOnce={false}>
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        </FadeIn>
+                                                    </div>
+                                                    <div className="mobile-caption">
+                                                        <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
+                                                        <p className="text-small">{item?.node?.work?.subheadline}</p>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+                                        )
+                                    }
+                                }
+
+                            })}
+                        </Row>
+                    </Container>
                 </>
             }
         </div >
