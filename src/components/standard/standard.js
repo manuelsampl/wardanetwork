@@ -13,7 +13,7 @@ export default function Standard({ context }) {
         <div className="page-wrapper standard-page">
 
             <Container fluid>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 

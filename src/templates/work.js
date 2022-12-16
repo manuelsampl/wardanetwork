@@ -128,7 +128,7 @@ const Work = (context) => {
         <>
             <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
 
-            <AnimateIn triggerOnce={false}>
+            <AnimateIn triggerOnce={true}>
                 <div className="work-header">
                     <GatsbyImage image={headerImage} alt={context?.pageContext?.edge?.featuredImage?.node?.altText} />
                 </div>
@@ -142,7 +142,7 @@ const Work = (context) => {
                 </Container>
             </AnimateIn>
             <div className="work-page">
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Container fluid>
                         <Row>
                             <span><h1 className="work-h1">{context?.pageContext?.edge?.title}</h1></span>
@@ -170,7 +170,7 @@ const Work = (context) => {
                     </div>
                     <div className="btn-2 info-btn" onClick={handleClick}>{btnContent}</div>
                 </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Container fluid className="work-video-container">
                         <Row>
                             <Col xs={12}>
@@ -185,7 +185,7 @@ const Work = (context) => {
                         </Row>
                     </Container>
                 </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Container fluid className="work-images-headline">
                         <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.work?.fotoTitle }}></h3>
                     </Container>
@@ -211,7 +211,7 @@ const Work = (context) => {
                                 <Row key={i} style={{ marginBottom: `${item?.margin}px` }}>
                                     <Col xs={12} md={4}></Col>
                                     <Col xs={12} md={4} className="work-image-holder" >
-                                        <AnimateIn triggerOnce={false}>
+                                        <AnimateIn triggerOnce={true}>
                                             <GatsbyImage image={image} className="work-image" alt={item?.bild?.altText} style={{ left: item?.shiftX, width: `${item?.width}%` }} />
                                         </AnimateIn>
                                     </Col>
@@ -225,7 +225,7 @@ const Work = (context) => {
                                     <Col xs={12} md={4}></Col>
                                     <Col xs={12} md={4}></Col>
                                     <Col xs={12} md={4} className="work-image-holder" >
-                                        <AnimateIn triggerOnce={false}>
+                                        <AnimateIn triggerOnce={true}>
                                             <GatsbyImage image={image} className="work-image" alt={item?.bild?.altText} style={{ left: item?.shiftX, width: `${item?.width}%` }} />
                                         </AnimateIn>
                                     </Col>
@@ -255,7 +255,7 @@ const Work = (context) => {
                             </svg>OTHER PROJECTS</h2>
                         </Marquee>
                     </FadeIn>
-                    <AnimateIn triggerOnce={false} >
+                    <AnimateIn triggerOnce={true} >
                         <Container luid  >
                             <Row className="justify-center">
                                 {data?.allWpWork?.edges.map((element, i) => {

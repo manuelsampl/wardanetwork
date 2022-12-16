@@ -83,13 +83,13 @@ export default function About({ context }) {
     return (
         <div className="sticky-container">
             <Container>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row className="page-wrapper about-page">
                         <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 
                     </Row>
                 </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <Col xd={12} className="align-center" >
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
@@ -118,14 +118,14 @@ export default function About({ context }) {
                 </div>
             </AnimateIn>
             <Container>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row className="about-page">
 
                         <span><h1 >{context?.pageContext?.edge?.about?.headline2}</h1></span>
 
                     </Row>
                 </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <Col xd={12} className="align-center" >
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.text2 }} />
@@ -137,7 +137,7 @@ export default function About({ context }) {
                 {context?.pageContext?.edge?.about?.faq?.map((item, i) => {
 
                     return (
-                        <AnimateIn key={i} triggerOnce={false}>
+                        <AnimateIn key={i} triggerOnce={true}>
                             <div onClick={() => clickHandler(i)} className="faq-container">
                                 <div className="faq-headline" style={{ marginLeft: clicked[i] ? '0px' : '' }}>
                                     <h3 dangerouslySetInnerHTML={{ __html: item?.question }}></h3>
@@ -163,7 +163,7 @@ export default function About({ context }) {
                 })}
 
             </Container>
-            <AnimateIn triggerOnce={false}>
+            <AnimateIn triggerOnce={true}>
                 <div className="media-wrapper">
                     <Container>
                         <GatsbyImage className="media-logo" image={mediaIcon} alt={context?.pageContext?.edge?.about?.wardaMediaIcon?.altText} />
@@ -191,12 +191,12 @@ export default function About({ context }) {
                 </div>
             </AnimateIn>
             <Container>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row className="about-page partners-container">
                         <span><h1 >{context?.pageContext?.edge?.about?.headlinePartners}</h1></span>
                     </Row>
                 </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <Logos logos={context?.pageContext?.edge?.about?.partners} />
 
@@ -204,7 +204,7 @@ export default function About({ context }) {
                 </AnimateIn>
             </Container>
             <Container style={{ height: 'auto', overflow: 'revert' }}>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row className="about-page team-container">
                         <span><h1 >{context?.pageContext?.edge?.about?.teamHeadline}</h1></span>
                     </Row>
@@ -242,7 +242,7 @@ export default function About({ context }) {
                         })}
                     </Row>
                 </AnimateIn>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <Col className="align-center">
                             <Link className="btn btn-black" to={context?.pageContext?.edge?.about?.jobCta?.url} target={context?.pageContext?.edge?.about?.jobCta?.target}>{context?.pageContext?.edge?.about?.jobCta?.title}</Link>

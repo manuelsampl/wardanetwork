@@ -38,7 +38,7 @@ export default function Jobs({ context }) {
         <div className="page-wrapper jobs-page">
 
             <Container fluid>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 
@@ -46,7 +46,7 @@ export default function Jobs({ context }) {
                 </AnimateIn>
             </Container>
             <Container className="smaller-container">
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <Col xd={12} md={12}>
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
@@ -54,7 +54,7 @@ export default function Jobs({ context }) {
                     </Row>
                 </AnimateIn>
             </Container>
-            <AnimateIn triggerOnce={false}>
+            <AnimateIn triggerOnce={true}>
                 <Container fluid className="jobs-wrapper">
                     <Row>
                         {data?.allWpJob?.edges?.map((job, i) => {
@@ -82,7 +82,7 @@ export default function Jobs({ context }) {
                 </Container>
             </AnimateIn>
             <div className="yellow-container">
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Container fluid>
                         <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobs.headline }} ></h3>
                         <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobs.text }} ></div>

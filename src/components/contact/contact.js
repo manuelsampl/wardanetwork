@@ -18,7 +18,7 @@ export default function Contact({ context }) {
     return (
         <>
             <Container fluid>
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row className="page-wrapper contact-page">
                         <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 
@@ -26,7 +26,7 @@ export default function Contact({ context }) {
                 </AnimateIn>
             </Container>
             <Container className="smaller-container">
-                <AnimateIn triggerOnce={false}>
+                <AnimateIn triggerOnce={true}>
                     <Row>
                         <Col xd={12} md={6}>
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.contact.leftColumn }} />
@@ -39,7 +39,7 @@ export default function Contact({ context }) {
             </Container>
             <div className="pink-container">
                 <Container>
-                    <AnimateIn triggerOnce={false}>
+                    <AnimateIn triggerOnce={true}>
                         <Row>
                             <Col xs={12} className="align-pink">
                                 <GatsbyImage className="sign-icon" image={icon} alt="conichiwa" /><br />
