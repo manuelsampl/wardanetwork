@@ -66,7 +66,6 @@ const Work = (context) => {
     const { x, y } = useMousePosition()
     const [openBox, setOpenBox] = useState(false)
     const [btnContent, setBtnContent] = useState('mehr Infos')
-    const [step, setStep] = useState(0)
 
     const [autoplay, setAutoplay] = useState(false)
 
@@ -89,12 +88,7 @@ const Work = (context) => {
         }
     }
 
-    function doIt(scroll) {
-        const element = document.getElementById('myScroller')
-        if (element) {
-            return element.scrollLeft = scroll + step
-        }
-    }
+
 
     const [absoluteY, setAbsoluteY] = useState(0)
     const [absoluteX, setAbsoluteX] = useState(0)
@@ -117,7 +111,6 @@ const Work = (context) => {
     }
 
     function handleMouseEnter(e) {
-        console.log(e)
         setAbsoluteX(e.target.parentElement.offsetParent.offsetLeft)
         setHoveredElement(e.target)
         const elem = e.target
@@ -263,7 +256,7 @@ const Work = (context) => {
                     </FadeIn>
                     <AnimateIn triggerOnce={false} >
                         <Container luid  >
-                            <Row >
+                            <Row className="justify-center">
                                 {data?.allWpWork?.edges.map((element, i) => {
                                     const image = getImage(element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
                                     if (i < 2) {
@@ -274,7 +267,7 @@ const Work = (context) => {
                                                         <GatsbyImage image={image} alt={element.node?.featuredImage?.node?.altText} />
                                                         <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                             <Item>
-                                                                <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>
+                                                                <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
                                                                     <h3 dangerouslySetInnerHTML={{ __html: element?.node?.title }} />
                                                                     <p className="text-small">{element?.node?.work?.subheadline}</p>
                                                                 </div>

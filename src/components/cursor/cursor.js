@@ -11,8 +11,8 @@ export default function Cursor() {
 
     return (
         <>
-            <div className={"ring"} style={{ left: `${x}px`, top: `${y}px` }}> </div>
-            <div className={"dot"} style={{ left: `${x}px`, top: `${y}px` }}> </div>
+            <div className={"ring"} id="ring" style={{ left: `${x}px`, top: `${y}px` }}> </div>
+            <div className={"dot"} id="dot" style={{ left: `${x}px`, top: `${y}px` }}> </div>
         </>
     )
 }

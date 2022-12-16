@@ -130,7 +130,6 @@ const LandingPage = (context) => {
 
   const logo = data?.wp
 
-  console.log(context?.pageContext?.edge?.home?.tabletVideoIdVimeo)
   return (
     <>
       <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>

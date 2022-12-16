@@ -132,7 +132,7 @@ export default function Work({ context }) {
                             updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
                             imagesLoadedOptions={imagesLoadedOptions} // default {}
                         >
-                            {data.allWpWork?.edges.map((item, i) => {
+                            {data.allWpWork?.edges?.map((item, i) => {
                                 const image = getImage(item?.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
                                 const link = item?.node?.slug
 

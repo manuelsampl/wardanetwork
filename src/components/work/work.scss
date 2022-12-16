@@ -153,10 +153,29 @@
     }
 }
 
+.justify-center {
+    justify-content: center;
+}
+
+.work-video-container .video video:hover {
+    cursor: url('../../assets/play.svg') 50 50, auto !important;
+
+
+}
+
+.work-video-container .video video:hover~#dot {
+    display: none;
+}
+
+.work-video-container .video video:hover~#ring {
+    display: none;
+}
+
 .otherWorkContainer {
     max-height: 300px;
     margin-top: 60px;
-    margin-right: 80px;
+    padding-right: 80px;
+    padding-left: 80px;
 
     .gatsby-image-wrapper-constrained {
         display: flex;
