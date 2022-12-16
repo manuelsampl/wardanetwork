@@ -18,7 +18,7 @@ export default function Contact({ context }) {
     return (
         <>
             <Container fluid>
-                <AnimateIn triggerOnce={true}>
+                <AnimateIn triggerOnce={true} delay={1400}>
                     <Row className="page-wrapper contact-page">
                         <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 

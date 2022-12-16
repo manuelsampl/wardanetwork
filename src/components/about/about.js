@@ -83,7 +83,7 @@ export default function About({ context }) {
     return (
         <div className="sticky-container">
             <Container>
-                <AnimateIn triggerOnce={true}>
+                <AnimateIn triggerOnce={true} delay={1400}>
                     <Row className="page-wrapper about-page">
                         <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 

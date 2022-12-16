@@ -39,7 +39,7 @@ const Work = (context) => {
 
     const data = useStaticQuery(graphql`
     query{
-        allWpWork(sort: {dateGmt: ASC}) {
+        allWpWork(sort: {dateGmt: DESC}) {
             edges {
                 node {
                     title
@@ -140,18 +140,20 @@ const Work = (context) => {
 
 
     const headerImage = getImage(context?.pageContext?.edge?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
-
+    const image1 = getImage(data?.allWpWork?.edges[0]?.element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
+    const image2 = getImage(data?.allWpWork?.edges[1]?.element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
     return (
         <>
             <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
 
-            <AnimateIn triggerOnce={true}>
+            <AnimateIn triggerOnce={true} delay={1400}>
                 <div className="work-header">
                     <GatsbyImage image={headerImage} alt={context?.pageContext?.edge?.featuredImage?.node?.altText} />
                 </div>
 
                 <Container fluid>
                     <Row>
+
                         <Col className="align-right" xs={12} onClick={executeScroll}>
                             <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" width="19px" viewBox="0 0 78.65 86.28"><path stroke="#000" strokeWidth="5px" fill="none" d="M5.43,2.88L74.95,41.52c.8,.45,1.2,.99,1.2,1.62s-.4,1.17-1.2,1.62L5.43,83.4c-.8,.45-1.49,.51-2.07,.16s-.86-.98-.86-1.88V4.61c0-.91,.29-1.54,.86-1.88s1.27-.3,2.07,.16Z" /></svg><span className="btn-2 info-btn-2">Watch the film</span>
                         </Col>
@@ -187,24 +189,29 @@ const Work = (context) => {
                     </div>
                     <div className="btn-2 info-btn" onClick={handleClick}>{btnContent}</div>
                 </AnimateIn>
-                <AnimateIn triggerOnce={true}>
-                    <Container ref={myRef} fluid className="work-video-container">
-                        <Row>
-                            <Col xs={12}>
-                                <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.work?.videoTitle }}></h3>
-                            </Col>
-                        </Row>
-                        <Row className="margin-container">
-                            <Col xs={12} >
-                                {!autoplay ?
-                                    <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} />
-                                    :
-                                    <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} />
-                                }
-                            </Col>
-                        </Row>
-                    </Container>
-                </AnimateIn>
+                {context?.pageContext?.edge?.work?.videoIdVimeo != undefined ?
+                    <AnimateIn triggerOnce={true}>
+                        <Container ref={myRef} fluid className="work-video-container">
+                            <Row>
+                                <Col xs={12}>
+                                    <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.work?.videoTitle }}></h3>
+                                </Col>
+                            </Row>
+                            <Row className="margin-container">
+                                <Col xs={12} >
+                                    {!autoplay ?
+                                        <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} />
+                                        :
+                                        <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} />
+                                    }
+                                </Col>
+                            </Row>
+                        </Container>
+                    </AnimateIn>
+                    :
+                    <></>
+                }
+
                 <AnimateIn triggerOnce={true}>
                     <Container fluid className="work-images-headline">
                         <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.work?.fotoTitle }}></h3>
@@ -254,6 +261,7 @@ const Work = (context) => {
                         }
 
                     })}
+
                 </Container>
                 <div className="more-work-container">
                     <FadeIn triggerOnce={false}>
@@ -278,38 +286,51 @@ const Work = (context) => {
                     <AnimateIn triggerOnce={true} >
                         <Container luid  >
                             <Row className="justify-center">
-                                {data?.allWpWork?.edges.map((element, i) => {
-                                    const image = getImage(element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
-                                    if (i < 2) {
-                                        return (
-                                            <Col key={i} xs={6} md={5} className="otherWorkContainer">
-                                                <Link to={`/work/${element.node?.slug}`}>
-                                                    <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
-                                                        <GatsbyImage image={image} alt={element.node?.featuredImage?.node?.altText} />
-                                                        <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
-                                                            <Item>
-                                                                <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
-                                                                    <h3 dangerouslySetInnerHTML={{ __html: element?.node?.title }} />
-                                                                    <p className="text-small">{element?.node?.work?.subheadline}</p>
-                                                                </div>
-                                                            </Item>
-                                                        </div>
-                                                    </div>
-                                                    <div className="mobile-caption desktop-hide">
-                                                        <h3 dangerouslySetInnerHTML={{ __html: element?.node?.title }} />
-                                                        <p className="text-small">{element?.node?.work?.subheadline}</p>
-                                                    </div>
-                                                </Link>
-                                            </Col>
-                                        )
-                                    } else {
-                                        return
-                                    }
 
-                                })}
+
+
+                                <Col xs={6} md={5} className="otherWorkContainer">
+                                    <Link to={`/work/${data?.allWpWork?.edges[0].node?.slug}`}>
+                                        <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
+                                            <GatsbyImage image={image1} alt={data?.allWpWork?.edges[0].node?.featuredImage?.node?.altText} />
+                                            <div id="hover_1" className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
+                                                <Item>
+                                                    <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
+                                                        <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[0]?.node?.title }} />
+                                                        <p className="text-small">{data?.allWpWork?.edges[0]?.node?.work?.subheadline}</p>
+                                                    </div>
+                                                </Item>
+                                            </div>
+                                        </div>
+                                        <div className="mobile-caption desktop-hide">
+                                            <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[0]?.node?.title }} />
+                                            <p className="text-small">{data?.allWpWork?.edges[0]?.node?.work?.subheadline}</p>
+                                        </div>
+                                    </Link>
+                                </Col>
+                                <Col xs={6} md={5} className="otherWorkContainer">
+                                    <Link to={`/work/${data?.allWpWork?.edges[1]?.node?.slug}`}>
+                                        <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
+                                            <GatsbyImage image={image2} alt={data?.allWpWork?.edges[1]?.node?.featuredImage?.node?.altText} />
+                                            <div id="hover_2" className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
+                                                <Item>
+                                                    <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
+                                                        <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[1]?.node?.title }} />
+                                                        <p className="text-small">{data?.allWpWork?.edges[1]?.node?.work?.subheadline}</p>
+                                                    </div>
+                                                </Item>
+                                            </div>
+                                        </div>
+                                        <div className="mobile-caption desktop-hide">
+                                            <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[1]?.node?.title }} />
+                                            <p className="text-small">{data?.allWpWork?.edges[1]?.node?.work?.subheadline}</p>
+                                        </div>
+                                    </Link>
+                                </Col>
                             </Row>
                         </Container>
                     </AnimateIn>
+
                 </div>
             </div>
             <Footer></Footer>

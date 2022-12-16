@@ -111,7 +111,7 @@ export default function Work({ context }) {
         <div className="page-wrapper work-page">
             {!isSSR &&
                 <>
-                    <AnimateIn triggerOnce="true">
+                    <AnimateIn triggerOnce="true" delay={1400}>
                         <Container fluid className="work-top">
                             <Row>
                                 <span><h1 className="work-h1">{context?.pageContext?.edge?.title}</h1></span>

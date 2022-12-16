@@ -30,7 +30,7 @@ const Jobs = (context) => {
             <div className="page-wrapper jobs-page">
                 <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
 
-                <AnimateIn triggerOnce={true}>
+                <AnimateIn triggerOnce={true} delay={1400}>
 
                     <Container className="jobdetails-container" >
                         <Row>

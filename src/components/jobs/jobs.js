@@ -38,7 +38,7 @@ export default function Jobs({ context }) {
         <div className="page-wrapper jobs-page">
 
             <Container fluid>
-                <AnimateIn triggerOnce={true}>
+                <AnimateIn triggerOnce={true} delay={1400}>
                     <Row>
                         <span><h1 >{context?.pageContext?.edge?.title}</h1></span>
 

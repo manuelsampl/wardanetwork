@@ -22,6 +22,11 @@
     flex-direction: row;
     align-items: flex-end;
     padding-bottom: 40px;
+
+}
+
+.landing-video {
+    background-color: var(--main-text-color);
 }
 
 .video {
@@ -50,6 +55,7 @@ video {
     opacity: 1;
 
 }
+
 
 .preloader-image {
     z-index: 0;

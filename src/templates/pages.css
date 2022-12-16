@@ -27,10 +27,14 @@ h1 {
     background-image: linear-gradient(var(--jobs), var(--jobs));
     background-position: 5% 87%;
     background-repeat: no-repeat;
-    background-size: 110% 30px;
-    transition: background-size .3s;
+    background-size: 0% 30px;
+    transition: background-size 0.8s;
     overflow: visible;
     padding-inline: 10px 10px;
+}
+
+.h1visible h1 {
+    background-size: 110% 30px !important;
 }
 
 .align-left {
