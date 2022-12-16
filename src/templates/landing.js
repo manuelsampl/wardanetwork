@@ -138,13 +138,13 @@ const LandingPage = (context) => {
         <SingleTransition className="btn btn-landing" path={context?.pageContext?.edge?.home?.link?.url} color={logo?.siteOptions?.siteOptions?.workColor} id="home-cta" >{context?.pageContext?.edge?.home?.link?.title}</SingleTransition>
       </div>
       <div className="landing-video video-desktop">
-        <VideoVimeo muted={true} controls={false} videoId={context?.pageContext?.edge?.home?.desktopVideoIdVimeo} />
+        <VideoVimeo muted={true} autoplay={true} controls={false} videoId={context?.pageContext?.edge?.home?.desktopVideoIdVimeo} />
       </div>
       <div className="landing-video video-tablet">
-        <VideoVimeo muted={true} controls={false} videoId={context?.pageContext?.edge?.home?.tabletVideoIdVimeo} />
+        <VideoVimeo muted={true} autoplay={true} controls={false} videoId={context?.pageContext?.edge?.home?.tabletVideoIdVimeo} />
       </div>
       <div className="landing-video video-mobile">
-        <VideoVimeo muted={true} controls={false} videoId={context?.pageContext?.edge?.home?.mobileVideoIdVimeo} />
+        <VideoVimeo muted={true} autoplay={true} controls={false} videoId={context?.pageContext?.edge?.home?.mobileVideoIdVimeo} />
       </div>
 
       {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {

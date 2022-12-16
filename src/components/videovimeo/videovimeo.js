@@ -31,7 +31,7 @@ export default function Video({ videoId, controls, muted, width, autoplay }) {
 
                     :
 
-                    <video style={{ width: `${width}%` }} src={video} controls={controls} playsInline autoPlay={autoplay} data-autoplay data-keepplaying loop muted={muted} />
+                    <video style={{ width: `${width}%` }} src={video} controls={controls} playsInline autoPlay={autoplay} data-autoplay data-keepplaying loop muted={true} />
                 }
 
             </div >
