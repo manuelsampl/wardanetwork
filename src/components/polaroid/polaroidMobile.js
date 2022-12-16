@@ -79,7 +79,7 @@ export default function PolaroidMobile(polaroids) {
 
     function setY(e) {
         if (document) {
-            const elem = document.getElementById('polaroid-container')
+            const elem = document.getElementById('polaroid-container-mobile')
             if (elem != undefined && elem != null) {
                 const rect = elem?.getBoundingClientRect()
                 setAbsoluteY(rect.top)
@@ -114,7 +114,7 @@ export default function PolaroidMobile(polaroids) {
 
     return (
         <>
-            <div id="polaroid-container" onClick={(e) => permission(e)} className="polaroid-container" >
+            <div id="polaroid-container-mobile" onClick={(e) => permission(e)} className="polaroid-container" >
                 <div className="preload-polaroids">
                     {polaroids.polaroids.map((polaroid, i) => {
                         const img = getImage(polaroid.polaroid.localFile.childImageSharp.gatsbyImageData)
