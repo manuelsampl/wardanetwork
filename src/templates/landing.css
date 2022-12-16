@@ -80,6 +80,10 @@ video {
     .video-mobile {
         display: none;
     }
+
+    .landing-container {
+        padding-bottom: 140px;
+    }
 }
 
 
