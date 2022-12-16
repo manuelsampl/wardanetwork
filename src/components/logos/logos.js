@@ -11,14 +11,10 @@ export default function Logos(logos) {
 
     const [visible, setVisible] = useState([0, 1, 2, 3, 4, 5, 6, 7])
     const [changed, setChanged] = useState(0)
-
-    useEffect(() => {
-        console.log(visible)
-        return
-    }, [visible]);
+    const [seconds, setSeconds] = useState(0)
 
 
-    function changeImage(e, i) {
+    function changeImage(i) {
 
         let r = Math.floor(Math.random() * logos.logos.length)
         let newArray = visible
@@ -27,13 +23,22 @@ export default function Logos(logos) {
         setChanged(changed + 1)
     }
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            let r = Math.floor(Math.random() * 8)
+            changeImage(r)
+            setSeconds(seconds + 1)
+        }, 500);
+        return () => clearInterval(interval);
+    }, [seconds]);
+
+
     return (
         <>
             {visible.map((v, i) => {
-
                 const img = getImage(logos.logos[visible[i]].logo.localFile.childImageSharp.gatsbyImageData)
                 return (
-                    <Col xs={6} md={3} key={i} id={`logo${i}`} onMouseEnter={(e) => changeImage(e, i)} className="logo-partner-wrapper" >
+                    <Col xs={6} md={3} key={i} id={`logo${i}`} className="logo-partner-wrapper" >
                         <GatsbyImage className="logo-partner" image={img} alt={logos.logos[visible[i]].logo?.altText} />
                     </Col>
                 )

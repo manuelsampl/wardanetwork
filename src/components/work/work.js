@@ -7,8 +7,8 @@ import Masonry from 'react-masonry-component';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import useMousePosition from "../../hooks/useMousePosition/useMousePosition"
 
-
 import AnimateIn from '../../components/animateIn/animateIn'
+import FadeIn from '../../components/animateIn/fadeIn'
 
 import './work.scss'
 
@@ -87,7 +87,6 @@ export default function Work({ context }) {
     }
 
     function handleMouseEnter(e) {
-        console.log(e.target.parentElement.offsetParent.offsetTop)
         setAbsoluteX(e.target.parentElement.offsetParent.offsetLeft)
         setHoveredElement(e.target)
         const elem = e.target
@@ -142,11 +141,10 @@ export default function Work({ context }) {
                                     if (item?.node?.work?.overviewWidth === "1") {
                                         return (
                                             <Col key={i} xs={12} md={6} className="masonry-margin max-height-1" >
-
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
-                                                    <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
-
-
+                                                    <FadeIn triggerOnce={false}>
+                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                    </FadeIn>
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                         <Item>
                                                             <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>
@@ -161,10 +159,10 @@ export default function Work({ context }) {
                                     } else {
                                         return (
                                             <Col key={i} xs={12} className="masonry-margin max-height-1" >
-
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
-                                                    <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
-
+                                                    <FadeIn triggerOnce={false}>
+                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                    </FadeIn>
 
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                         <Item>
@@ -181,11 +179,11 @@ export default function Work({ context }) {
                                 } else {
                                     if (item?.node?.work?.overviewWidth === "1") {
                                         return (
-
                                             <Col key={i} xs={12} md={6} className="masonry-margin max-height-2" >
-
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
-                                                    <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                    <FadeIn triggerOnce={false}>
+                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                    </FadeIn>
                                                     <div className="hover-follow">
                                                         <h3>{item?.node?.title}</h3>
                                                         <p className="text-small">{item?.node?.work?.subheadline}</p>
@@ -204,10 +202,10 @@ export default function Work({ context }) {
                                     } else {
                                         return (
                                             <Col key={i} xs={12} className="masonry-margin max-height-2" >
-
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
-                                                    <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
-
+                                                    <FadeIn triggerOnce={false}>
+                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                    </FadeIn>
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)}>
                                                         <Item>
                                                             <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>

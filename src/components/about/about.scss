@@ -152,21 +152,24 @@
     }
 }
 
+.media-container a svg {
+    fill: #868a8e;
+}
+
 .zoom-hover {
     overflow: hidden;
-    transition: scale 0.8s ease;
-
 
 }
 
 .zoom-hover div img {
-    transition: all 0.8s ease-in-out;
+    transition: transform 0.8s ease;
 }
 
 
 
 .zoom-hover div img:hover {
-    transform: scale(1.1)
+    transition: transform 0.8s ease;
+    transform: scale(1.08)
 }
 
 .green-container {

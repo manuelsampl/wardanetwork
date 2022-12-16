@@ -141,6 +141,18 @@
     }
 }
 
+
+.overflowHidden div {
+    height: 100%;
+}
+
+.bottom-works-container:hover {
+    img {
+        transform: scale(1.05);
+        transition: all 0.8s ease;
+    }
+}
+
 .otherWorkContainer {
     max-height: 300px;
     margin-top: 60px;
@@ -257,6 +269,18 @@
 
 .hover-caption-video {
     pointer-events: none;
+}
+
+.work-h2 {
+    margin-top: 36px;
+    margin-bottom: 60px;
+}
+
+.masonry-margin:hover {
+    .gatsby-image-wrapper-constrained img {
+        transform: scale(1.05);
+        transition: 0.8s all ease;
+    }
 }
 
 @media (max-width: 769px) {

@@ -67,7 +67,6 @@ const Work = (context) => {
     const [openBox, setOpenBox] = useState(false)
     const [btnContent, setBtnContent] = useState('mehr Infos')
     const [step, setStep] = useState(0)
-    const [intervalId, setIntervalId] = useState(0)
 
     const [autoplay, setAutoplay] = useState(false)
 
@@ -129,7 +128,6 @@ const Work = (context) => {
 
 
 
-
     const headerImage = getImage(context?.pageContext?.edge?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
 
     return (
@@ -154,7 +152,7 @@ const Work = (context) => {
                     <Container fluid>
                         <Row>
                             <span><h1 className="work-h1">{context?.pageContext?.edge?.title}</h1></span>
-
+                            <h2 className="work-h2">{context?.pageContext?.edge?.work?.subheadline}</h2>
                         </Row>
                     </Container>
                     <Container>
@@ -170,7 +168,7 @@ const Work = (context) => {
                                 {context?.pageContext?.edge?.work?.infos.map((item, i) => (
                                     <Col key={i} xs={12} md={3}>
                                         <p className="text-xs bold">{item?.headline}</p>
-                                        <p className="text-xs">{item?.text}</p>
+                                        <div className="text-xs" dangerouslySetInnerHTML={{ __html: item?.text }} />
                                     </Col>
                                 ))}
                             </Row>
@@ -272,7 +270,7 @@ const Work = (context) => {
                                         return (
                                             <Col key={i} xs={7} md={5} className="otherWorkContainer">
                                                 <Link to={`/work/${element.node?.slug}`}>
-                                                    <div className="gatsby-image-wrapper bottom-works-container">
+                                                    <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
                                                         <GatsbyImage image={image} alt={element.node?.featuredImage?.node?.altText} />
                                                         <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                             <Item>

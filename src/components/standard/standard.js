@@ -9,7 +9,6 @@ import AnimateIn from '../../components/animateIn/animateIn'
 import './standard.scss'
 
 export default function Standard({ context }) {
-    console.log(context?.pageContext?.edge)
     return (
         <div className="page-wrapper standard-page">
 
