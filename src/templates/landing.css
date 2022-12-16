@@ -20,6 +20,11 @@
     padding-bottom: 40px;
 }
 
+.video {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 video {
     width: 100% !important;
     height: 100% !important;
@@ -49,4 +54,45 @@ video {
     top: 0;
     width: 0;
     height: 0;
+}
+
+.video-desktop {
+    display: block;
+}
+
+.video-tablet {
+    display: none;
+}
+
+.video-mobile {
+    display: none;
+}
+
+@media (max-width: 769px) {
+    .video-desktop {
+        display: none;
+    }
+
+    .video-tablet {
+        display: block;
+    }
+
+    .video-mobile {
+        display: none;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .video-desktop {
+        display: none;
+    }
+
+    .video-tablet {
+        display: none;
+    }
+
+    .video-mobile {
+        display: block;
+    }
 }

@@ -67,24 +67,9 @@ exports.createPages = async function ({ graphql, actions }) {
                             navbarTransparent
                           }
                         home {
-                            videoDesktop {
-                                localFile {
-                                    publicURL
-                                }
-                                title
-                            }
-                            ipadVideo {
-                                localFile {
-                                    publicURL
-                                }
-                                title
-                            }
-                            mobileVideo {
-                                localFile {
-                                    publicURL
-                                }
-                                title
-                            }
+                            desktopVideoIdVimeo
+                            mobileVideoIdVimeo
+                            tabletVideoIdVimeo
                             link{
                                 url
                                 title

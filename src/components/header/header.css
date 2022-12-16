@@ -126,6 +126,11 @@
 }
 
 
+.navbar-nav .nav-link {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
 
 @media (max-width: 769px) {
     .hamburger-react {
@@ -167,6 +172,8 @@
     .opacity1 {
         pointer-events: revert !important;
     }
+
+
 
     .navbar-transparent .nav-link {
         margin: 60px 0;

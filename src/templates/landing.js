@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Header from '../components/header/header'
 import SingleTransition from '../components/transitionlink/singleTransition'
-import Video from '../components/video/video'
+import VideoVimeo from '../components/videovimeo/videovimeo'
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -129,13 +129,23 @@ const LandingPage = (context) => {
     }`);
 
   const logo = data?.wp
+
+  console.log(context?.pageContext?.edge?.home?.tabletVideoIdVimeo)
   return (
     <>
       <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
       <div className="landing-container">
         <SingleTransition className="btn btn-landing" path={context?.pageContext?.edge?.home?.link?.url} color={logo?.siteOptions?.siteOptions?.workColor} id="home-cta" >{context?.pageContext?.edge?.home?.link?.title}</SingleTransition>
       </div>
-      <Video videoClassName="landing-video video-desktop" videoSrcURL={context?.pageContext?.edge?.home?.videoDesktop?.localFile?.publicURL} />
+      <div className="landing-video video-desktop">
+        <VideoVimeo muted={true} controls={false} videoId={context?.pageContext?.edge?.home?.desktopVideoIdVimeo} />
+      </div>
+      <div className="landing-video video-tablet">
+        <VideoVimeo muted={true} controls={false} videoId={context?.pageContext?.edge?.home?.tabletVideoIdVimeo} />
+      </div>
+      <div className="landing-video video-mobile">
+        <VideoVimeo muted={true} controls={false} videoId={context?.pageContext?.edge?.home?.mobileVideoIdVimeo} />
+      </div>
 
       {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
         const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)

@@ -156,23 +156,46 @@ const Pages = (context) => {
     switch (slug) {
       case 'contact':
         return (
-          <Contact context={context}></Contact>
+          <>
+            {!isSSR &&
+              <Loader color={color} images={images} id="loader" />
+            }
+            <Contact context={context}></Contact>
+          </>
         );
       case 'work':
         return (
-          <Work context={context}></Work>
+          <>
+            {!isSSR &&
+              <Loader color={color} images={images} id="loader" />
+            }
+            <Work context={context}></Work>
+          </>
         );
       case 'about':
         return (
-          <About context={context}></About>
+          <>
+            {!isSSR &&
+              <Loader color={color} images={images} id="loader" />
+            }
+            <About context={context}></About>
+          </>
         );
       case 'jobs':
         return (
-          <Jobs context={context}></Jobs>
+          <>
+            {!isSSR &&
+              <Loader color={color} images={images} id="loader" />
+            }
+            <Jobs context={context}></Jobs>
+          </>
+
         );
       default:
         return (
-          <Standard context={context}></Standard>
+          <>
+            <Standard context={context}></Standard>
+          </>
         );
 
     }
@@ -182,9 +205,7 @@ const Pages = (context) => {
   return (
     <>
       <Header transparent={context?.pageContext?.edge?.pageSettings?.navbarTransparent}></Header>
-      {!isSSR &&
-        <Loader color={color} images={images} id="loader" />
-      }
+
       {rendererSwitch(context?.pageContext?.edge?.slug, context)}
     </>
 

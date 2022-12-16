@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useMemo } from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Marquee from "react-fast-marquee"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Video from '../components/video/video'
 import useMousePosition from "../hooks/useMousePosition/useMousePosition"
 import VideoVimeo from '../components/videovimeo/videovimeo'
 import Header from '../components/header/header'
@@ -14,7 +13,24 @@ import FadeIn from '../components/animateIn/fadeIn'
 
 import './landing.css'
 
+const Item = ({ children }) => {
+    const [hovered, eventHandlers] = useHover()
 
+    return (
+        <div {...eventHandlers} className="hover-image">{hovered && children}</div>
+    )
+}
+
+const useHover = () => {
+    const [hovered, setHovered] = useState()
+
+    const eventHandlers = useMemo(() => ({
+        onMouseOver() { setHovered(true) },
+        onMouseOut() { setHovered(false) }
+    }), [])
+
+    return [hovered, eventHandlers]
+}
 
 
 const Work = (context) => {
@@ -27,6 +43,9 @@ const Work = (context) => {
                 node {
                     title
                     content
+                    work{
+                        subheadline
+                    }
                     slug
                     featuredImage {
                         node {
@@ -48,11 +67,18 @@ const Work = (context) => {
     const [openBox, setOpenBox] = useState(false)
     const [btnContent, setBtnContent] = useState('mehr Infos')
     const [step, setStep] = useState(0)
-    const scrollRef = useRef()
     const [intervalId, setIntervalId] = useState(0)
 
+    const [autoplay, setAutoplay] = useState(false)
 
 
+    const handleClick2 = () => {
+        if (!autoplay) {
+            setAutoplay(true)
+        } else {
+            setAutoplay(false)
+        }
+    }
 
     const handleClick = () => {
         if (!openBox) {
@@ -71,54 +97,35 @@ const Work = (context) => {
         }
     }
 
+    const [absoluteY, setAbsoluteY] = useState(0)
+    const [absoluteX, setAbsoluteX] = useState(0)
+    const [hoveredElement, setHoveredElement] = useState(undefined)
+
+    const isSSR = typeof window === "undefined"
+
+    if (!isSSR) {
+        window.addEventListener('scroll', (e) => setY(e))
+    }
 
 
-    useEffect(() => {
-        const element = document.getElementById('myScroller')
-        if (element) {
-            if (intervalId != 0) {
-                clearInterval(intervalId)
-            }
+    function setY(e) {
+        if (!isSSR && hoveredElement != undefined) {
+            const elem = hoveredElement
 
-            const inter = setInterval(() => doIt(element.scrollLeft), 40)
-            setIntervalId(inter)
-
+            const rect = elem.getBoundingClientRect()
+            setAbsoluteY(rect.top)
         }
+    }
 
-        return
+    function handleMouseEnter(e) {
+        console.log(e)
+        setAbsoluteX(e.target.parentElement.offsetParent.offsetLeft)
+        setHoveredElement(e.target)
+        const elem = e.target
+        const rect = elem.getBoundingClientRect()
+        setAbsoluteY(rect.top)
+    }
 
-    }, [step])
-
-
-    useEffect(() => {
-        const width = window.innerWidth
-
-        if ((width / 2) < x) {
-            if ((width / 4 * 3) < x) {
-                if ((width / 7 * 5) < x) {
-                    setStep(15)
-                } else {
-                    setStep(7)
-                }
-
-            } else {
-                setStep(2)
-            }
-        } else {
-
-            if ((width / 4) > x) {
-                if ((width / 7) > x) {
-                    setStep(-15)
-                } else {
-                    setStep(-7)
-                }
-
-            } else {
-                setStep(-2)
-            }
-        }
-        return
-    }, [x])
 
 
 
@@ -179,8 +186,9 @@ const Work = (context) => {
                             </Col>
                         </Row>
                         <Row className="margin-container">
-                            <Col xs={12}>
-                                <Video videoSrcURL={context?.pageContext?.edge?.work?.video?.localFile?.publicURL}></Video>
+                            <Col xs={12} >
+                                <VideoVimeo muted={true} controls={true} videoId={context?.pageContext?.edge?.work?.videoIdVimeo} autoplay={autoplay} onClick={(e) => handleClick2(e)} onMouseEnter={(e) => handleMouseEnter(e)} />
+
                             </Col>
                         </Row>
                     </Container>
@@ -256,17 +264,32 @@ const Work = (context) => {
                         </Marquee>
                     </FadeIn>
                     <AnimateIn triggerOnce={false} >
-                        <Container className="scrollTwister-container" fluid  >
-                            <Row className="scrollTwister" id="myScroller" ref={scrollRef}>
-                                {data?.allWpWork?.edges.map((item, i) => {
-                                    const image = getImage(item.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
-                                    return (
-                                        <Col key={i} xs={7} md={5} className="otherWorkContainer">
-                                            <Link to={`/work/${item.node?.slug}`}>
-                                                <GatsbyImage image={image} alt={item.node?.featuredImage?.node?.altText} />
-                                            </Link>
-                                        </Col>
-                                    )
+                        <Container luid  >
+                            <Row >
+                                {data?.allWpWork?.edges.map((element, i) => {
+                                    const image = getImage(element.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
+                                    if (i < 2) {
+                                        return (
+                                            <Col key={i} xs={7} md={5} className="otherWorkContainer">
+                                                <Link to={`/work/${element.node?.slug}`}>
+                                                    <div className="gatsby-image-wrapper bottom-works-container">
+                                                        <GatsbyImage image={image} alt={element.node?.featuredImage?.node?.altText} />
+                                                        <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
+                                                            <Item>
+                                                                <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>
+                                                                    <h3 dangerouslySetInnerHTML={{ __html: element?.node?.title }} />
+                                                                    <p className="text-small">{element?.node?.work?.subheadline}</p>
+                                                                </div>
+                                                            </Item>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+                                        )
+                                    } else {
+                                        return
+                                    }
+
                                 })}
                             </Row>
                         </Container>

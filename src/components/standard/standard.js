@@ -6,10 +6,10 @@ import Row from 'react-bootstrap/Row'
 
 import AnimateIn from '../../components/animateIn/animateIn'
 
-
+import './standard.scss'
 
 export default function Standard({ context }) {
-
+    console.log(context?.pageContext?.edge)
     return (
         <div className="page-wrapper standard-page">
 
@@ -22,13 +22,11 @@ export default function Standard({ context }) {
                 </AnimateIn>
             </Container>
             <Container >
-                <AnimateIn triggerOnce={false}>
-                    <Row>
-                        <Col xd={12} md={12} className="align-left">
-                            <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
-                        </Col>
-                    </Row>
-                </AnimateIn>
+                <Row>
+                    <Col xd={12} md={12} className="align-left">
+                        <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
+                    </Col>
+                </Row>
             </Container>
         </div>
     )

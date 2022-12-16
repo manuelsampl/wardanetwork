@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'
 
 
-export default function Video({ videoId, controls, muted, width }) {
+export default function Video({ videoId, controls, muted, width, autoplay }) {
     const [video, setVideo] = useState(null)
 
-    const [autoplay, setAutoplay] = useState(false)
 
 
     const apiFetch = async () => {
@@ -19,14 +18,7 @@ export default function Video({ videoId, controls, muted, width }) {
         if (!videoId) {
             return
         }
-        if (!muted) {
-            if (!autoplay) {
-                setAutoplay(false)
-            }
 
-        } else {
-            setAutoplay(true)
-        }
         apiFetch()
     }, [apiFetch, axios])
 
@@ -35,17 +27,14 @@ export default function Video({ videoId, controls, muted, width }) {
         video ?
             <div className="video">
                 {!autoplay ?
-                    <>
-                        <div className="play-button" onClick={() => setAutoplay(true)}>Play</div>
-                        <video style={{ width: `${width}%` }} src={video} controls={controls} playsInline autoPlay={autoplay} data-keepplaying loop muted={muted} />
-                    </>
+                    <video style={{ width: `${width}%` }} src={video} controls={controls} playsInline autoPlay={autoplay} data-keepplaying loop muted={muted} />
+
                     :
 
                     <video style={{ width: `${width}%` }} src={video} controls={controls} playsInline autoPlay={autoplay} data-autoplay data-keepplaying loop muted={muted} />
-
                 }
 
-            </div>
+            </div >
 
             : null
     )
