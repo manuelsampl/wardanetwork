@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
             <Cursor mouseOver={mouseOver} />
 
 
-            <main onMouseOver={(e) => handleMouseOver(e)} >{children}</main>
+            <main onMouseOver={(e) => handleMouseOver(e)} onFocus={(e) => handleMouseOver(e)} >{children}</main>
 
 
 

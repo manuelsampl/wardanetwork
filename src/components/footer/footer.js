@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Marquee from "react-fast-marquee"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import AnimateIn from '../../components/animateIn/animateIn'
 import FadeIn from '../../components/animateIn/fadeIn'
 
 

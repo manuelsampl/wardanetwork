@@ -80,7 +80,7 @@ export default function Polaroid(polaroids) {
     function setY(e) {
         if (document) {
             const elem = document.getElementById('polaroid-container')
-            if (elem != undefined && elem != null) {
+            if (elem !== undefined && elem !== null) {
                 const rect = elem?.getBoundingClientRect()
                 setAbsoluteY(rect.top)
             }
@@ -91,7 +91,7 @@ export default function Polaroid(polaroids) {
 
     return (
         <>
-            <div id="polaroid-container" className="polaroid-container" onMouseEnter={(e) => weAreHovered(e)} onMouseLeave={() => weAreUnHovered()}>
+            <div id="polaroid-container" className="polaroid-container" onTouchStart={(e) => weAreHovered(e)} onMouseLeave={() => weAreUnHovered()} onMouseEnter={(e) => weAreHovered(e)} onTouchEnd={() => weAreUnHovered()}>
                 <div className="preload-polaroids">
                     {polaroids.polaroids.map((polaroid, i) => {
                         const img = getImage(polaroid.polaroid.localFile.childImageSharp.gatsbyImageData)

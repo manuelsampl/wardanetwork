@@ -81,7 +81,7 @@ export default function Work({ context }) {
 
 
     function setY(e) {
-        if (!isSSR && hoveredElement != undefined) {
+        if (!isSSR && hoveredElement !== undefined) {
             const elem = hoveredElement
 
             const rect = elem.getBoundingClientRect()

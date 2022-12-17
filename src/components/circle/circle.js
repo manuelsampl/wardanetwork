@@ -19,7 +19,7 @@ export default function Circle() {
         }
 
         window.onscroll = () => {
-            doScroll(window.pageYOffset)
+            return doScroll(window.pageYOffset)
         }
 
 
@@ -35,12 +35,15 @@ export default function Circle() {
             if (document) {
                 const rote = (scroll / document.body.scrollHeight) * 360 * 7
                 setRotation(rote)
+                return
             }
 
+        } else {
+            return
         }
 
 
-    }, [scroll])
+    }, [scroll, isSSR])
 
 
     return (

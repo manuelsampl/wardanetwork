@@ -28,7 +28,7 @@ export default function Logos(logos) {
             let r = Math.floor(Math.random() * 8)
             changeImage(r)
             setSeconds(seconds + 1)
-        }, 500);
+        }, 400);
         return () => clearInterval(interval);
     }, [seconds]);
 

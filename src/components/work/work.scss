@@ -191,6 +191,33 @@
     }
 }
 
+.logo-partner-wrapper {
+    height: 200px;
+}
+
+.logo-partner-wrapper {
+    background-color: transparent !important;
+
+    div {
+        background-color: transparent !important;
+    }
+
+    img {
+        animation: fadeIn 0.8s;
+        background-color: transparent !important;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .masonry-margin {
     border: 20px solid transparent;
     overflow: hidden;
@@ -287,6 +314,10 @@
 }
 
 .hover-caption-video {
+    pointer-events: none;
+}
+
+.hover-caption {
     pointer-events: none;
 }
 

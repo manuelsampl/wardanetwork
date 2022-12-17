@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react"
+import React, { useState, useRef, useMemo } from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -109,7 +109,7 @@ const Work = (context) => {
 
     function setY(e) {
         const isSSR = typeof window === "undefined"
-        if (!isSSR && hoveredElement != undefined) {
+        if (!isSSR && hoveredElement !== undefined) {
             const elem = hoveredElement
 
             const rect = elem.getBoundingClientRect()
@@ -185,9 +185,10 @@ const Work = (context) => {
                             </Row>
                         </Container>
                     </div>
-                    <div className="btn-2 info-btn" onClick={handleClick}>{btnContent}</div>
+                    <div className="btn-2 info-btn" role="button"
+                        tabindex={0} onClick={handleClick} onKeyDown={handleClick} onT>{btnContent}</div>
                 </AnimateIn>
-                {context?.pageContext?.edge?.work?.videoIdVimeo != undefined ?
+                {context?.pageContext?.edge?.work?.videoIdVimeo !== undefined ?
                     <AnimateIn triggerOnce={true}>
                         <Container ref={myRef} fluid className="work-video-container">
                             <Row>
@@ -257,6 +258,7 @@ const Work = (context) => {
                                 </Row>
                             )
                         }
+                        return <></>
 
                     })}
 
@@ -291,7 +293,7 @@ const Work = (context) => {
                                     <Link to={`/work/${data?.allWpWork?.edges[0].node?.slug}`}>
                                         <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
                                             <GatsbyImage image={image1} alt={data?.allWpWork?.edges[0].node?.featuredImage?.node?.altText} />
-                                            <div id="hover_1" className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
+                                            <div id="hover_1" className="work-hover-container" role="link" tabindex={0} onMouseEnter={(e) => handleMouseEnter(e)} >
                                                 <Item>
                                                     <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
                                                         <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[0]?.node?.title }} />
@@ -310,7 +312,7 @@ const Work = (context) => {
                                     <Link to={`/work/${data?.allWpWork?.edges[1]?.node?.slug}`}>
                                         <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
                                             <GatsbyImage image={image2} alt={data?.allWpWork?.edges[1]?.node?.featuredImage?.node?.altText} />
-                                            <div id="hover_2" className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
+                                            <div id="hover_2" className="work-hover-container" role="link" tabindex={0} onMouseEnter={(e) => handleMouseEnter(e)} >
                                                 <Item>
                                                     <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
                                                         <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[1]?.node?.title }} />

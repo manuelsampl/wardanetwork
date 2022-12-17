@@ -98,20 +98,10 @@ export default function About({ context }) {
                     </Row>
                 </AnimateIn>
             </Container>
-            <AnimateIn className="mobile-hide" triggerOnce={true}>
+            <AnimateIn triggerOnce={true}>
                 <div className="polaroids">
                     {!isSSR &&
                         <Polaroid polaroids={context?.pageContext?.edge?.about?.polaroids}></Polaroid>
-                    }
-                    <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.madness }} />
-
-                </div>
-            </AnimateIn>
-            <AnimateIn className="desktop-hide" triggerOnce={true}>
-
-                <div className="polaroids">
-                    {!isSSR &&
-                        <PolaroidMobile polaroids={context?.pageContext?.edge?.about?.polaroids}></PolaroidMobile>
                     }
                     <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.madness }} />
 

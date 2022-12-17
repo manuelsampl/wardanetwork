@@ -26,7 +26,6 @@ const AnimateIn = ({ threshold = 0.15, triggerOnce = false, delay = 0, ...remain
             return
 
         }
-        return
 
 
     }, [delay, isDelay]);

@@ -11,11 +11,18 @@
     transition-duration: 100ms;
     -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
-    will-change: width, height, transform, border;
+    will-change: all;
     z-index: 9999999999999999;
     pointer-events: none;
     mix-blend-mode: difference;
+    animation: fadeIn 0.8s;
 }
+
+.ring:nth-child(2) {
+    display: none;
+}
+
+
 
 .dot {
     position: fixed;
@@ -28,6 +35,26 @@
     z-index: 9999999999999999;
     pointer-events: none;
     transition: width 0.8s ease, height 0.8s ease, background-color 0.8s ease;
+    transform: translate(-50%, -50%);
+}
+
+
+.triangle {
+    display: block;
+    transform: translate(0%, -50%) !important;
+    width: 0px;
+    height: 0px;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 0 15px 18px 15px;
+    border-color: transparent #000 #000 transparent;
+    animation: fadeIn 0.8s;
+    mix-blend-mode: difference;
+    background-color: #ffffff;
+}
+
+.triangle:nth-child(2) {
+    display: block;
 }
 
 body {
