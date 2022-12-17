@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Masonry from 'react-masonry-component';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import useMousePosition from "../../hooks/useMousePosition/useMousePosition"
-
+import VideoVimeo from "../../components/videovimeo/videovimeo"
 import AnimateIn from '../../components/animateIn/animateIn'
 import FadeIn from '../../components/animateIn/fadeIn'
 
@@ -60,6 +60,8 @@ export default function Work({ context }) {
                         subheadline
                         overviewWidth
                         overviewHeight
+                        videoInGrid
+                        videoIdVimeo
                     }
                 }
             }
@@ -139,6 +141,7 @@ export default function Work({ context }) {
                                 const image = getImage(item?.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData)
                                 const link = item?.node?.slug
 
+
                                 if (item?.node?.work?.overviewHeight === "1") {
 
                                     if (item?.node?.work?.overviewWidth === "1") {
@@ -146,7 +149,11 @@ export default function Work({ context }) {
                                             <Col key={i} xs={12} md={6} className="masonry-margin max-height-1" >
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
                                                     <FadeIn triggerOnce={false}>
-                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        {item?.node?.work?.videoInGrid ?
+                                                            <VideoVimeo controls={false} muted={true} autoplay={true} videoId={item?.node?.work?.videoIdVimeo}></VideoVimeo>
+                                                            :
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        }
                                                     </FadeIn>
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                         <Item>
@@ -168,7 +175,11 @@ export default function Work({ context }) {
                                             <Col key={i} xs={12} className="masonry-margin max-height-1" >
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
                                                     <FadeIn triggerOnce={false}>
-                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        {item?.node?.work?.videoInGrid ?
+                                                            <VideoVimeo controls={false} muted={true} autoplay={true} videoId={item?.node?.work?.videoIdVimeo}></VideoVimeo>
+                                                            :
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        }
                                                     </FadeIn>
 
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
@@ -193,7 +204,11 @@ export default function Work({ context }) {
                                             <Col key={i} xs={12} md={6} className="masonry-margin max-height-2" >
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
                                                     <FadeIn triggerOnce={false}>
-                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        {item?.node?.work?.videoInGrid ?
+                                                            <VideoVimeo controls={false} muted={true} autoplay={true} videoId={item?.node?.work?.videoIdVimeo}></VideoVimeo>
+                                                            :
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        }
                                                     </FadeIn>
                                                     <div className="hover-follow">
                                                         <h3>{item?.node?.title}</h3>
@@ -220,7 +235,11 @@ export default function Work({ context }) {
                                             <Col key={i} xs={12} className="masonry-margin max-height-2" >
                                                 <Link to={`/work/${link}`} className="overflowHidden" >
                                                     <FadeIn triggerOnce={false}>
-                                                        <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        {item?.node?.work?.videoInGrid ?
+                                                            <VideoVimeo controls={false} muted={true} autoplay={true} videoId={item?.node?.work?.videoIdVimeo}></VideoVimeo>
+                                                            :
+                                                            <GatsbyImage image={image} alt={item?.node?.featuredImage?.node?.altText}></GatsbyImage>
+                                                        }
                                                     </FadeIn>
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)}>
                                                         <Item>
