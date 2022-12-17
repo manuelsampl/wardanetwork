@@ -158,36 +158,32 @@ const Pages = (context) => {
       case 'contact':
         return (
           <>
-            {!isSSR &&
-              <Loader color={color} images={images} id="loader" />
-            }
+            <Loader color={color} images={images} id="loader" />
+
             <Contact context={context}></Contact>
           </>
         );
       case 'work':
         return (
           <>
-            {!isSSR &&
-              <Loader color={color} images={images} id="loader" />
-            }
+            <Loader color={color} images={images} id="loader" />
+
             <Work context={context}></Work>
           </>
         );
       case 'about':
         return (
           <>
-            {!isSSR &&
-              <Loader color={color} images={images} id="loader" />
-            }
+            <Loader color={color} images={images} id="loader" />
+
             <About context={context}></About>
           </>
         );
       case 'jobs':
         return (
           <>
-            {!isSSR &&
-              <Loader color={color} images={images} id="loader" />
-            }
+            <Loader color={color} images={images} id="loader" />
+
             <Jobs context={context}></Jobs>
           </>
 

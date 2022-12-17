@@ -61,8 +61,8 @@ export default function Loader({ color, images }) {
             {cnt >= -1 && !stop ?
                 <>
                     <GatsbyImage loading="eager" className="video-desktop" alt={images[cnt + 1].imageDesktop.altText} image={imageDesktop} />
-                    <GatsbyImage loading="eager" className="video-tablet" alt={images[cnt + 1].imageDesktop.altText} image={imageTablet} />
-                    <GatsbyImage loading="eager" className="video-mobile" alt={images[cnt + 1].imageDesktop.altText} image={imageMobile} />
+                    <GatsbyImage loading="eager" className="video-tablet" alt={images[cnt + 1].imageTablet.altText} image={imageTablet} />
+                    <GatsbyImage loading="eager" className="video-mobile" alt={images[cnt + 1].imageMobile.altText} image={imageMobile} />
                 </>
                 : <></>}
         </motion.div >
