@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { debounce } from "lodash"
+
 // import { useContext } from "react"; used later
 import useMousePosition from "../../hooks/useMousePosition/useMousePosition"
 // import { MouseContext } from "../../context/mouse-context"; used from step6
