@@ -21,34 +21,38 @@ const variants = {
 
 export default function Loader({ color, images }) {
 
-
+    const isSSR = typeof window === "undefined"
 
     const [stop, setStop] = useState(false)
     const [cnt, setCnt] = useState(-1)
 
 
     useEffect(() => {
-        if (document) (
-            document.getElementsByClassName('tl-wrapper')[0].style.position = 'revert'
-        )
+        if (!isSSR) {
+            if (document) (
+                document.getElementsByClassName('tl-wrapper')[0].style.position = 'revert'
+            )
 
-        const interval = setInterval(() => {
+            const interval = setInterval(() => {
 
-            if (cnt < images.length - 2) {
-                setCnt(cnt + 1)
-            } else {
-                setStop(true)
-                return () => {
-                    setCnt(0)
-                    document.getElementsByClassName('tl-wrapper')[0].style.position = 'relative'
-                    clearTimeout(interval)
+                if (cnt < images.length - 2) {
+                    setCnt(cnt + 1)
+                } else {
+                    setStop(true)
+                    return () => {
+                        setCnt(0)
+                        document.getElementsByClassName('tl-wrapper')[0].style.position = 'relative'
+                        clearTimeout(interval)
+                    }
+
                 }
-
-            }
-        }, 180)
+            }, 180)
 
 
-        return () => clearTimeout(interval);
+            return () => clearTimeout(interval);
+        } else {
+            return
+        }
     }, [cnt, images.length])
 
 
