@@ -33,9 +33,6 @@ h1 {
     padding-inline: 10px 10px;
 }
 
-.h1visible h1 {
-    background-size: 110% 30px !important;
-}
 
 .align-left {
     text-align: left;

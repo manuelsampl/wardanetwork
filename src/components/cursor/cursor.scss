@@ -65,12 +65,18 @@ body {
     }
 }
 
-@media (max-width: 769px) {
+@media (hover: none) {
+    /* ... */
+
     .dot {
         display: none;
     }
 
     .ring {
+        display: none;
+    }
+
+    .triangle {
         display: none;
     }
 }

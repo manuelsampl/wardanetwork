@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
 
 
     const [mouseOver, setMouseOver] = useState(0)
+    const [touchDevice, setTouchDevice] = useState(false)
 
     const data = useStaticQuery(graphql`
     query {
@@ -132,14 +133,34 @@ const Layout = ({ children }) => {
         }
     }`);
 
+    const isSSR = typeof window === "undefined"
+
     function handleMouseOver(e) {
         setMouseOver(e.target)
+    }
+    if (!isSSR) {
+        window.addEventListener('touchstart', function onFirstTouch() {
+
+            // or set some global variable
+            setTouchDevice(true)
+
+            // we only need to know once that a human touched the screen, so we can stop listening now
+            window.removeEventListener('touchstart', onFirstTouch, false)
+        }, false)
     }
 
     return (
         <div id="layoutcontainer">
 
-            <Cursor mouseOver={mouseOver} />
+
+            {!isSSR ?
+                !touchDevice ?
+                    <Cursor mouseOver={mouseOver} />
+                    :
+                    <></>
+                :
+                <></>
+            }
 
 
             <main onMouseOver={(e) => handleMouseOver(e)} onFocus={(e) => handleMouseOver(e)} >{children}</main>
