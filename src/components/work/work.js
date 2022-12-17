@@ -40,7 +40,7 @@ export default function Work({ context }) {
 
     const data = useStaticQuery(graphql`
     query{
-        allWpWork {
+        allWpWork(sort: {dateGmt: ASC}) {
             edges {
                 node {
                     title
