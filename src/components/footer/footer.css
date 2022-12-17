@@ -3,6 +3,8 @@
     color: #fff;
     padding-top: 26px;
     padding-bottom: 26px;
+    z-index: 3;
+    position: relative;
 }
 
 .footer a {

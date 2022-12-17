@@ -68,6 +68,7 @@ video {
 
 .video-desktop {
     display: block;
+    transform: scale(1.4);
 }
 
 .video-tablet {
@@ -78,7 +79,9 @@ video {
     display: none;
 }
 
-@media (max-width: 769px) {
+
+
+@media (max-width: 992px) {
     .video-desktop {
         display: none;
     }
