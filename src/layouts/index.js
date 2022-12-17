@@ -196,6 +196,7 @@ const Layout = ({ children }) => {
             })}
             {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
                 const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
+                console.log(img)
                 return (
                     <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
                 )

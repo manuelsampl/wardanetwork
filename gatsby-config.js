@@ -33,7 +33,26 @@ module.exports = {
         },
       },
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
+  }, "gatsby-plugin-image",
+  {
+    resolve: 'gatsby-plugin-sharp',
+    options: {
+      defaults: {
+        formats: [`auto`, `webp`],
+        placeholder: `dominantColor`,
+        quality: 50,
+        breakpoints: [576, 768, 992, 1200],
+        backgroundColor: `transparent`,
+        tracedSVGOptions: {},
+        blurredOptions: {},
+        jpgOptions: {},
+        pngOptions: {},
+        webpOptions: {},
+        avifOptions: {},
+      }
+    }
+  },
+    "gatsby-transformer-sharp", "gatsby-plugin-sass", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       "trackingId": process.env.GATSBY_GOOGLE_ANALYTICS

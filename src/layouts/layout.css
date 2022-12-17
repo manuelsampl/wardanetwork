@@ -38,6 +38,12 @@
     --contact: #f8bbd6;
 }
 
+main {
+    position: relative;
+    z-index: 1;
+    background-color: var(--main-bg-color);
+}
+
 
 
 body {

@@ -56,11 +56,11 @@ video {
 
 .preloader-image {
     z-index: 0;
-    position: fixed;
+    position: fixed !important;
     left: 0;
-    bottom: 60px;
+    top: 300px;
     width: 100vw;
-    height: 10vh;
+    height: 100vh;
 }
 
 .video-desktop {
