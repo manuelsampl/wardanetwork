@@ -11,8 +11,6 @@ import Cursor from '../components/cursor/cursor';
 
 
 const Layout = ({ children }) => {
-
-
     const [mouseOver, setMouseOver] = useState(0)
     const [touchDevice, setTouchDevice] = useState(false)
 
