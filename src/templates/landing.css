@@ -58,9 +58,9 @@ video {
     z-index: 0;
     position: fixed;
     left: 0;
-    top: 0;
-    width: 1px;
-    height: 1px;
+    bottom: 60px;
+    width: 100vw;
+    height: 10vh;
 }
 
 .video-desktop {
