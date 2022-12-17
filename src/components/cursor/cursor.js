@@ -39,7 +39,6 @@ export default function Cursor(mouseOver) {
         }
     }
     function checkIfIsVideo(mouseOver) {
-        console.log(mouseOver)
         const target = mouseOver?.mouseOver?.nodeName || ''
         const parent1 = mouseOver.mouseOver?.parentElement?.nodeName || ''
         const parent2 = mouseOver.mouseOver?.parentElement?.parentElement?.nodeName || ''

@@ -9,7 +9,7 @@ export default function Video({ videoId, controls, muted, width, autoplay }) {
 
     const apiFetch = async () => {
         const response = await axios.get(`https://api.vimeo.com/videos/${videoId}`, { headers: { Authorization: `bearer ${process.env.GATSBY_VIMEO_ACCESS_TOKEN}` } })
-        console.log(response)
+
         let found = response?.data?.files.find(element => element.public_name === "1080p")
         if (found === undefined) {
             found = response?.data?.files.find(element => element.public_name === "720p")
