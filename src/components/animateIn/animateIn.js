@@ -35,7 +35,7 @@ const AnimateIn = ({ threshold = 0.15, triggerOnce = false, delay = 0, ...remain
             ref={ref}
             style={{
                 // adjust these as desired
-                transition: "opacity 500ms, transform 500ms",
+                transition: "opacity 1000ms, transform 1000ms",
                 opacity: inView ? 1 : 0,
                 transform: `translateY(${inView ? 0 : 100}px)`,
             }}
