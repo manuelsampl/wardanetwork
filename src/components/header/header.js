@@ -9,7 +9,7 @@ import * as THREE from "three"
 import { Canvas, useFrame } from "@react-three/fiber"
 
 import TransitionLink from '../transitionlink/transition'
-import Model from './model'
+
 
 
 
