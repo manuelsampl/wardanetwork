@@ -6,9 +6,12 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Spin as Hamburger } from 'hamburger-react'
 import * as THREE from "three"
+import { OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from "@react-three/fiber"
-
+import Model from './model'
 import TransitionLink from '../transitionlink/transition'
+
+import { ScrollControls, Sky, useScroll, useGLTF, useAnimations } from '@react-three/drei'
 
 
 
@@ -17,6 +20,8 @@ import TransitionLink from '../transitionlink/transition'
 import './header.css'
 
 const Header = (transparent) => {
+
+
   const data = useStaticQuery(graphql`
     query {
         wp{
@@ -60,13 +65,14 @@ const Header = (transparent) => {
     }
         `);
 
+
   const logo = data?.wp
   const navigation = data?.allWpMenu
 
   const [isOpen, setOpen] = useState(false)
   const [brandSmall, setBrandSmall] = useState(false)
 
-
+  const [rotation, setRotation] = useState(0)
 
 
   const isSSR = typeof window === "undefined"
@@ -78,6 +84,9 @@ const Header = (transparent) => {
     } else {
       setBrandSmall(false)
     }
+
+
+    setRotation(e.target.scrollingElement.scrollTop / 300)
   }
 
   if (!isSSR) {
@@ -92,7 +101,18 @@ const Header = (transparent) => {
 
           {transparent.transparent === true ? isOpen === true ?
             <>
-
+              <div className="spinning-w">
+                <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
+                  <ambientLight />
+                  <directionalLight position={[-5, 5, 5]} />
+                  <group rotation={[0, rotation, 0]} position={[0, 0, 0]}>
+                    <Suspense fallback={null}>
+                      <Model color="black" />
+                    </Suspense>
+                  </group>
+                  <OrbitControls enablePan={false} enableZoom={true} />
+                </Canvas>
+              </div>
               <svg id="Warda_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 62">
                 <motion.g animate={{ transform: brandSmall ? 'translate(-150px, 0px) scale(0)' : 'translate(0px, 0px) scale(1)' }} id="type">
                   <polygon points="127.84 26.08 124.86 15.08 123.85 15.08 120.87 26.08 118.17 15.08 117.14 15.08 120.34 27.73 121.33 27.73 124.35 16.72 127.37 27.73 128.36 27.73 131.56 15.08 130.54 15.08 127.84 26.08" fill="#000000" />
@@ -109,12 +129,23 @@ const Header = (transparent) => {
                   <polygon points="193.38 43.53 197.33 38.7 196.16 38.7 189.67 46.6 189.67 38.7 188.7 38.7 188.7 51.35 189.67 51.35 189.67 47.92 192.73 44.26 196.85 51.35 198 51.35 193.38 43.53" fill="#000000" />
                 </motion.g>
                 <motion.polygon animate={{ transform: brandSmall ? 'scale(0)' : 'scale(1)' }} id="slash" points="88.69 0 39.73 61.69 40.13 62 89.09 .31 88.69 0" fill="#000000" />
-                <polygon id="W" points="42.76 17.06 0 17.06 0 45.1 19.89 19.61 19.89 45.1 42.76 17.06" fill="#000000" />
+
               </svg>
             </>
             :
             <>
-
+              <div className="spinning-w">
+                <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
+                  <ambientLight />
+                  <directionalLight position={[-5, 5, 5]} />
+                  <group rotation={[0, rotation, 0]} position={[0, 0, 0]}>
+                    <Suspense fallback={null}>
+                      <Model color="white" />
+                    </Suspense>
+                  </group>
+                  <OrbitControls enablePan={false} enableZoom={true} />
+                </Canvas>
+              </div>
               <svg id="Warda_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 62">
                 <motion.g animate={{ transform: brandSmall ? 'translate(-150px, 0px) scale(0)' : 'translate(0px, 0px) scale(1)' }} id="type">
                   <polygon points="127.84 26.08 124.86 15.08 123.85 15.08 120.87 26.08 118.17 15.08 117.14 15.08 120.34 27.73 121.33 27.73 124.35 16.72 127.37 27.73 128.36 27.73 131.56 15.08 130.54 15.08 127.84 26.08" fill="#ffffff" />
@@ -131,12 +162,23 @@ const Header = (transparent) => {
                   <polygon points="193.38 43.53 197.33 38.7 196.16 38.7 189.67 46.6 189.67 38.7 188.7 38.7 188.7 51.35 189.67 51.35 189.67 47.92 192.73 44.26 196.85 51.35 198 51.35 193.38 43.53" fill="#ffffff" />
                 </motion.g>
                 <motion.polygon animate={{ transform: brandSmall ? 'scale(0)' : 'scale(1)' }} id="slash" points="88.69 0 39.73 61.69 40.13 62 89.09 .31 88.69 0" fill="#ffffff" />
-                <polygon id="W" points="42.76 17.06 0 17.06 0 45.1 19.89 19.61 19.89 45.1 42.76 17.06" fill="#ffffff" />
+
               </svg>
             </>
             :
             <>
-
+              <div className="spinning-w">
+                <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
+                  <ambientLight />
+                  <directionalLight position={[-5, 5, 5]} />
+                  <group rotation={[0, rotation, 0]} position={[0, 0, 0]}>
+                    <Suspense fallback={null}>
+                      <Model color="black" />
+                    </Suspense>
+                  </group>
+                  <OrbitControls enablePan={false} enableZoom={true} />
+                </Canvas>
+              </div>
               <svg id="Warda_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 62">
                 <motion.g animate={{ transform: brandSmall ? 'translate(-150px, 0px) scale(0)' : 'translate(0px, 0px) scale(1)' }} id="type">
                   <polygon points="127.84 26.08 124.86 15.08 123.85 15.08 120.87 26.08 118.17 15.08 117.14 15.08 120.34 27.73 121.33 27.73 124.35 16.72 127.37 27.73 128.36 27.73 131.56 15.08 130.54 15.08 127.84 26.08" fill="#000000" />
@@ -153,7 +195,7 @@ const Header = (transparent) => {
                   <polygon points="193.38 43.53 197.33 38.7 196.16 38.7 189.67 46.6 189.67 38.7 188.7 38.7 188.7 51.35 189.67 51.35 189.67 47.92 192.73 44.26 196.85 51.35 198 51.35 193.38 43.53" fill="#000000" />
                 </motion.g>
                 <motion.polygon animate={{ transform: brandSmall ? 'scale(0)' : 'scale(1)' }} id="slash" points="88.69 0 39.73 61.69 40.13 62 89.09 .31 88.69 0" fill="#000000" />
-                <polygon id="W" points="42.76 17.06 0 17.06 0 45.1 19.89 19.61 19.89 45.1 42.76 17.06" fill="#000000" />
+
               </svg>
             </>
           }

@@ -5,12 +5,11 @@ all actions and sets up a THREE.AnimationMixer for it so that you don't have to.
 All of the assets actions, action-names and clips are available in its output. 
 */
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { useLoader } from '@react-three/fiber'
 
 
@@ -22,36 +21,35 @@ export default function Model(color) {
 
     const loader = GLTFLoader
 
-    var { scene } = useLoader(loader, '/warda_white.glb')
-    const sceneWhite = scene
+    const [colorSet, setColorSet] = useState(color)
 
-    var { scene } = useLoader(GLTFLoader, '/warda_white.glb')
+    useEffect(() => {
+        if (color.color !== colorSet) {
+            setColorSet(color.color)
+        }
 
-    const sceneBlack = scene
+    }, [color])
+
+    var url = ''
+
+    if (colorSet === 'black') {
+        url = '/warda_black.glb'
+    } else {
+        url = '/warda_white.glb'
+    }
+
+    const { scene } = useLoader(loader, url)
+
 
 
 
 
     if (!isSSR) {
-        if (color === "white") {
-            return (
-                <group dispose={null}>
-                    <group>
-                        <primitive scale={2} object={sceneWhite}>
-                        </primitive>
-                    </group>
-                </group >
-            )
-        } else {
-            return (
-                <group dispose={null}>
-                    <group>
-                        <primitive scale={2} object={sceneBlack}>
-                        </primitive>
-                    </group>
-                </group >
-            )
-        }
+        return (
+            <group dispose={null}>
+                <primitive scale="1.2" object={scene} ></primitive>
+            </group >
+        )
     } else {
         return (<></>)
     }
