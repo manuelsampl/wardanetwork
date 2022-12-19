@@ -58,25 +58,21 @@
 }
 
 body {
-    cursor: none !important;
 
-    a {
-        cursor: none !important;
-    }
-}
 
-@media (hover: none) {
-    /* ... */
+    @media (hover: none) {
+        /* ... */
 
-    .dot {
-        display: none;
-    }
+        .dot {
+            display: none;
+        }
 
-    .ring {
-        display: none;
-    }
+        .ring {
+            display: none;
+        }
 
-    .triangle {
-        display: none;
+        .triangle {
+            display: none;
+        }
     }
 }
