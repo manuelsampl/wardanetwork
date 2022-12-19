@@ -289,7 +289,7 @@ const Work = (context) => {
 
 
 
-                                <Col xs={6} md={5} className="otherWorkContainer">
+                                <Col xs={12} sm={6} md={5} className="otherWorkContainer">
                                     <Link to={`/work/${data?.allWpWork?.edges[0].node?.slug}`}>
                                         <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
                                             <GatsbyImage image={image1} alt={data?.allWpWork?.edges[0].node?.featuredImage?.node?.altText} />
@@ -308,7 +308,7 @@ const Work = (context) => {
                                         </div>
                                     </Link>
                                 </Col>
-                                <Col xs={6} md={5} className="otherWorkContainer">
+                                <Col xs={12} sm={6} md={5} className="otherWorkContainer">
                                     <Link to={`/work/${data?.allWpWork?.edges[1]?.node?.slug}`}>
                                         <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained bottom-works-container">
                                             <GatsbyImage image={image2} alt={data?.allWpWork?.edges[1]?.node?.featuredImage?.node?.altText} />
