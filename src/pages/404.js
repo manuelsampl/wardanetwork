@@ -17,8 +17,8 @@ function Rig() {
     let { x, y } = useMousePosition()
     return useFrame((state) => {
 
-        state.scene.children[2].rotation.x = THREE.MathUtils.lerp(state.scene.children[2].rotation.x, -0.7 + (y / 1000) / 0.5, 0.5)
-        state.scene.children[2].rotation.y = THREE.MathUtils.lerp(state.scene.children[2].rotation.y, - 0.95 + (x / 1000) / 0.8, 0.5)
+        state.scene.children[2].rotation.x = THREE.MathUtils.lerp(state.scene.children[2].rotation.x, -0.5 + (y / window.innerHeight) / 0.5, 0.5)
+        state.scene.children[2].rotation.y = THREE.MathUtils.lerp(state.scene.children[2].rotation.y, -0.35 + (x / window.innerWidth) / 0.8, 0.5)
 
 
     })

@@ -41,8 +41,8 @@ export default function Model(color) {
 
     if (!isSSR) {
 
-        const { scene } = useLoader(loader, url)
 
+        const { scene } = useLoader(loader, url)
 
         return (
             <group dispose={null}>
