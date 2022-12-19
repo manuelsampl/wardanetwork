@@ -26,6 +26,7 @@ function Rig() {
 }
 
 export default function NotFoundPage({ context }) {
+    const isSSR = typeof window === "undefined"
 
 
 
@@ -42,16 +43,21 @@ export default function NotFoundPage({ context }) {
                 </Row>
                 <Row>
                     <Col xs={12} className="three" id="three">
-                        <Canvas camera={{ position: [0, -1, 16], fov: 50 }}>
-                            <ambientLight />
-                            <directionalLight position={[-5, 5, 5]} />
-                            <group position={[0, 0, 5]}>
-                                <Suspense fallback={null}>
-                                    <Model />
-                                </Suspense>
-                            </group>
-                            <Rig></Rig>
-                        </Canvas>
+                        {!isSSR ?
+                            <Canvas camera={{ position: [0, -1, 16], fov: 50 }}>
+                                <ambientLight />
+                                <directionalLight position={[-5, 5, 5]} />
+                                <group position={[0, 0, 5]}>
+                                    <Suspense fallback={null}>
+                                        <Model />
+                                    </Suspense>
+                                </group>
+                                <Rig></Rig>
+                            </Canvas>
+                            :
+                            <>
+                            </>
+                        }
                     </Col>
                 </Row>
             </Container>
