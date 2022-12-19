@@ -15,6 +15,9 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.5",
+    "@react-three/drei": "^9.46.7",
+    "@react-three/fiber": "^8.9.1",
+    "@types/three": "^0.146.0",
     "add": "^2.0.6",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",

@@ -16,6 +16,25 @@
     text-align: center;
 }
 
+#three {
+    left: 0;
+    top: 0;
+    position: relative;
+    z-index: 999999;
+    pointer-events: none;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#three div {
+    pointer-events: none !important;
+}
+
+#three canvas {
+    pointer-events: none;
+}
 
 
 h1 {
@@ -37,4 +56,8 @@ h1 {
 .align-left {
     text-align: left;
     margin-top: 60px;
+}
+
+.page-404 {
+    margin-bottom: 0px;
 }
