@@ -16,21 +16,27 @@ import { useLoader } from '@react-three/fiber'
 export default function Model(props) {
     // Fetch model and a separate texture
 
+    const isSSR = typeof window === "undefined"
+
+    if (!isSSR) {
+        const { nodes, materials, scene } = useLoader(GLTFLoader, './eye.glb')
 
 
-    const { nodes, materials, scene } = useLoader(GLTFLoader, './eye.glb')
-
-    console.log(nodes)
-    console.log(materials)
 
 
 
-    return (
-        <group {...props} dispose={null}>
-            <group>
-                <primitive scale={0.8} object={scene}>
-                </primitive>
-            </group>
-        </group >
-    )
+
+
+
+        return (
+            <group {...props} dispose={null}>
+                <group>
+                    <primitive scale={0.8} object={scene}>
+                    </primitive>
+                </group>
+            </group >
+        )
+    } else {
+        return (<></>)
+    }
 }
