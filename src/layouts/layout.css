@@ -54,14 +54,14 @@ body {
 
 a {
     text-decoration: none;
-    color: #868a8e;
+    color: #53595f;
 
 }
 
 
 a:hover {
     text-decoration: none;
-    color: #868a8e;
+    color: var(--main-text-color);
     opacity: 0.75;
 }
 
