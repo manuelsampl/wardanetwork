@@ -84,10 +84,9 @@ export default function Cursor(mouseOver) {
             {!isVideo ?
                 <>
 
-                    <div className={"dot"} id="dot" style={overLink ? { left: `${x}px`, top: `${y}px`, width: "5px", height: "5px", backgroundColor: "#fffc00", transform: "translate(-50%, -50%)", mixBlendMode: "difference" } : { left: `${x}px`, top: `${y}px` }}> </div>
+                    <div className={"dot"} id="dot" style={overLink ? { display: "none" } : { left: `${x}px`, top: `${y}px` }}> </div>
 
-                    <div className={overLink ? "ring triangle" : "ring"} id="ring" style={overLink ? { left: `${x + 5}px`, top: `${y - 20}px` } : { left: `${x}px`, top: `${y}px` }}> </div>
-                    <div className={overLink ? "ring triangle" : "ring"} id="ring" style={overLink ? { left: `${x + 20}px`, top: `${y - 20}px` } : { left: `${x}px`, top: `${y}px` }}> </div>
+                    <div className={"ring"} id="ring" style={overLink ? { display: "none" } : { left: `${x}px`, top: `${y}px` }}> </div>
 
                 </>
                 :

@@ -22,8 +22,8 @@ export default function Standard({ context }) {
             </Container>
             <Container >
                 <Row>
-                    <Col xd={12} md={12} className="align-left">
-                        <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
+                    <Col xd={12} md={12} className={`align-left ${context?.pageContext?.edge?.slug === 'impressum' ? 'impressum' : ''}`}>
+                        <div className="text-sm" dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.content }} />
                     </Col>
                 </Row>
             </Container>

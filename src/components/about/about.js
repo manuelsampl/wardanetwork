@@ -168,7 +168,7 @@ export default function About({ context }) {
 
                                 const image = getImage(item?.image?.localFile?.childImageSharp?.gatsbyImageData)
                                 return (
-                                    <Col key={i} xs={12} md={4} className="zoom-hover">
+                                    <Col key={i} xs={4} md={4} className="zoom-hover">
                                         <GatsbyImage image={image} alt={item?.image?.altText} />
                                         <h4 dangerouslySetInnerHTML={{ __html: item?.title }} />
                                     </Col>
@@ -215,7 +215,7 @@ export default function About({ context }) {
                             const image = getImage(item?.image?.localFile?.childImageSharp?.gatsbyImageData)
                             const imageAdult = getImage(item?.imageAdult?.localFile?.childImageSharp?.gatsbyImageData)
                             return (
-                                <Col key={i} xs={6} md={4} >
+                                <Col key={i} xs={12} md={4} >
                                     <div className="image-team-wrapper">
                                         <div className="team-image"  >
                                             <GatsbyImage className="image-baby" image={image} alt={item?.image?.altText} />

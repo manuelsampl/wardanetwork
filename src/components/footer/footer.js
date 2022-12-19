@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Marquee from "react-fast-marquee"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import FadeIn from '../../components/animateIn/fadeIn'
-
+import SingleTransition from '../transitionlink/singleTransition'
 
 import './footer.css'
 
@@ -16,6 +16,11 @@ const Footer = () => {
     const data = useStaticQuery(graphql`
     query {
         wp {
+            siteOptions {
+                siteOptions {
+                contactColor
+                }
+            }
         footerSettings {
             footerSettings {
               bottomLeftLink{
@@ -107,7 +112,7 @@ const Footer = () => {
                 <FadeIn triggerOnce={false}>
                     <Row>
                         <Col xs={12} className="getintouch">
-                            <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
+                            <SingleTransition id="footer-getintouch" path={getInTouchLink.url} color={data?.wp?.siteOptions?.siteOptions?.contactColor}>{getInTouch}</SingleTransition>
                         </Col>
                     </Row>
                 </FadeIn>
@@ -144,7 +149,7 @@ const Footer = () => {
                 <FadeIn triggerOnce={false}>
                     <Row>
                         <Col xs={12} className="getintouch">
-                            <a href={getInTouchLink.getInTouchLink} aria-label="send email"><span>{getInTouch}</span></a>
+                            <SingleTransition id="footer-getintouch" path={getInTouchLink.url} color={data?.wp?.siteOptions?.siteOptions?.contactColor}>{getInTouch}</SingleTransition>
                         </Col>
                     </Row>
                 </FadeIn>

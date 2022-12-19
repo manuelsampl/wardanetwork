@@ -19,7 +19,10 @@ export default function Model(props) {
     const isSSR = typeof window === "undefined"
 
     if (!isSSR) {
+
         const { nodes, materials, scene } = useLoader(GLTFLoader, '/eye.glb')
+
+
 
 
         return (

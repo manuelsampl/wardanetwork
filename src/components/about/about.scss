@@ -156,19 +156,7 @@
 }
 
 .zoom-hover {
-    overflow: hidden;
-
-}
-
-.zoom-hover div img {
-    transition: transform 0.8s ease;
-}
-
-
-
-.zoom-hover div img:hover {
-    transition: transform 0.8s ease;
-    transform: scale(1.08)
+    padding: 20px;
 }
 
 .green-container {
@@ -271,7 +259,48 @@
     left: 85%;
     height: 140px;
     width: 140px;
+    -webkit-animation: rotating 5s linear infinite;
+    -moz-animation: rotating 5s linear infinite;
+    -ms-animation: rotating 5s linear infinite;
+    -o-animation: rotating 5s linear infinite;
+    animation: rotating 5s linear infinite;
 }
+
+@-webkit-keyframes rotating
+
+/* Safari and Chrome */
+    {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
 
 .sticky-container {
     position: relative;
@@ -291,7 +320,12 @@
 }
 
 .image-team-wrapper h4 {
-    font-size: 16px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.media-wrapper h4 {
+    margin-top: 20px;
 }
 
 @media (max-width: 769px) {
@@ -313,6 +347,69 @@
         font-size: 30px;
         -webkit-text-stroke-width: 1px;
     }
+
+    .cta {
+        margin-top: 40px;
+    }
+
+    .about-page span {
+        margin-bottom: 30px !important;
+    }
+
+    .polaroids {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        min-height: 500px;
+    }
+
+    .faq-wrapper {
+        margin-top: 30px !important;
+    }
+
+    .faq-container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .media-wrapper {
+        margin-top: 60px;
+    }
+
+    .logo-partner-wrapper {
+        padding: 20px;
+        height: 100px;
+    }
+
+    .walls-container {
+        max-width: 100%;
+        overflow: scroll;
+
+        .row {
+            flex-wrap: revert;
+        }
+
+        .col-4 {
+            width: 70%;
+            padding: 15px;
+        }
+
+        h4 {
+            text-align: left;
+        }
+    }
+
+    .green-container {
+        height: 360px;
+    }
+
+    .partners-container {
+        margin-top: 60px;
+    }
+
+    .team-container {
+        margin-top: 60px;
+    }
+
 }
 
 @media (max-width: 576px) {

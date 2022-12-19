@@ -24,7 +24,7 @@ export default function Contact({ context }) {
                     </Row>
                 </AnimateIn>
             </Container>
-            <Container className="smaller-container">
+            <Container className="smaller-container contact-page">
                 <AnimateIn triggerOnce={true}>
                     <Row>
                         <Col xd={12} md={6}>
@@ -41,7 +41,7 @@ export default function Contact({ context }) {
                     <AnimateIn triggerOnce={true}>
                         <Row>
                             <Col xs={12} className="align-pink">
-                                <GatsbyImage className="sign-icon" image={icon} alt="conichiwa" /><br />
+                                <GatsbyImage className="sign-icon" image={icon} alt={"conichiwa"} /><br />
                                 <Link className="btn btn-black" to={context?.pageContext?.edge?.contact?.cta?.url} target={context?.pageContext?.edge?.contact?.cta?.target}>{context?.pageContext?.edge?.contact?.cta?.title}</Link>
                             </Col>
                         </Row>

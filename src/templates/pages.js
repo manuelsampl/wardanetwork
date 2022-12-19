@@ -82,6 +82,7 @@ const Pages = (context) => {
                     }
                   }
                   imageIpad {
+                    altText
                     localFile {
                       childImageSharp {
                         gatsbyImageData
@@ -89,6 +90,7 @@ const Pages = (context) => {
                     }
                   }
                   imageMobile {
+                    altText
                     localFile {
                       childImageSharp {
                         gatsbyImageData

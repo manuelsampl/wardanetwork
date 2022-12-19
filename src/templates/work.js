@@ -148,13 +148,15 @@ const Work = (context) => {
                 <div className="work-header">
                     <GatsbyImage image={headerImage} alt={context?.pageContext?.edge?.featuredImage?.node?.altText} />
                 </div>
-
                 <Container fluid>
                     <Row>
-
-                        <Col className="align-right" xs={12} onClick={executeScroll}>
-                            <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" width="19px" viewBox="0 0 78.65 86.28"><path stroke="#000" strokeWidth="5px" fill="none" d="M5.43,2.88L74.95,41.52c.8,.45,1.2,.99,1.2,1.62s-.4,1.17-1.2,1.62L5.43,83.4c-.8,.45-1.49,.51-2.07,.16s-.86-.98-.86-1.88V4.61c0-.91,.29-1.54,.86-1.88s1.27-.3,2.07,.16Z" /></svg><span className="btn-2 info-btn-2">Watch the film</span>
-                        </Col>
+                        {context?.pageContext?.edge?.work?.videoIdVimeo !== null ?
+                            <Col className="align-right" xs={12} onClick={executeScroll}>
+                                <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" width="19px" viewBox="0 0 78.65 86.28"><path stroke="#000" strokeWidth="5px" fill="none" d="M5.43,2.88L74.95,41.52c.8,.45,1.2,.99,1.2,1.62s-.4,1.17-1.2,1.62L5.43,83.4c-.8,.45-1.49,.51-2.07,.16s-.86-.98-.86-1.88V4.61c0-.91,.29-1.54,.86-1.88s1.27-.3,2.07,.16Z" /></svg><span className="btn-2 info-btn-2">Watch the film</span>
+                            </Col>
+                            :
+                            <></>
+                        }
                     </Row>
                 </Container>
             </AnimateIn>
@@ -188,7 +190,7 @@ const Work = (context) => {
                     <div className="btn-2 info-btn" role="button"
                         tabindex={0} onClick={handleClick} onKeyDown={handleClick} onT>{btnContent}</div>
                 </AnimateIn>
-                {context?.pageContext?.edge?.work?.videoIdVimeo !== undefined ?
+                {context?.pageContext?.edge?.work?.videoIdVimeo !== null ?
                     <AnimateIn triggerOnce={true}>
                         <Container ref={myRef} fluid className="work-video-container">
                             <Row>
@@ -295,7 +297,7 @@ const Work = (context) => {
                                             <GatsbyImage image={image1} alt={data?.allWpWork?.edges[0].node?.featuredImage?.node?.altText} />
                                             <div id="hover_1" className="work-hover-container" role="link" tabindex={0} onMouseEnter={(e) => handleMouseEnter(e)} >
                                                 <Item>
-                                                    <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
+                                                    <div className="hover-caption hover-caption-small" style={{ left: `${x - absoluteX + 10}px`, top: `${y - absoluteY + 10}px` }}>
                                                         <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[0]?.node?.title }} />
                                                         <p className="text-small">{data?.allWpWork?.edges[0]?.node?.work?.subheadline}</p>
                                                     </div>
@@ -314,7 +316,7 @@ const Work = (context) => {
                                             <GatsbyImage image={image2} alt={data?.allWpWork?.edges[1]?.node?.featuredImage?.node?.altText} />
                                             <div id="hover_2" className="work-hover-container" role="link" tabindex={0} onMouseEnter={(e) => handleMouseEnter(e)} >
                                                 <Item>
-                                                    <div className="hover-caption" style={{ left: `${x - absoluteX - 150}px`, top: `${y - absoluteY - 50}px` }}>
+                                                    <div className="hover-caption hover-caption-small" style={{ left: `${x - absoluteX + 10}px`, top: `${y - absoluteY + 10}px` }}>
                                                         <h3 dangerouslySetInnerHTML={{ __html: data?.allWpWork?.edges[1]?.node?.title }} />
                                                         <p className="text-small">{data?.allWpWork?.edges[1]?.node?.work?.subheadline}</p>
                                                     </div>

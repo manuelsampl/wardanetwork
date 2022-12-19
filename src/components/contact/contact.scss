@@ -30,3 +30,13 @@
 .contact-page h1 {
     background-image: linear-gradient(var(--contact), var(--contact)) !important;
 }
+
+@media (max-width: 769px) {
+    .contact-page {
+        text-align: center;
+    }
+
+    .pink-container {
+        margin-top: 60px;
+    }
+}

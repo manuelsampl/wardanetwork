@@ -64,4 +64,27 @@
     .jobdetails-container h1 {
         font-size: 6vw;
     }
+
+    .jobs-page .smaller-container {
+        margin-bottom: 60px;
+    }
+
+    .jobs-wrapper .col-12 {
+        padding: 0;
+    }
+
+    .yellow-container {
+        margin-top: 60px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        text-align: center;
+
+        .jobs-format {
+            text-align: center !important;
+
+            div p {
+                text-align: center !important;
+            }
+        }
+    }
 }

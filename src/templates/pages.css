@@ -61,3 +61,14 @@ h1 {
 .page-404 {
     margin-bottom: 0px;
 }
+
+
+@media (max-width: 769px) {
+
+    .page-wrapper {
+        margin-top: 145px;
+    }
+
+
+
+}

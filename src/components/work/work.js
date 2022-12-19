@@ -157,7 +157,7 @@ export default function Work({ context }) {
                                                     </FadeIn>
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                         <Item>
-                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>
+                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 60}px`, top: `${y - absoluteY - 10}px` }}>
                                                                 <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
                                                                 <p className="text-small">{item?.node?.work?.subheadline}</p>
                                                             </div>
@@ -184,7 +184,7 @@ export default function Work({ context }) {
 
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                         <Item>
-                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>
+                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 60}px`, top: `${y - absoluteY - 10}px` }}>
                                                                 <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
                                                                 <p className="text-small">{item?.node?.work?.subheadline}</p>
                                                             </div>
@@ -216,7 +216,7 @@ export default function Work({ context }) {
                                                     </div>
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)} >
                                                         <Item>
-                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>
+                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 60}px`, top: `${y - absoluteY - 10}px` }}>
                                                                 <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
                                                                 <p className="text-small">{item?.node?.work?.subheadline}</p>
                                                             </div>
@@ -243,7 +243,7 @@ export default function Work({ context }) {
                                                     </FadeIn>
                                                     <div id={`hover_${i}`} className="work-hover-container" onMouseEnter={(e) => handleMouseEnter(e)}>
                                                         <Item>
-                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 200}px`, top: `${y - absoluteY - 50}px` }}>
+                                                            <div className="hover-caption" style={{ left: `${x - absoluteX - 60}px`, top: `${y - absoluteY - 10}px` }}>
                                                                 <h3 dangerouslySetInnerHTML={{ __html: item?.node?.title }} />
                                                                 <p className="text-small">{item?.node?.work?.subheadline}</p>
                                                             </div>
