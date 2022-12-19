@@ -81,14 +81,16 @@ export default function Jobs({ context }) {
                     </Row>
                 </Container>
             </AnimateIn>
-            <div className="yellow-container">
-                <AnimateIn triggerOnce={true}>
+            <AnimateIn triggerOnce={true}>
+                <div className="yellow-container">
+
                     <Container fluid>
                         <h3 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobs.headline }} ></h3>
                         <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobs.text }} ></div>
                     </Container>
-                </AnimateIn>
-            </div>
+                </div>
+
+            </AnimateIn>
         </div>
     )
 }
