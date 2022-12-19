@@ -36,7 +36,7 @@ export default function NotFoundPage({ context }) {
                 <Row>
                     <Col xs={12}>
                         <h1>404 - Da WARDA nix.</h1>
-                        <p>Such weiter...</p>
+                        <p>Leider ist hier nichts, suche weiter...</p>
                         <Link className="btn btn-black" to="/">Zur website</Link>
                     </Col>
                 </Row>
