@@ -18,10 +18,10 @@ export default function Model(props) {
 
     const isSSR = typeof window === "undefined"
 
+
+    const { nodes, materials, scene } = useLoader(GLTFLoader, '/eye.glb')
+
     if (!isSSR) {
-        const { nodes, materials, scene } = useLoader(GLTFLoader, '/eye.glb')
-
-
         return (
             <group {...props} dispose={null}>
                 <group>
