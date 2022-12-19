@@ -18,7 +18,7 @@ export default function Model(props) {
 
 
 
-    const { nodes, materials, scene } = useLoader(GLTFLoader, '/static/eye.glb')
+    const { nodes, materials, scene } = useLoader(GLTFLoader, './eye.glb')
 
     console.log(nodes)
     console.log(materials)
