@@ -9,7 +9,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function Logos(logos) {
 
-    const [visible, setVisible] = useState([0, 1, 2, 3, 4, 5, 6, 7])
+    const [visible, setVisible] = useState([0, 1, 2, 3, 4, 5])
     const [changed, setChanged] = useState(0)
     const [seconds, setSeconds] = useState(0)
 
@@ -25,7 +25,7 @@ export default function Logos(logos) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            let r = Math.floor(Math.random() * 8)
+            let r = Math.floor(Math.random() * 6)
             changeImage(r)
             setSeconds(seconds + 1)
         }, 600);
@@ -38,7 +38,7 @@ export default function Logos(logos) {
             {visible.map((v, i) => {
                 const img = getImage(logos.logos[visible[i]].logo.localFile.childImageSharp.gatsbyImageData)
                 return (
-                    <Col xs={6} md={3} key={i} id={`logo${i}`} className="logo-partner-wrapper" >
+                    <Col xs={6} md={4} key={i} id={`logo${i}`} className="logo-partner-wrapper" >
                         <GatsbyImage loading="eager" className="logo-partner" image={img} alt={logos.logos[visible[i]].logo?.altText} />
                     </Col>
                 )
