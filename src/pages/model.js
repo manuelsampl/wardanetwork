@@ -17,9 +17,9 @@ export default function Model(props) {
     // Fetch model and a separate texture
 
     const isSSR = typeof window === "undefined"
-
+    const { nodes, materials, scene } = useLoader(GLTFLoader, '/eye.glb')
     if (!isSSR) {
-        const { nodes, materials, scene } = useLoader(GLTFLoader, '/eye.glb')
+
 
 
         return (
