@@ -38,11 +38,12 @@ export default function Model(color) {
         url = '/warda_white.glb'
     }
 
+    const { scene } = useLoader(loader, url)
 
     if (!isSSR) {
 
 
-        const { scene } = useLoader(loader, url)
+
 
         return (
             <group dispose={null}>

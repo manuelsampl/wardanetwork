@@ -13,14 +13,26 @@ export default function Logos(logos) {
     const [changed, setChanged] = useState(0)
     const [seconds, setSeconds] = useState(0)
 
+    function checkIfIn() {
+
+    }
+
 
     function changeImage(i) {
 
         let r = Math.floor(Math.random() * logos.logos.length)
         let newArray = visible
-        newArray[i] = r
-        setVisible(newArray)
-        setChanged(changed + 1)
+
+        if (!newArray.includes(r)) {
+            newArray[i] = r
+            setVisible(newArray)
+            setChanged(changed + 1)
+            return
+        } else {
+            changeImage(i)
+            return
+        }
+
     }
 
     useEffect(() => {
@@ -28,7 +40,7 @@ export default function Logos(logos) {
             let r = Math.floor(Math.random() * 6)
             changeImage(r)
             setSeconds(seconds + 1)
-        }, 600);
+        }, 2000);
         return () => clearInterval(interval);
     }, [seconds]);
 

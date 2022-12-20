@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import { useInView } from "react-intersection-observer"
 
-const AnimateIn = ({ threshold = 0.15, triggerOnce = false, delay = 0, ...remainingProps }) => {
+const AnimateIn = ({ threshold = 0.05, triggerOnce = false, delay = 0, ...remainingProps }) => {
     const [ref, inView] = useInView({ threshold, triggerOnce })
 
     const [isDelay, setIsDelay] = useState(true)

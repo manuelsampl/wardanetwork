@@ -130,6 +130,9 @@
     display: block;
 }
 
+.mobile-none {
+    display: flex
+}
 
 .bottom-arrow {
     margin-left: 10px;
@@ -167,7 +170,19 @@
     content: '';
 }
 
+.desktop-none {
+    display: none
+}
+
 @media (max-width: 992px) {
+
+    .mobile-none {
+        display: none;
+    }
+
+    .desktop-none {
+        display: flex
+    }
 
     .d-mobile-none {
         display: none;

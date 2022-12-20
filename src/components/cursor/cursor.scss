@@ -4,17 +4,14 @@
     left: 0;
     width: 20px;
     height: 20px;
-    border: 1px solid var(--main-text-color);
+    border: 1px solid var(--main-bg-color);
     background-color: transparent;
     border-radius: 100%;
     transform: translate(-50%, -50%);
-    -webkit-transition-duration: 100ms;
-    transition-duration: 100ms;
-    -webkit-transition-timing-function: ease;
-    transition-timing-function: ease;
-    will-change: all;
+    transition: all 0.5s ease;
     z-index: 9999999999999999;
     pointer-events: none;
+    mix-blend-mode: difference;
 }
 
 

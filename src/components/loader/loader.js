@@ -46,7 +46,7 @@ export default function Loader({ color, images }) {
                     }
 
                 }
-            }, 180)
+            }, 120)
 
 
             return () => clearTimeout(interval);

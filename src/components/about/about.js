@@ -7,7 +7,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import AnimateIn from '../../components/animateIn/animateIn'
 
 import Polaroid from "../polaroid/polaroid"
-import PolaroidMobile from "../polaroid/polaroid"
+import PolaroidMobile from "../polaroid/polaroidMobile"
 import Logos from "../logos/logos"
 
 import './about.scss'
@@ -99,9 +99,16 @@ export default function About({ context }) {
                 </AnimateIn>
             </Container>
             <AnimateIn triggerOnce={true}>
-                <div className="polaroids">
+                <div className="polaroids mobile-none">
                     {!isSSR &&
                         <Polaroid polaroids={context?.pageContext?.edge?.about?.polaroids}></Polaroid>
+                    }
+                    <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.madness }} />
+
+                </div>
+                <div className="polaroids desktop-none">
+                    {!isSSR &&
+                        <PolaroidMobile polaroids={context?.pageContext?.edge?.about?.polaroids}></PolaroidMobile>
                     }
                     <h2 dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.about?.madness }} />
 
@@ -202,12 +209,14 @@ export default function About({ context }) {
 
             </Container>
             <div className="circle-team">
-                <Circle ></Circle>
+                <div className="circle">
+                    <Circle ></Circle>
+                </div>
             </div>
             <Container className="bottom-row" >
 
 
-                <AnimateIn triggerOnce="true">
+                <AnimateIn >
 
                     <Row className="margin-bottom-100">
 

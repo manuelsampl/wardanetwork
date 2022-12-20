@@ -61,22 +61,21 @@ class Cover extends _react.Component {
     }) => {
       const directionTo = direction === 'up' ? '-100%' : '100%';
       const directionFrom = direction === 'up' ? '100%' : '-100%';
-      const wait = 5.3;
-      const half = (seconds - wait) / 2;
+      const wait = 1.5;
+      const half = (1 - wait) / 2;
       const cover = this.getCoverEl();
       return _gsap.default.timeline().set(cover, {
         y: directionFrom
       }).to(cover, {
         y: "0%",
         ease: "power1.easeInOut",
-        duration: 0.3
+        duration: 0.5
       }).set(node, {
         opacity: 0,
-        duration: 3.5,
       }).to(cover, {
         y: directionTo,
-        ease: "power1.easeIn",
-        duration: 2
+        ease: "power1.easeInOut",
+        duration: half
       }, `+=${wait}`);
     };
 

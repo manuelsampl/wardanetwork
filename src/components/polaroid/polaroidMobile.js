@@ -37,13 +37,14 @@ const Item = ({ polaroids, i, x, y }) => {
 export default function PolaroidMobile(polaroids) {
 
 
-    const { x, y } = useMousePosition()
+    const [x, setX] = useState(0)
+    const [y, setY] = useState(0)
     const [hovered, setHovered] = useState(false)
     const [counter, setCounter] = useState(0)
     const [polaroidList, setPolaroidList] = useState([])
     const [absoluteY, setAbsoluteY] = useState(0)
 
-    window.addEventListener('scroll', (e) => setY(e))
+    window.addEventListener('scroll', (e) => setYp(e))
 
     useInterval(() => {
         if (polaroids.polaroids.length > counter) {
@@ -62,6 +63,8 @@ export default function PolaroidMobile(polaroids) {
 
 
     function weAreHovered(e) {
+        setY(e.touches[0].clientY)
+        setX(e.touches[0].clientX)
         const elem = e.target
         if (elem) {
             const rect = elem?.getBoundingClientRect()
@@ -77,10 +80,10 @@ export default function PolaroidMobile(polaroids) {
         return
     }
 
-    function setY(e) {
+    function setYp(e) {
         if (document) {
-            const elem = document.getElementById('polaroid-container-mobile')
-            if (elem != undefined && elem != null) {
+            const elem = document.getElementById('polaroid-container')
+            if (elem !== undefined && elem !== null) {
                 const rect = elem?.getBoundingClientRect()
                 setAbsoluteY(rect.top)
             }
@@ -89,32 +92,9 @@ export default function PolaroidMobile(polaroids) {
         return
     }
 
-    function permission() {
-        const isSSR = typeof window === "undefined"
-        if (!isSSR) {
-            if (typeof (DeviceMotionEvent) !== "undefined" && typeof (DeviceMotionEvent.requestPermission) === "function") {
-                // (optional) Do something before API request prompt.
-                DeviceMotionEvent.requestPermission()
-                    .then(response => {
-                        // (optional) Do something after API prompt dismissed.
-                        if (response == "granted") {
-                            window.addEventListener("devicemotion", (e) => {
-                                // do something for 'e' here.
-                                console.log(e);
-                            })
-                        }
-                    })
-                    .catch(console.error)
-            } else {
-                alert("DeviceMotionEvent is not defined");
-            }
-        }
-        return
-    }
-
     return (
         <>
-            <div id="polaroid-container-mobile" onClick={(e) => permission(e)} className="polaroid-container" >
+            <div id="polaroid-container-mobile" className="polaroid-container" onTouchEnd={(e) => weAreUnHovered(e)} onTouchMoveCapture={(e) => weAreHovered(e)} >
                 <div className="preload-polaroids">
                     {polaroids.polaroids.map((polaroid, i) => {
                         const img = getImage(polaroid.polaroid.localFile.childImageSharp.gatsbyImageData)
