@@ -42,7 +42,7 @@ export default function NotFoundPage({ context }) {
             </Container>
             <Container>
                 <Row>
-                    <Col xs={12}>
+                    <Col xs={12} className="align-center">
                         <Link className="btn btn-black" to="/">Zur website</Link>
                     </Col>
                 </Row>

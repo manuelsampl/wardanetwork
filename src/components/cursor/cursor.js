@@ -24,7 +24,7 @@ export default function Cursor(mouseOver) {
         const parent1 = mouseOver.mouseOver?.parentElement?.nodeName || ''
         const parent2 = mouseOver.mouseOver?.parentElement?.parentElement?.nodeName || ''
         const parent3 = mouseOver.mouseOver?.parentElement?.parentElement?.parentElement?.nodeName || ''
-        console.log(targetClass)
+
         if (target === "A" || parent1 === "A" || parent2 === "A" || parent3 === "A" || parentClass === "hover-caption" || targetClass === "hover-caption" || targetClass === "faq-container" || parentClass === "hover-caption" || targetClass === "hover-image" || parentClass === "hover-image" || (targetClass === "btn-2 info-btn" || targetClass === "btn-2 info-btn-2")) {
             if ((overLink === false || overLink === undefined)) {
 

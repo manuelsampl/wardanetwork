@@ -55,7 +55,7 @@ const useHover = () => {
 
 const useTouchStart = () => {
     const [hovered, setHovered] = useState()
-    console.log('ok')
+
     const eventHandlers = useMemo(() => ({
         onTouchStart() { setHovered(true) },
         onTouchEnd() { setHovered(false) }
