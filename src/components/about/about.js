@@ -29,7 +29,15 @@ const Item = ({ children }) => {
     const [hovered, eventHandlers] = useHover()
 
     return (
-        <div {...eventHandlers} className="hover-image">{hovered && children}</div>
+        <div {...eventHandlers} className="hover-image mobile-hide">{hovered && children}</div>
+    )
+}
+
+const ItemMobile = ({ children }) => {
+    const [hovered, eventHandlers] = useTouchStart()
+
+    return (
+        <div {...eventHandlers} className="hover-image desktop-hide">{hovered && children}</div>
     )
 }
 
@@ -39,6 +47,18 @@ const useHover = () => {
     const eventHandlers = useMemo(() => ({
         onMouseOver() { setHovered(true) },
         onMouseOut() { setHovered(false) }
+    }), [])
+
+    return [hovered, eventHandlers]
+}
+
+
+const useTouchStart = () => {
+    const [hovered, setHovered] = useState()
+    console.log('ok')
+    const eventHandlers = useMemo(() => ({
+        onTouchStart() { setHovered(true) },
+        onTouchEnd() { setHovered(false) }
     }), [])
 
     return [hovered, eventHandlers]
@@ -228,9 +248,12 @@ export default function About({ context }) {
                                     <div className="image-team-wrapper">
                                         <div className="team-image"  >
                                             <GatsbyImage className="image-baby" image={image} alt={item?.image?.altText} />
-                                            <Item>
+                                            <Item >
                                                 <GatsbyImage className="image-adult" image={imageAdult} alt={item?.imageAdult?.altText} />
                                             </Item>
+                                            <ItemMobile >
+                                                <GatsbyImage className="image-adult" image={imageAdult} alt={item?.imageAdult?.altText} />
+                                            </ItemMobile>
                                         </div>
                                         <h4 dangerouslySetInnerHTML={{ __html: item?.name }} />
                                         <div className="text-sm" dangerouslySetInnerHTML={{ __html: item?.position }} />

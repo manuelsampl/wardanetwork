@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+import CookieConsent from "react-cookie-consent";
 import './layout.css'
 
 
@@ -11,10 +11,10 @@ import Cursor from '../components/cursor/cursor';
 
 
 const Layout = ({ children }) => {
-    const [mouseOver, setMouseOver] = useState(0)
-    const [touchDevice, setTouchDevice] = useState(false)
+  const [mouseOver, setMouseOver] = useState(0)
+  const [touchDevice, setTouchDevice] = useState(false)
 
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
         wp{
             siteOptions {
@@ -131,118 +131,134 @@ const Layout = ({ children }) => {
         }
     }`);
 
-    const isSSR = typeof window === "undefined"
+  const isSSR = typeof window === "undefined"
 
-    function handleMouseOver(e) {
-        setMouseOver(e.target)
-    }
-    if (!isSSR) {
-        window.addEventListener('touchstart', function onFirstTouch() {
+  function handleMouseOver(e) {
+    setMouseOver(e.target)
+  }
+  if (!isSSR) {
+    window.addEventListener('touchstart', function onFirstTouch() {
 
-            // or set some global variable
-            setTouchDevice(true)
+      // or set some global variable
+      setTouchDevice(true)
 
-            // we only need to know once that a human touched the screen, so we can stop listening now
-            window.removeEventListener('touchstart', onFirstTouch, false)
-        }, false)
-    }
-
-
-    return (
-        <div id="layoutcontainer">
+      // we only need to know once that a human touched the screen, so we can stop listening now
+      window.removeEventListener('touchstart', onFirstTouch, false)
+    }, false)
+  }
 
 
-            {!isSSR ?
-                !touchDevice ?
-                    <Cursor mouseOver={mouseOver} />
-                    :
-                    <></>
-                :
-                <></>
-            }
+  return (
+    <div id="layoutcontainer">
 
 
-            <main onMouseOver={(e) => handleMouseOver(e)} onFocus={(e) => handleMouseOver(e)} >{children}</main>
+      {!isSSR ?
+        !touchDevice ?
+          <Cursor mouseOver={mouseOver} />
+          :
+          <></>
+        :
+        <></>
+      }
 
-            {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
-                const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
-                const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
-                const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
-                )
-            })}
+      <CookieConsent
+        location="bottom"
+        buttonText="Akzeptieren"
+        enableDeclineButton
+        declineButtonText="Ablehnen"
+        cookieName="_ga"
+        flipButtons
+        buttonClasses="btn btn-landing"
+        declineButtonClasses="btn-2 btn-black"
+        style={{ background: "#101820", fontSize: "15px", flex: "auto", textAlign: "left", fontFamily: "Futura" }}
+        expires={150}
 
-            {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
-                const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
-                const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
-                const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
+      >
+        Wir verwenden Cookies, um Inhalte anzuzeigen, zu personalisieren und die Zugriffe auf unsere Website zu analysieren.
+      </CookieConsent>
 
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
-                )
-            })}
 
-            {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
-                const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
-                const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
-                )
-            })}
+      <main onMouseOver={(e) => handleMouseOver(e)} onFocus={(e) => handleMouseOver(e)} >{children}</main>
 
-            {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
-                const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
-                const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
-                const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
-                )
-            })}
-            {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
-                const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
-                return (
-                    <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
-                )
-            })}
+      {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
+        const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
+        const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.workTransition.map((image, i) => {
+        const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+        )
+      })}
 
-        </div>
-    )
+      {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
+        const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
+        const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.aboutTransition.map((image, i) => {
+        const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
+
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+        )
+      })}
+
+      {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
+        const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
+        const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+        )
+      })}
+
+      {data?.wp?.siteOptions?.siteOptions?.contactTransition.map((image, i) => {
+        const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
+        const img = getImage(image.imageDesktop.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageDesktop.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
+        const img = getImage(image.imageMobile.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageMobile.altText} image={img} />
+        )
+      })}
+      {data?.wp?.siteOptions?.siteOptions?.jobsTransition.map((image, i) => {
+        const img = getImage(image.imageIpad.localFile.childImageSharp.gatsbyImageData)
+        return (
+          <GatsbyImage loading="eager" key={i} className="preloader-image" alt={image.imageIpad.altText} image={img} />
+        )
+      })}
+
+    </div>
+  )
 
 }
 

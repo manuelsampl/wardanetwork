@@ -5,13 +5,11 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Spin as Hamburger } from 'hamburger-react'
-import * as THREE from "three"
 import { OrbitControls } from '@react-three/drei'
-import { Canvas, useFrame } from "@react-three/fiber"
+import { Canvas } from "@react-three/fiber"
 import Model from './model'
 import TransitionLink from '../transitionlink/transition'
 
-import { ScrollControls, Sky, useScroll, useGLTF, useAnimations } from '@react-three/drei'
 
 
 
@@ -110,7 +108,6 @@ const Header = (transparent) => {
                       <Model color="black" />
                     </Suspense>
                   </group>
-                  <OrbitControls enablePan={false} enableZoom={true} />
                 </Canvas>
               </div>
               <svg id="Warda_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 62">

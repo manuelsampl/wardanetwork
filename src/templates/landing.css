@@ -43,14 +43,14 @@ video {
 }
 
 .btn-landing {
-    background-color: var(--work);
-    color: var(--main-text-color);
+    background-color: var(--work) !important;
+    color: var(--main-text-color) !important;
 }
 
 .btn-landing:hover {
-    color: var(--main-text-color);
-    background-color: #ecccff;
-    opacity: 1;
+    color: var(--main-text-color) !important;
+    background-color: #ecccff !important;
+    opacity: 1 !important;
 
 }
 
