@@ -101,7 +101,7 @@ const Header = (transparent) => {
             <>
               <div className="spinning-w">
                 <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-                  <ambientLight />
+                  <ambientLight intensity={4} />
                   <directionalLight position={[-5, 5, 5]} />
                   <group rotation={[0, rotation, 0]} position={[0, 0, 0]}>
                     <Suspense fallback={null}>
@@ -133,7 +133,7 @@ const Header = (transparent) => {
             <>
               <div className="spinning-w">
                 <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-                  <ambientLight />
+                  <ambientLight intensity={0.5} />
                   <directionalLight position={[-5, 5, 5]} />
                   <group rotation={[0, rotation, 0]} position={[0, 0, 0]}>
                     <Suspense fallback={null}>
@@ -166,7 +166,7 @@ const Header = (transparent) => {
             <>
               <div className="spinning-w">
                 <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-                  <ambientLight />
+                  <ambientLight intensity={4} />
                   <directionalLight position={[-5, 5, 5]} />
                   <group rotation={[0, rotation, 0]} position={[0, 0, 0]}>
                     <Suspense fallback={null}>
