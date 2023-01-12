@@ -12,7 +12,7 @@ import AnimateIn from '../components/animateIn/animateIn'
 import FadeIn from '../components/animateIn/fadeIn'
 import Footer from '../components/footer/footer';
 
-import './landing.css'
+import './landing.scss'
 
 const Item = ({ children }) => {
     const [hovered, eventHandlers] = useHover()

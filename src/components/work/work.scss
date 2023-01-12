@@ -4,7 +4,7 @@
 }
 
 .work-top {
-    margin-bottom: 60px;
+    margin-bottom: 4.166666666666666vw;
 }
 
 .info-box {
@@ -21,11 +21,11 @@
 }
 
 .info-btn {
-    margin-top: 40px;
-    font-size: 15px;
+    margin-top: 2.7777777777777777vw;
+    font-size: 1.0416666666666665vw;
     font-family: "Futura";
     font-weight: bold;
-    letter-spacing: 3.5px;
+    letter-spacing: 0.24305555555555555vw;
 }
 
 .info-btn:hover {
@@ -34,10 +34,10 @@
 
 
 .info-btn-2 {
-    font-size: 15px;
+    font-size: 1.0416666666666665vw;
     font-family: "Futura";
     font-weight: bold;
-    letter-spacing: 3.5px;
+    letter-spacing: 0.24305555555555555vw;
 }
 
 .info-btn-2:hover {
@@ -46,12 +46,12 @@
 
 .open-box {
     height: auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-top: 60px;
+    padding-top: 4.166666666666666vw;
+    padding-bottom: 4.166666666666666vw;
+    margin-top: 4.166666666666666vw;
 
     .col-12 {
-        padding: 30px;
+        padding: 2.083333333333333vw;
     }
 }
 
@@ -68,12 +68,12 @@
 
 .work-page {
     text-align: center;
-    margin-top: 73px;
+    margin-top: 5.069444444444445vw;
 }
 
 .work-header {
-    margin-top: 94px;
-    max-height: 514px;
+    margin-top: 6.527777777777779vw;
+    max-height: 35.69444444444444vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -93,20 +93,20 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    margin-top: 50px;
+    margin-top: 3.4722222222222223vw;
     cursor: pointer;
 
     svg {
-        margin-right: 12px;
+        margin-right: 0.8333333333333334vw;
     }
 }
 
 
 .play-small {
-    border: 1px solid #000;
-    border-width: 1px 1px 1px 1px;
-    width: 10px;
-    height: 10px;
+    border: 0.06944444444444445vw solid #000;
+    border-width: 0.06944444444444445vw 0.06944444444444445vw 0.06944444444444445vw 0.06944444444444445vw;
+    width: 0.6944444444444444vw;
+    height: 0.6944444444444444vw;
     line-height: 0;
     font-size: 0;
 
@@ -118,12 +118,12 @@
 
 .work-video-container {
     text-align: left;
-    margin-top: 200px;
+    margin-top: 13.88888888888889vw;
 }
 
 .work-images-headline {
     text-align: left;
-    margin-top: 200px;
+    margin-top: 13.88888888888889vw;
 }
 
 .work-image-holder {
@@ -133,8 +133,8 @@
 .more-work-container {
     background-color: var(--work);
     color: #323080;
-    padding-top: 60px;
-    padding-bottom: 100px;
+    padding-top: 4.166666666666666vw;
+    padding-bottom: 6.944444444444445vw;
 
     h2 {
         font-weight: bold;
@@ -172,10 +172,10 @@
 }
 
 .otherWorkContainer {
-    max-height: 300px;
-    margin-top: 60px;
-    padding-right: 80px;
-    padding-left: 80px;
+    max-height: 20.833333333333336vw;
+    margin-top: 4.166666666666666vw;
+    padding-right: 5.555555555555555vw;
+    padding-left: 5.555555555555555vw;
 
     .gatsby-image-wrapper-constrained {
         display: flex;
@@ -192,7 +192,7 @@
 }
 
 .logo-partner-wrapper {
-    height: 200px;
+    height: 13.88888888888889vw;
 }
 
 .logo-partner-wrapper {
@@ -219,7 +219,7 @@
 }
 
 .masonry-margin {
-    border: 20px solid transparent;
+    border: 1.3888888888888888vw solid transparent;
     overflow: hidden;
 
 
@@ -240,16 +240,16 @@
 }
 
 .works-masonry-container {
-    margin-top: 160px;
-    margin-bottom: 200px;
+    margin-top: 11.11111111111111vw;
+    margin-bottom: 13.88888888888889vw;
 }
 
 .max-height-1 {
-    height: 390px;
+    height: 27.083333333333332vw;
 }
 
 .max-height-2 {
-    height: 780px;
+    height: 54.166666666666664vw;
 }
 
 .hover-follow {
@@ -264,37 +264,37 @@
 .hover-caption {
     position: absolute;
     color: white !important;
-    width: 300px !important;
+    width: 20.833333333333336vw !important;
     text-align: left;
 
     .text-small {
         font-family: 'Monument';
-        font-size: 20px;
-        letter-spacing: 0.91px;
+        font-size: 1.3888888888888888vw;
+        letter-spacing: 0.06319444444444444vw;
         line-height: 2;
-        margin-top: -15px;
+        margin-top: -1.0416666666666665vw;
     }
 
     h3 {
-        font-size: 35px;
-        letter-spacing: 1.59px;
-        line-height: 50px;
+        font-size: 2.430555555555556vw;
+        letter-spacing: 0.11041666666666668vw;
+        line-height: 3.4722222222222223vw;
     }
 }
 
 .hover-caption-small {
     h3 {
-        font-size: 20px;
-        letter-spacing: 1.3px;
-        line-height: 35px;
+        font-size: 1.3888888888888888vw;
+        letter-spacing: 0.09027777777777779vw;
+        line-height: 2.430555555555556vw;
     }
 
     .text-small {
         font-family: 'Monument';
-        font-size: 15px;
-        letter-spacing: 0.91px;
+        font-size: 1.0416666666666665vw;
+        letter-spacing: 0.06319444444444444vw;
         line-height: 2;
-        margin-top: -15px;
+        margin-top: -1.0416666666666665vw;
     }
 }
 
@@ -325,11 +325,11 @@
 }
 
 .work-images-container {
-    margin-top: 50px;
+    margin-top: 3.4722222222222223vw;
 }
 
 .margin-container {
-    margin-top: 50px;
+    margin-top: 3.4722222222222223vw;
 }
 
 .hover-caption-video {
@@ -341,8 +341,8 @@
 }
 
 .work-h2 {
-    margin-top: 36px;
-    margin-bottom: 60px;
+    margin-top: 2.5vw;
+    margin-bottom: 4.166666666666666vw;
 }
 
 .masonry-margin:hover {
@@ -369,10 +369,81 @@
 
 
 @media (max-width: 992px) {
+    .work-top {
+        margin-bottom: 16vw;
+    }
+
+
+    .info-btn {
+        margin-top: 10.666666666666668vw;
+        font-size: 4vw;
+        letter-spacing: 0.9333333333333335vw;
+    }
+
+    .info-btn-2 {
+        font-size: 4vw;
+        letter-spacing: 0.9333333333333335vw;
+    }
+
+    .open-box {
+        padding-top: 16vw;
+        padding-bottom: 16vw;
+        margin-top: 16vw;
+
+        .col-12 {
+            padding: 8vw;
+        }
+    }
+
+    .work-page {
+        margin-top: 19.466666666666665vw;
+    }
+
+    .work-header {
+        margin-top: 25.066666666666666vw;
+        max-height: 137.06666666666666vw;
+    }
+
+    .align-right {
+        margin-top: 13.333333333333334vw;
+
+        svg {
+            margin-right: 3.2vw;
+        }
+    }
+
+
+    .play-small {
+        border: 0.26666666666666666vw solid #000;
+        border-width: 0.26666666666666666vw 0.26666666666666666vw 0.26666666666666666vw 0.26666666666666666vw;
+        width: 2.666666666666667vw;
+        height: 2.666666666666667vw;
+    }
+
+    .work-video-container {
+        margin-top: 30vw;
+    }
+
+
+    .work-images-headline {
+        margin-top: 53.333333333333336vw;
+    }
+
+    .more-work-container {
+        padding-top: 16vw;
+        padding-bottom: 26.666666666666668vw;
+
+        h2 {
+            font-weight: bold;
+        }
+    }
+
+
     .otherWorkContainer {
         max-height: revert;
-        padding-left: 5px;
-        padding-right: 5px;
+        margin-top: 16vw;
+        padding-left: 1.3333333333333335vw;
+        padding-right: 1.3333333333333335vw;
 
         .desktop-hide {
             display: block !important;
@@ -380,13 +451,82 @@
 
         .mobile-caption {
             color: var(--main-text-color);
-            margin-top: 10px;
-            margin-bottom: -30px;
+            margin-top: 2.666666666666667vw;
+            margin-bottom: -8vw;
         }
+    }
+
+    .logo-partner-wrapper {
+        height: 53.333333333333336vw;
     }
 
     .otherWorkContainer .gatsby-image-wrapper-constrained {
         height: auto;
+    }
+
+    .masonry-margin {
+        border: 5.333333333333334vw solid transparent;
+    }
+
+    .works-masonry-container {
+        margin-top: 42.66666666666667vw;
+        margin-bottom: 53.333333333333336vw;
+
+        a:hover {
+            opacity: 1 !important;
+        }
+
+        a {
+            opacity: 1 !important;
+        }
+    }
+
+    .max-height-1 {
+        height: 104vw;
+    }
+
+    .max-height-2 {
+        height: 208vw;
+    }
+
+    .hover-caption {
+        width: 80vw !important;
+
+        .text-small {
+            font-family: 'Monument';
+            font-size: 5.333333333333334vw;
+            letter-spacing: 0.24266666666666667vw;
+            line-height: 2;
+            margin-top: -4vw;
+        }
+
+        h3 {
+            font-size: 9.333333333333334vw;
+            letter-spacing: 0.424vw;
+            line-height: 13.333333333333334vw;
+        }
+    }
+
+    .hover-caption-small {
+        h3 {
+            font-size: 5.333333333333334vw;
+            letter-spacing: 0.3466666666666667vw;
+            line-height: 9.333333333333334vw;
+        }
+
+        .text-small {
+            font-size: 4vw;
+            letter-spacing: 0.24266666666666667vw;
+            margin-top: -4vw;
+        }
+    }
+
+    .work-images-container {
+        margin-top: 13.333333333333334vw;
+    }
+
+    .margin-container {
+        margin-top: 13.333333333333334vw;
     }
 }
 
@@ -394,19 +534,19 @@
 
     .otherWorkContainer {
         max-height: revert;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 1.3333333333333335vw;
+        padding-right: 1.3333333333333335vw;
 
         .mobile-caption {
             color: var(--main-text-color);
-            margin-top: 10px;
-            margin-bottom: -30px;
+            margin-top: 2.666666666666667vw;
+            margin-bottom: -8vw;
         }
     }
 
     .desktop-hide {
         display: block !important;
-        margin-bottom: 80px;
+        margin-bottom: 21.333333333333336vw;
 
         a {
             color: var(--main-text-color);
@@ -420,13 +560,13 @@
 
     .masonry-margin {
         border: 0px;
-        border-bottom: 20px solid transparent;
+        border-bottom: 5.333333333333334vw solid transparent;
     }
 
     .work-image-holder .gatsby-image-wrapper-constrained {
         left: 0px !important;
         width: 100% !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 5.333333333333334vw !important;
     }
 
     .work-images-container .row {
@@ -438,10 +578,12 @@
         text-align: center;
     }
 
+
+
     .max-height-1 {
-        height: 500px;
-        margin-bottom: 20px;
-        margin-top: 40px;
+        height: 133.33333333333331vw;
+        margin-bottom: 5.333333333333334vw;
+        margin-top: 10.666666666666668vw;
 
         a {
             height: 100%;
@@ -458,9 +600,9 @@
     }
 
     .max-height-2 {
-        height: 500px;
-        margin-bottom: 20px;
-        margin-top: 40px;
+        height: 133.33333333333331vw;
+        margin-bottom: 5.333333333333334vw;
+        margin-top: 10.666666666666668vw;
 
         a {
             height: 100%;
@@ -476,6 +618,8 @@
         }
     }
 
+
+
     .work-page .desktop-hide {
         text-align: left;
 
@@ -485,33 +629,33 @@
     }
 
     .work-h2 {
-        margin-top: 15px;
-        margin-bottom: 40px;
+        margin-top: 4vw;
+        margin-bottom: 10.666666666666668vw;
 
         svg {
-            width: 90px !important;
+            width: 24vw !important;
         }
     }
 
     .marquee svg {
-        width: 90px !important;
+        width: 24vw !important;
     }
 
     .work-images-headline {
-        margin-top: 60px;
+        margin-top: 16vw;
         text-align: center;
     }
 
     .more-work-container h2 {
-        font-size: 35px;
+        font-size: 9.333333333333334vw;
     }
 
     .otherWorkContainer {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 5.333333333333334vw;
+        padding-right: 5.333333333333334vw;
     }
 
     .otherWorkContainer {
-        margin-top: 40px;
+        margin-top: 10.666666666666668vw;
     }
 }

@@ -12,7 +12,7 @@
 }
 
 .page-wrapper {
-    margin-top: 250px;
+    margin-top: 17.36111111111111vw;
     text-align: center;
 }
 
@@ -22,8 +22,8 @@
     position: relative;
     z-index: 999999;
     pointer-events: none;
-    width: 400px;
-    height: 400px;
+    width: 27.77777777777778vw;
+    height: 27.77777777777778vw;
     text-align: center;
     margin: 0 auto;
 }
@@ -46,7 +46,7 @@ h1 {
     background-image: linear-gradient(var(--jobs), var(--jobs));
     background-position: 5% 87%;
     background-repeat: no-repeat;
-    background-size: 0% 30px;
+    background-size: 0% 2.083333333333333vw;
     transition: background-size 0.8s;
     overflow: visible;
 }
@@ -54,7 +54,7 @@ h1 {
 
 .align-left {
     text-align: left;
-    margin-top: 60px;
+    margin-top: 4.166666666666666vw;
 }
 
 .page-404 {
@@ -69,8 +69,26 @@ h1 {
     }
 
     .page-wrapper {
-        margin-top: 145px;
+        margin-top: 38.666666666666664vw;
     }
+
+
+
+    #three {
+        width: 106.66666666666667vw;
+        height: 106.66666666666667vw;
+    }
+
+    h1 {
+        background-size: 0% 8vw;
+    }
+
+
+    .align-left {
+        text-align: left;
+        margin-top: 16vw;
+    }
+
 
 
 

@@ -1,14 +1,14 @@
 .smaller-container {
-    max-width: 750px;
-    margin-top: 45px;
+    max-width: 52.083333333333336vw;
+    margin-top: 3.125vw;
 }
 
 .pink-container {
     background-color: var(--contact);
     text-align: center;
-    padding-top: 61px;
-    padding-bottom: 61px;
-    margin-top: 200px;
+    padding-top: 4.236111111111112vw;
+    padding-bottom: 4.236111111111112vw;
+    margin-top: 13.88888888888889vw;
     min-height: 100%;
 
     .btn-black:hover {
@@ -18,8 +18,9 @@
 }
 
 .sign-icon {
-    max-width: 537px;
-    margin-bottom: 60px;
+    max-width: 37.291666666666664vw;
+    margin-bottom: 2.6vw;
+
 }
 
 .landing .tl-edges {
@@ -31,12 +32,34 @@
     background-image: linear-gradient(var(--contact), var(--contact)) !important;
 }
 
+.konichiwa {
+    margin-bottom: 4.027777777777778vw;
+    font-size: 1.6vw;
+}
+
 @media (max-width: 769px) {
     .contact-page {
         text-align: center;
     }
 
+    .konichiwa {
+        margin-bottom: 12vw;
+        font-size: 5vw;
+    }
+
+    .smaller-container {
+        max-width: 200vw;
+        margin-top: 12vw;
+    }
+
     .pink-container {
-        margin-top: 60px;
+        padding-top: 16.266666666666666vw;
+        padding-bottom: 16.266666666666666vw;
+        margin-top: 53.333333333333336vw;
+    }
+
+    .sign-icon {
+        max-width: 143.2vw;
+        margin-bottom: 7vw;
     }
 }

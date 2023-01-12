@@ -5,7 +5,7 @@ import SingleTransition from '../components/transitionlink/singleTransition'
 import VideoVimeo from '../components/videovimeo/videovimeo'
 import Footer from '../components/footer/footer'
 
-import './landing.css'
+import './landing.scss'
 
 const LandingPage = (context) => {
 

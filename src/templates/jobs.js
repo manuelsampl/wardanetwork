@@ -48,16 +48,17 @@ const Jobs = (context) => {
                         </Row>
                     </Container>
                 </AnimateIn>
+                <AnimateIn triggerOnce={true}>
+                    <div className="yellow-container">
 
-                <div className="yellow-container">
-                    <AnimateIn triggerOnce={true}>
                         <Container className="jobs-format">
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobsDetail.payment }} ></div>
                             <div dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.jobsDetail.apply }} ></div>
                         </Container>
-                    </AnimateIn>
-                    <a className="btn btn-black" href={`mailto:${data?.wp?.siteOptions?.siteOptions?.jobsEmailAdresse}`}>JETZT BEWERBEN</a>
-                </div>
+
+                        <a className="btn btn-black" href={`mailto:${data?.wp?.siteOptions?.siteOptions?.jobsEmailAdresse}`}>JETZT BEWERBEN</a>
+                    </div>
+                </AnimateIn>
             </div >
             <Footer></Footer>
         </>

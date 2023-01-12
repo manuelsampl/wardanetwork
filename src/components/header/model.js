@@ -40,11 +40,12 @@ export default function Model(color) {
 
 
 
+
+
+
+
+    const { scene } = useLoader(loader, url)
     if (!isSSR) {
-
-
-
-        const { scene } = useLoader(loader, url)
         return (
             <group dispose={null}>
                 <primitive scale="1.2" object={scene} ></primitive>

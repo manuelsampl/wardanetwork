@@ -20,17 +20,17 @@
 
 .getintouch {
     text-align: center;
-    margin-top: 77px;
-    margin-bottom: 77px;
+    margin-top: 5.347222222222222vw;
+    margin-bottom: 5.347222222222222vw;
 }
 
 .getintouch a {
     font-family: Monument;
     font-weight: bold;
     color: var(--contact) !important;
-    font-size: 50px;
+    font-size: 3.4722222222222223vw;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 0.3472222222222222vw;
     text-decoration: none;
     position: relative;
     z-index: 2;
@@ -44,10 +44,10 @@
 
 .getintouch a:after {
     background: none repeat scroll 0 0 transparent;
-    bottom: -4px;
+    bottom: -0.2777777777777778vw;
     content: "";
     display: block;
-    height: 5px;
+    height: 0.3472222222222222vw;
     left: 0;
     position: absolute;
     background: var(--contact);
@@ -83,7 +83,7 @@
 }
 
 .logo-footer {
-    width: 26px;
+    width: 1.8055555555555554vw;
 }
 
 .footer-link {
@@ -93,7 +93,7 @@
 
 .footer-link {
     font-family: Monument;
-    font-size: 14px;
+    font-size: 1.6666666666666667vw;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -101,18 +101,18 @@
     text-transform: uppercase;
     color: #fffc00 !important;
     text-decoration: none;
-    letter-spacing: 1.5px;
-    width: 170px;
+    letter-spacing: 0.10416666666666667vw;
+    width: 11.805555555555555vw;
 }
 
 .footer-link img {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0.3472222222222222vw;
+    padding-right: 0.3472222222222222vw;
 }
 
 .footer-marquee-text {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.3472222222222222vw;
+    margin-right: 0.3472222222222222vw;
 }
 
 .footer-link:hover {
@@ -135,8 +135,8 @@
 }
 
 .bottom-arrow {
-    margin-left: 10px;
-    margin-bottom: 4px;
+    margin-left: 0.6944444444444444vw;
+    margin-bottom: 0.2777777777777778vw;
 }
 
 .footer-nav {
@@ -147,13 +147,13 @@
 }
 
 .footer-nav-link {
-    padding-right: 10px;
-    font-size: 15px;
+    padding-right: 0.6944444444444444vw;
+    font-size: 1.0416666666666665vw;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
-    letter-spacing: 0.68px;
+    letter-spacing: 0.04722222222222222vw;
 }
 
 .footer-nav-link:last-child {
@@ -162,7 +162,7 @@
 
 .footer-nav-link::after {
     content: '•';
-    padding-left: 10px;
+    padding-left: 0.6944444444444444vw;
 }
 
 
@@ -174,7 +174,16 @@
     display: none
 }
 
+.getintouch a:hover {
+    opacity: 1 !important;
+}
+
 @media (max-width: 992px) {
+
+    .footer {
+        padding-top: 6.933333333333333vw;
+        padding-bottom: 6.933333333333333vw;
+    }
 
     .mobile-none {
         display: none;
@@ -193,12 +202,17 @@
     }
 
     .getintouch a {
-        font-size: 25px;
+        font-size: 6.666666666666667vw;
+        letter-spacing: 1.3333333333333335vw;
+    }
+
+    .getintouch a:after {
+        bottom: -1.0666666666666667vw;
     }
 
     .getintouch {
-        margin-top: 38px;
-        margin-bottom: 38px;
+        margin-top: 10.133333333333333vw;
+        margin-bottom: 10.133333333333333vw;
     }
 
     .socialFooter {
@@ -206,8 +220,14 @@
 
     }
 
+
+    .logo-footer {
+        width: 6.933333333333333vw;
+    }
+
+
     .socialFooter a {
-        padding: 32px;
+        padding: 1.3333333333333335vw;
     }
 
     .mobile-footer-txt {
@@ -216,9 +236,26 @@
     }
 
     .footer-link {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 9vw;
+        padding-bottom: 9vw;
         margin: 0 auto;
+        letter-spacing: 0.4vw;
+        width: 45.33333333333333vw;
+        font-size: 3.733333333333334vw;
+    }
+
+    .footer-link:hover {
+        opacity: 1;
+    }
+
+    .footer-link img {
+        padding-left: 1.3333333333333335vw;
+        padding-right: 1.3333333333333335vw;
+    }
+
+    .footer-marquee-text {
+        margin-left: 1.3333333333333335vw;
+        margin-right: 1.3333333333333335vw;
     }
 
     .copyright {
@@ -226,7 +263,21 @@
     }
 
     .footer-nav {
-        margin-bottom: 30px;
+        margin-bottom: 8vw;
     }
 
+    .bottom-arrow {
+        margin-left: 2.0666666666666667vw;
+        margin-bottom: 1.666666666666667vw;
+    }
+
+    .footer-nav-link {
+        padding-right: 2.666666666666667vw;
+        font-size: 4vw;
+        letter-spacing: 0.18133333333333335vw;
+    }
+
+    .footer-nav-link::after {
+        padding-left: 2.666666666666667vw;
+    }
 }

@@ -8,7 +8,7 @@ import About from '../components/about/about'
 import Jobs from '../components/jobs/jobs'
 import Standard from '../components/standard/standard'
 import Footer from '../components/footer/footer';
-import './pages.css'
+import './pages.scss'
 
 
 

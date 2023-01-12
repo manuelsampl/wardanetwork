@@ -6,8 +6,8 @@
         font-family: 'Futura';
         font-weight: normal;
         line-height: 1.7;
-        letter-spacing: 1px;
-        font-size: 20px;
+        letter-spacing: 0.06944444444444445vw;
+        font-size: 1.3888888888888888vw;
     }
 
     ul {
@@ -15,28 +15,28 @@
         font-family: 'Futura';
         font-weight: normal;
         line-height: 1.7;
-        letter-spacing: 1px;
-        font-size: 20px;
-        padding-left: 18px;
+        letter-spacing: 0.06944444444444445vw;
+        font-size: 1.3888888888888888vw;
+        padding-left: 1.25vw;
     }
 
     h4 {
-        margin-top: 100px;
-        margin-bottom: 30px;
+        margin-top: 6.944444444444445vw;
+        margin-bottom: 2.083333333333333vw;
     }
 }
 
 .yellow-container {
     .btn {
-        margin-top: 60px;
+        margin-top: 4.166666666666666vw;
     }
 
     .jobs-format {
         margin-top: 0px;
 
         h4 {
-            margin-top: 60px;
-            margin-bottom: 30px;
+            margin-top: 4.166666666666666vw;
+            margin-bottom: 2.083333333333333vw;
         }
     }
 }
@@ -62,11 +62,11 @@
 
 @media (max-width: 769px) {
     .jobdetails-container h1 {
-        font-size: 6vw;
+        font-size: 8vw;
     }
 
     .jobs-page .smaller-container {
-        margin-bottom: 60px;
+        margin-bottom: 16vw;
     }
 
     .jobs-wrapper .col-12 {
@@ -74,17 +74,48 @@
     }
 
     .yellow-container {
-        margin-top: 60px;
-        padding-top: 60px;
-        padding-bottom: 60px;
+        margin-top: 16vw;
+        padding-top: 16vw;
+        padding-bottom: 16vw;
         text-align: center;
 
-        .jobs-format {
-            text-align: center !important;
+        .btn {
+            margin-top: 16vw;
+        }
 
-            div p {
-                text-align: center !important;
+        .jobs-format {
+            margin-top: 0px;
+
+            h4 {
+                margin-top: 16vw;
+                margin-bottom: 8vw;
             }
         }
+    }
+
+    .jobs-format {
+        text-align: center !important;
+
+        div p {
+            text-align: center !important;
+        }
+
+        p {
+            letter-spacing: 0.26666666666666666vw;
+            font-size: 5.333333333333334vw;
+        }
+
+        ul {
+            letter-spacing: 0.26666666666666666vw;
+            font-size: 5.333333333333334vw;
+            padding-left: 4.8vw;
+        }
+
+        h4 {
+            margin-top: 26.666666666666668vw;
+            margin-bottom: 8vw;
+        }
+
+
     }
 }

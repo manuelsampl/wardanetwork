@@ -1,15 +1,16 @@
 .navbar {
     background-color: var(--main-bg-color);
     max-width: 100%;
+
+    .container-fluid {
+        height: 100%;
+    }
+
 }
 
-.navbar .container-fluid {
-    height: 100%;
-}
 
 #Warda_logo {
     height: 100%;
-    margin-left: -20px
 }
 
 .navbar-transparent {
@@ -50,7 +51,7 @@
     bottom: 0;
     content: "";
     display: block;
-    height: 2px;
+    height: 0.1388888888888889vw;
     position: absolute;
     background: var(--main-bg-color);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
@@ -65,7 +66,7 @@
     bottom: 0;
     content: "";
     display: block;
-    height: 2px;
+    height: 0.1388888888888889vw;
     position: absolute;
     background: var(--main-text-color);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
@@ -77,12 +78,12 @@
 
 .navbar-nav .nav-link {
     font-family: 'Futura';
-    font-size: 14px;
+    font-size: 0.9722222222222222vw;
     font-weight: bold;
     line-height: 1.37;
-    letter-spacing: 1.64px;
-    margin-right: 27.5px;
-    margin-left: 27.5px;
+    letter-spacing: 0.11388888888888887vw;
+    margin-right: 1.9097222222222223vw;
+    margin-left: 1.9097222222222223vw;
     padding: 0px;
     text-transform: uppercase;
     display: inline-block;
@@ -94,7 +95,7 @@
     bottom: 0;
     content: "";
     display: block;
-    height: 2px;
+    height: 0.1388888888888889vw;
     left: 0%;
     position: absolute;
     background: var(--main-text-color);
@@ -125,7 +126,7 @@
 }
 
 .hamburger-react div {
-    height: 2px !important;
+    height: 0.1388888888888889vw !important;
 }
 
 
@@ -146,6 +147,11 @@
 
 
 @media (max-width: 769px) {
+    #Warda_logo {
+        height: 100%;
+        margin-left: 0vw
+    }
+
     .hamburger-react {
         display: block;
         z-index: 1040;
@@ -189,14 +195,14 @@
 
 
     .navbar-transparent .nav-link {
-        margin: 60px 0;
+        margin: 16vw 0;
         font-family: Futura;
-        font-size: 45px;
+        font-size: 12vw;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
-        letter-spacing: 2px;
+        letter-spacing: 0.5333333333333333vw;
         color: var(--main-text-color);
     }
 
@@ -210,14 +216,14 @@
     }
 
     .nav-link {
-        margin: 60px 0 !important;
+        margin: 8vw 0 !important;
         font-family: Futura !important;
-        font-size: 45px !important;
+        font-size: 12vw !important;
         font-weight: bold !important;
         font-stretch: normal !important;
         font-style: normal !important;
         line-height: normal !important;
-        letter-spacing: 2px !important;
+        letter-spacing: 0.5333333333333333vw !important;
         color: var(--main-text-color) !important;
     }
 
@@ -226,13 +232,14 @@
         color: var(--main-text-color) !important;
     }
 
+
     .navbar-expand .navbar-nav {
         flex-direction: column;
-        padding-left: 20px;
+        padding-left: 5.333333333333334vw;
     }
 
     .hamburger-react {
-        margin-right: -11px;
+        margin-right: -2.933333333333333vw;
     }
 
 }

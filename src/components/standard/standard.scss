@@ -6,15 +6,15 @@
     color: var(--main-text-color);
 
     h4 {
-        margin-top: 60px;
-        margin-bottom: 30px;
+        margin-top: 4.166666666666666vw;
+        margin-bottom: 2.083333333333333vw;
     }
 
     li {
-        font-size: 15px;
+        font-size: 1.0416666666666665vw;
     }
 
-    margin-bottom: 200px;
+    margin-bottom: 13.88888888888889vw;
 
     a {
         position: relative;
@@ -23,10 +23,10 @@
 
     a:after {
         background: none repeat scroll 0 0 transparent;
-        bottom: -3px;
+        bottom: -0.20833333333333334vw;
         content: "";
         display: block;
-        height: 2px;
+        height: 0.1388888888888889vw;
         left: 0;
         position: absolute;
         background: #53595f;
@@ -42,4 +42,27 @@
 
 .impressum {
     text-align: center !important;
+}
+
+@media (max-width: 769px) {
+
+    .standard-page {
+
+        h4 {
+            margin-top: 16vw;
+            margin-bottom: 8vw;
+        }
+
+        li {
+            font-size: 4vw;
+        }
+
+        margin-bottom: 53.333333333333336vw;
+
+
+        a:after {
+            bottom: -0.8vw;
+            height: 0.5333333333333333vw;
+        }
+    }
 }

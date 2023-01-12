@@ -42,6 +42,7 @@ export default function Contact({ context }) {
                         <Row>
                             <Col xs={12} className="align-pink">
                                 <GatsbyImage className="sign-icon" image={icon} alt={"conichiwa"} /><br />
+                                <div className="konichiwa" dangerouslySetInnerHTML={{ __html: context?.pageContext?.edge?.contact?.sublineIcon }} />
                                 <Link className="btn btn-black" to={context?.pageContext?.edge?.contact?.cta?.url} target={context?.pageContext?.edge?.contact?.cta?.target}>{context?.pageContext?.edge?.contact?.cta?.title}</Link>
                             </Col>
                         </Row>

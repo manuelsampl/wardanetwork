@@ -13,9 +13,6 @@ export default function Logos(logos) {
     const [changed, setChanged] = useState(0)
     const [seconds, setSeconds] = useState(0)
 
-    function checkIfIn() {
-
-    }
 
 
     function changeImage(i) {

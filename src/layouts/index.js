@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CookieConsent from "react-cookie-consent";
-import './layout.css'
+import './layout.scss'
 
 
 import Cursor from '../components/cursor/cursor';

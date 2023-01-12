@@ -46,8 +46,8 @@ body {
     font-family: 'Futura';
     font-weight: normal;
     line-height: 1.7;
-    letter-spacing: 1.3px;
-    font-size: 30px;
+    letter-spacing: 0.09027777777777779vw;
+    font-size: 2.083333333333333vw;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
 }
@@ -92,32 +92,32 @@ p {
     font-family: 'Futura';
     font-weight: normal;
     line-height: 2;
-    letter-spacing: 1.3px;
-    font-size: 30px;
+    letter-spacing: 0.09027777777777779vw;
+    font-size: 2.083333333333333vw;
 }
 
 .text-sm {
     font-family: 'Futura';
     font-weight: normal;
     line-height: 1.7;
-    letter-spacing: 1px;
-    font-size: 20px;
+    letter-spacing: 0.06944444444444445vw;
+    font-size: 1.3888888888888888vw;
 }
 
 .text-sm p {
     font-family: 'Futura';
     font-weight: normal;
     line-height: 1.7;
-    letter-spacing: 1px;
-    font-size: 20px;
+    letter-spacing: 0.06944444444444445vw;
+    font-size: 1.3888888888888888vw;
 }
 
 .text-xs {
     font-family: 'Futura';
     font-weight: normal;
     line-height: 1.7;
-    letter-spacing: 0.5px;
-    font-size: 15px;
+    letter-spacing: 0.034722222222222224vw;
+    font-size: 1.0416666666666665vw;
 
 }
 
@@ -125,8 +125,8 @@ p {
     font-family: 'Futura';
     font-weight: normal;
     line-height: 1.7;
-    letter-spacing: 0.5px;
-    font-size: 15px;
+    letter-spacing: 0.034722222222222224vw;
+    font-size: 1.0416666666666665vw;
 }
 
 .bold {
@@ -139,8 +139,8 @@ h1 {
     font-family: 'Monument';
     font-weight: bold;
     line-height: 1.5;
-    letter-spacing: 3px;
-    font-size: 70px;
+    letter-spacing: 0.20833333333333334vw;
+    font-size: 4.861111111111112vw;
     display: inline;
     margin-bottom: 60px;
 }
@@ -149,16 +149,16 @@ h2 {
     font-family: 'Monument';
     font-weight: normal;
     line-height: 1.5;
-    letter-spacing: 1.5px;
-    font-size: 35px;
+    letter-spacing: 0.10416666666666667vw;
+    font-size: 2.430555555555556vw;
 }
 
 h3 {
     font-family: 'Monument';
     font-weight: bold;
     line-height: 1.5;
-    letter-spacing: 1px;
-    font-size: 30px;
+    letter-spacing: 0.06944444444444445vw;
+    font-size: 2.083333333333333vw;
     text-transform: uppercase;
 }
 
@@ -166,8 +166,8 @@ h4 {
     font-family: 'Monument';
     font-weight: bold;
     line-height: 1.5;
-    letter-spacing: 1px;
-    font-size: 20px;
+    letter-spacing: 0.06944444444444445vw;
+    font-size: 1.3888888888888888vw;
 }
 
 
@@ -187,8 +187,8 @@ h4 {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
     border-radius: 100px !important;
-    font-size: 15px !important;
-    letter-spacing: 2.5px !important;
+    font-size: 1.0416666666666665vw !important;
+    letter-spacing: 0.1736111111111111vw !important;
     font-family: Monument !important;
     text-transform: uppercase !important;
     transition: all 0.5s ease !important;
@@ -211,8 +211,8 @@ h4 {
 .btn-2 {
     font-family: "Monument" !important;
     cursor: pointer !important;
-    font-size: 15px !important;
-    letter-spacing: 2.5px !important;
+    font-size: 1.0416666666666665vw !important;
+    letter-spacing: 0.1736111111111111vw !important;
 }
 
 .tl-wrapper {
@@ -248,15 +248,21 @@ h4 {
 
 @media (max-width: 769px) {
 
+
+    .btn-2 {
+        font-size: 4vw !important;
+        letter-spacing: 0.6666666666666667vw !important;
+    }
+
     .container-fluid {
         padding-left: 20px;
         padding-right: 20px;
     }
 
     h1 {
-        font-size: 35px;
+        font-size: 9.333333333333334vw;
         line-height: 1.4;
-        letter-spacing: 1.5px;
+        letter-spacing: 0.4vw;
         background-size: 0% 13px;
     }
 
@@ -265,45 +271,45 @@ h4 {
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 5.333333333333334vw;
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 5.333333333333334vw;
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 5.333333333333334vw;
 
     }
 
     h5 {
-        font-size: 15px;
+        font-size: 4vw;
         line-height: 1.5;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.13333333333333333vw;
     }
 
     p {
         line-height: 1.6;
-        letter-spacing: 1px;
-        font-size: 20px;
+        letter-spacing: 0.26666666666666666vw;
+        font-size: 5.333333333333334vw;
     }
 
     .text-sm {
         line-height: 1.6;
-        letter-spacing: 1px;
-        font-size: 20px;
+        letter-spacing: 0.26666666666666666vw;
+        font-size: 5.333333333333334vw;
     }
 
     .text-xs {
-        letter-spacing: 2.5px;
-        font-size: 13px;
+        letter-spacing: 0.4vw;
+        font-size: 3.4666666666666663vw;
     }
 
 
     .btn {
-        font-size: 13px;
-        letter-spacing: 2.5px;
+        font-size: 3.4666666666666663vw !important;
+        letter-spacing: 0.4vw !important;
     }
 
 

@@ -21,9 +21,9 @@ export default function Model(props) {
 
 
 
-    if (!isSSR) {
-        const { nodes, materials, scene } = useLoader(GLTFLoader, '/eye.glb')
 
+    const { nodes, materials, scene } = useLoader(GLTFLoader, '/eye.glb')
+    if (!isSSR) {
 
 
         return (

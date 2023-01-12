@@ -9,11 +9,11 @@
 
 .polaroid {
     position: absolute;
-    width: 200px;
+    width: 13.88888888888889vw;
     transform: translate(-50%, -50%);
 
     img {
-        width: 200px;
+        width: 13.88888888888889vw;
         height: auto;
     }
 }
@@ -30,4 +30,14 @@
 
 #polaroid-container-mobile {
     touch-action: none;
+}
+
+@media (max-width: 769px) {
+    .polaroid {
+        width: 53.333333333333336vw;
+
+        img {
+            width: 53.333333333333336vw;
+        }
+    }
 }

@@ -9,7 +9,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import FadeIn from '../../components/animateIn/fadeIn'
 import SingleTransition from '../transitionlink/singleTransition'
 
-import './footer.css'
+import './footer.scss'
 
 
 const Footer = () => {
